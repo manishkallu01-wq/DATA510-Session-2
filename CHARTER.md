@@ -3,13 +3,21 @@
 > Filled in live during the **Studio Charter** session in week 3. Every section below is committed in the same commit at the end of that class block. See [Studio Charter (single-session inception)](https://courses.lpcordova.phd/data510/project-framework/charter-inception.html) for the script and time-boxes.
 
 **Owner team:** Manish R Kallu 
+
 **Owner Product Lead:** Manish R Kallu
+
 **Peer Stakeholder POs:** Brandon Smith, Jon Garrow, Jackson Garro
+
 **Instructor / Sponsor:** Lucas Cordova (`LucasCordova` on GitHub)
+
 **GitHub repo:** [`<repo-link>`](https://github.com/manishkallu01-wq/DATA510-Session-2/tree/main)
+
 **GitHub Projects board:** [`<board-link>`](https://github.com/users/manishkallu01-wq/projects/1)
+
 **Discord category:** [`#<project>-12`](https://discord.com/channels/1277725100816203942/1508588739063054376)
+
 **Studio Session:** 2
+
 **Studio formed:** 25 May 2026
 
 ## Vision
