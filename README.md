@@ -11,7 +11,7 @@
 | Peer Stakeholder POs | Brandon Smith, Jon Garrow, Jackson Garro |
 | Studio Session | 2 |
 | GitHub repo | https://github.com/manishkallu01-wq/DATA510-Session-2 |
-| GitHub Projects board | (https://github.com/users/manishkallu01-wq/projects/1) |
+| GitHub Projects board | https://github.com/users/manishkallu01-wq/projects/1 |
 | Discord category | `#<project>-*` |
 | Instructor / Sponsor | Lucas Cordova (`LucasCordova` on GitHub) |
 
