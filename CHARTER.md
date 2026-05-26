@@ -121,6 +121,6 @@ This project exists to improve understanding of how economic disruptions influen
 
 ### How to reach us
 
-- **Discord category:** `#project-general`, `#project-studio`, `#project-blockers`
+- **Discord category:** [`#project-general`](https://discord.com/channels/1277725100816203942/1508588739063054376), [`#project-studio`](https://discord.com/channels/1277725100816203942/1508588756880461834), [`#project-blockers`](https://discord.com/channels/1277725100816203942/1508588778426597466)
 - **GitHub repo:** [`<repo-link>`](https://github.com/manishkallu01-wq/DATA510-Session-2/tree/main)
 - **GitHub Projects board:** [`<board-link>`](https://github.com/users/manishkallu01-wq/projects/1)
