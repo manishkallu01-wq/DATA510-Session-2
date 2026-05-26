@@ -14,7 +14,7 @@
 
 **GitHub Projects board:** https://github.com/users/manishkallu01-wq/projects/1
 
-**Discord category:** [`#<project>-12`](https://discord.com/channels/1277725100816203942/1508588739063054376) |
+**Discord category:** [`#<project>-12`](https://discord.com/channels/1277725100816203942/1508588739063054376)
 
 **Studio Session:** 2
 
