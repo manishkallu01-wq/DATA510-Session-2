@@ -72,11 +72,11 @@ A **Service Level Agreement** is a written promise the triad makes about *how fa
 
 | When this signal arrives... | Who responds | By when |
 |-----------------------------|--------------|---------|
-| Peer PO files a **Studio Brief** (commits to `studio/briefs/...`, links in `#<project>-studio`) | Owner team | <e.g., acknowledge in `#<project>-studio` within 24 hours, with a first-pass adopt / defer / decline call for each item> |
-| Peer PO files a **Studio Critique** | Owner team | <e.g., respond in `#<project>-studio` within 24 hours and capture follow-up items into the backlog> |
-| Owner team posts an **Iteration Review** in `README.md` | Both peer POs | <e.g., read before filing the next Brief and Critique> |
-| Owner team flags a **blocker** in `#<project>-blockers` | Instructor, plus any tagged peer PO | <e.g., responds by the next Studio Session at the latest; faster if online> |
-| Anyone asks a clarifying question in `#<project>-general` | Whoever is tagged (default: owner team) | <e.g., reply within 48 hours, even if the reply is "we will look at this next iteration"> |
+| Peer PO files a **Studio Brief** (commits to `studio/briefs/...`, links in `#project-studio`) | Owner team | Acknowledge in `#project-studio` within 24 hours with adopt/defer/decline feedback |
+| Peer PO files a **Studio Critique** | Owner team | Respond within 24 hours and add follow-up tasks to backlog if needed |
+| Owner team posts an **Iteration Review** in `README.md` | Both peer POs | Review before the next Studio Session |
+| Owner team flags a **blocker** in `#project-blockers` | Instructor and tagged peer PO | Respond by the next Studio Session or sooner if urgent |
+| Anyone asks a clarifying question in `#project-general` | Whoever is tagged (default: owner team) | Reply within 48 hours |
 
 ## Definition of Ready (PBI)
 
