@@ -1,6 +1,6 @@
-# <Project Name>
+## Economic Disruption and Unemployment Trend Analysis
 
-> One-sentence description of what this project is about. Replace this entire block before week 3.
+> This project analyzes how major economic disruptions such as recessions, inflation, COVID-19, layoffs, and policy changes impact unemployment trends across industries and regions in the United States using public economic datasets.
 
 ## Quick reference
 
