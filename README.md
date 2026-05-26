@@ -10,8 +10,8 @@
 | Owner Product Lead | Manish R Kallu |
 | Peer Stakeholder POs | Brandon Smith, Jon Garrow, Jackson Garro |
 | Studio Session | 2 |
-| GitHub repo | https://github.com/manishkallu01-wq/DATA510-Session-2 |
-| GitHub Projects board | https://github.com/users/manishkallu01-wq/projects/1 |
+| GitHub repo | [`<repo-link>`](https://github.com/manishkallu01-wq/DATA510-Session-2/tree/main)
+| GitHub Projects board | [`<board-link>`](https://github.com/users/manishkallu01-wq/projects/1)
 | Discord category | [`#<project>-12`](https://discord.com/channels/1277725100816203942/1508588739063054376) |
 | Instructor / Sponsor | Lucas Cordova (`LucasCordova` on GitHub) |
 
