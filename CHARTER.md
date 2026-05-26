@@ -72,7 +72,7 @@ A **Service Level Agreement** is a written promise the triad makes about *how fa
 
 | When this signal arrives... | Who responds | By when |
 |-----------------------------|--------------|---------|
-| Peer PO files a **Studio Brief** (commits to `studio/briefs/...`, links in GitHub Discussions or GitHub Issues) | Owner team | Acknowledge within 24 hours with adopt/defer/decline feedback |
+| Peer PO files a **Studio Brief** (commits to `studio/briefs/...`, links in GitHub Studio) | Owner team | Acknowledge within 24 hours with adopt/defer/decline feedback |
 | Peer PO files a **Studio Critique** | Owner team | Respond within 24 hours and add follow-up tasks to backlog if needed |
 | Owner team posts an **Iteration Review** in `README.md` | Both peer POs | Review before the next Studio Session |
 | Owner team flags a **blocker** in `#project-blockers` | Instructor and tagged peer PO | Respond by the next Studio Session or sooner if urgent |
