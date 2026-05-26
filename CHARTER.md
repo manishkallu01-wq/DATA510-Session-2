@@ -22,38 +22,49 @@
 
 ## Vision
 
-One or two sentences. The world (or organization, or domain) if this project succeeds.
+To build a unified, data-driven understanding of how major economic disruptions affect unemployment trends across industries and regions in the United States. If successful, this project will help researchers, policymakers, and job seekers better interpret labor market behavior and economic resilience over time.
 
 ## Mission
 
-One or two sentences. What the owner team will actually do this semester.
+This semester, the owner team will collect, integrate, and analyze historical U.S. economic datasets to study unemployment patterns using data engineering, visualization, and machine learning techniques. The team will produce forecasting insights, dashboards, and research findings based on public economic indicators.
 
 ## Context
 
-- **Users / affected parties:** who benefits, who is at risk, who might use the result.
-- **Data sources (proposed):** named sources, access status, license / ethics notes.
-- **Constraints:** time, compute, access, skills, scope.
-- **Ethics risks:** consent, retention, PII, fairness, deployment risk.
+- **Users / affected parties:** Economic researchers, workforce analysts, policymakers, businesses monitoring labor trends, students, and job seekers.
+
+- **Data sources (proposed):** FRED API, BLS datasets, U.S. Census Bureau datasets, CPI and inflation indicators, GDP datasets, unemployment datasets, and publicly available government economic APIs. All datasets are publicly accessible and contain minimal or no personally identifiable information (PII).
+
+- **Constraints:** Semester timeline, dataset integration complexity, compute limitations, project scope management, and team coordination.
+
+- **Ethics risks:** Potential bias in historical datasets, fairness concerns in regional comparisons, forecasting misinterpretation, and risk of overclaiming predictive accuracy.
 
 ## Success criteria by milestone
 
-- **M1, proposal (W4):** <measurable criterion>
-- **M2, data summary (W7):** <measurable criterion>
-- **M3, poster rough draft (W10):** <measurable criterion>
-- **M4, write-up rough draft (W12):** <measurable criterion>
-- **M5, final write-up and poster (W14):** <measurable criterion>
+- **M1, proposal (W4):** Finalized research questions, approved proposal, identified datasets, and seeded backlog with at least 5 PBIs.
+
+- **M2, data summary (W7):** Working ETL pipeline, integrated datasets, exploratory data analysis, missingness checks, and documented schema validation.
+
+- **M3, poster rough draft (W10):** Initial dashboards, unemployment trend visualizations, and baseline forecasting model results completed.
+
+- **M4, write-up rough draft (W12):** Draft methodology, analysis, visualizations, forecasting evaluation metrics, and findings completed.
+
+- **M5, final write-up and poster (W14):** Final paper, polished poster, reproducible pipelines, dashboards, forecasting outputs, and documented conclusions supported by evidence.
 
 ## Working agreements (internal to owner team)
 
-- **Sync rhythm:** <e.g., one async standup per weekday in `#<project>-standup`>
-- **Code review:** <who reviews what, by when>
-- **Decision rule:** <how the team decides when it disagrees>
+- **Sync rhythm:** One async standup per weekday in Discord and one weekly live sync meeting before class.
+
+- **Code review:** Every major pull request must be reviewed by at least one teammate before merging.
+
+- **Decision rule:** Consensus preferred; unresolved disagreements decided by the Owner Product Lead after discussion.
 
 ## Working agreements (triad with peer POs)
 
-- **Studio Brief due:** <example: by 5 pm the day before class, committed to `studio/briefs/W<NN>-<peer>.md` and linked in `#<project>-studio` on Discord>. If the owner team needs the peer POs to read or review something specific *before* the Studio Session (a data preview, model results, a draft figure), file the Brief earlier so the peer POs actually have time to do that homework. Otherwise the default is "before the Studio Session starts."
-- **Studio Critique due:** <example: by the end of class for the in-person discussion, or at an agreed-upon time within one day after class (e.g., 5 pm the next day) if the peer PO needs extra time to draft a thoughtful write-up>.
-- **Priority conflict resolution:** owner team integrates briefs in good faith; the instructor arbitrates (as Process Expert) if peer POs and owner team disagree.
+- **Studio Brief due:** By 5 PM the day before class, committed to `studio/briefs/` and linked in `#project-studio`.
+
+- **Studio Critique due:** By the end of class or within 24 hours after class if additional review time is needed.
+
+- **Priority conflict resolution:** Owner team integrates peer feedback in good faith; the instructor arbitrates unresolved conflicts if necessary.
 
 ## Response SLAs (Service Level Agreements)
 
@@ -94,17 +105,22 @@ A PBI is done, and may be moved from `Analyze` into `Done`, when:
 ## Stakeholder alignment memo (one-page summary)
 
 ### Why we exist
-<two sentences from Vision and Mission>
+
+This project exists to improve understanding of how economic disruptions influence unemployment trends across industries and regions in the United States. The team aims to create integrated economic datasets, forecasting models, and visualizations that support labor market analysis and economic research.
 
 ### What we will deliver to peer POs every week
-- An Iteration Review in this `README.md` by <day / time>
-- A summary of which Studio Brief items we adopted, deferred, or declined and why
+
+- An Iteration Review update in `README.md`
+- Progress summaries and backlog updates
+- Adopt/defer/decline decisions for Studio Brief feedback
 
 ### What we need from peer POs every week
-- A Studio Brief by <day / time> next class (next iteration's requirements, questions, risks)
-- A Studio Critique by <day / time> next class (assessment of last week's delivery)
+
+- A Studio Brief before class with questions, risks, or requirements
+- A Studio Critique after class evaluating project progress and deliverables
 
 ### How to reach us
-- Discord category: `#<project>-general` (day-to-day), `#<project>-studio` (Briefs and Critiques), `#<project>-blockers` (impediments)
-- GitHub repo: <link>
-- GitHub Projects board: <link>
+
+- **Discord category:** `#project-general`, `#project-studio`, `#project-blockers`
+- **GitHub repo:** [`<repo-link>`](https://github.com/manishkallu01-wq/DATA510-Session-2/tree/main)
+- **GitHub Projects board:** [`<board-link>`](https://github.com/users/manishkallu01-wq/projects/1)
