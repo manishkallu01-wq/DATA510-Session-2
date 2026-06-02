@@ -34,9 +34,6 @@ _site/
 # Raw, external, and interim data are not committed. Document them in
 # data/README.md instead and keep small, reproducible processed snapshots
 # under data/processed/ if you really need them in git.
-data/raw/
-data/external/
-data/interim/
 *.csv.gz
 *.parquet
 *.feather
