@@ -1,4 +1,4 @@
-## Economic Disruption and Unemployment Trend Analysis
+## Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
 
 > This project analyzes how major economic disruptions such as recessions, inflation, COVID-19, layoffs, and policy changes impact unemployment trends across industries and regions in the United States using public economic datasets.
 
