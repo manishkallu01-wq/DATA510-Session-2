@@ -1,10 +1,8 @@
 ---
-title: "Capstone Project Write-Up"
-subtitle: "Replace with your project title"
+title: "Macroeconomic Drivers of U.S. Unemployment"
+subtitle: "Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators"
 author:
-  - "Your Name"
-  - "Teammate Two"
-  - "Teammate Three"
+  - "Manish R Kallu"
 date: today
 bibliography: refs.bib
 format:
@@ -34,17 +32,16 @@ execute:
 
 # Title, Team, and Affiliations
 
-**Project title:** *(same as charter)*
+**Project title:** *Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators*
 
 | Name | Role | Willamette email |
 |------|------|------------------|
-| | Owner Product Lead | |
-| | | |
-| | | |
+| Manish R Kallu| Owner Product Lead | mkallu@willamette.edu |
 
-**Peer Stakeholder POs:** *(from lookup)*
+**Peer Stakeholder POs:** * Brandon Smith, Jon Garrow, Jackson Garro *
 
-**Repository:** `https://github.com/your-org/your-repo`
+
+**Repository:** `https://github.com/manishkallu01-wq/DATA510-Session-2`
 
 # Abstract
 
