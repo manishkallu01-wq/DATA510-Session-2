@@ -1,4 +1,4 @@
-# Studio Charter: Economic Disruption and Unemployment Trend Analysis
+# Studio Charter: Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
 
 **Owner team:** Manish R Kallu 
 
