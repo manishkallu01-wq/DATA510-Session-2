@@ -473,8 +473,8 @@ The resulting analytical framework integrates six approved economic datasets spa
 
 ## References
 
-* Barnichon, R. (2013). *Using labor force flows to forecast the labor market.* Federal Reserve Bank of San Francisco Economic Letter, 2013(8), 1-5.
-* Bureau of Economic Analysis. (n.d.). *National economic accounts.* U.S. Department of Commerce. [https://www.bea.gov](https://www.bea.gov)
+Barnichon, R. (2013). *Using labor force flows to forecast the labor market.* Federal Reserve Bank of San Francisco Economic Letter, 2013(8), 1-5.
+Bureau of Economic Analysis. (n.d.). *National economic accounts.* U.S. Department of Commerce. [https://www.bea.gov](https://www.bea.gov)
 * Bureau of Labor Statistics. (n.d.). *Labor market and inflation statistics.* U.S. Department of Commerce. [https://www.bls.gov](https://www.bls.gov)
 * Chung, H., Fallick, B., Nekarda, C. J., & Ratner, D. (2014). *Assessing the change in labor market conditions.* Board of Governors of the Federal Reserve System. [https://www.federalreserve.gov](https://www.federalreserve.gov)
 * Favara, G., Gilchrist, S., Lewis, K., & Zakrajšek, E. (2022). *Recession risk and the excess bond premium.* Journal of Monetary Economics, 125, 15-31.
