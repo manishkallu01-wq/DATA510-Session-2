@@ -38,7 +38,7 @@ execute:
 |------|------|------------------|
 | Manish R Kallu| Owner Product Lead | mkallu@willamette.edu |
 
-**Peer Stakeholder POs:** * Brandon Smith, Jon Garrow, Jackson Garro *
+**Peer Stakeholder POs:** Brandon Smith, Jon Garrow, Jackson Garro
 
 
 **Repository:** `https://github.com/manishkallu01-wq/DATA510-Session-2`
