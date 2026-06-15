@@ -1,6 +1,6 @@
 # 📊 Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
 
-> 🚀 **Capstone Project | DATA 510 – Data Science Studio (DS3)**
+> 🚀 **DATA 510 – Data Science Studio (DS3)**
 >
 > An end-to-end Data Engineering, Analytics, Statistical Modeling, and Machine Learning project investigating how macroeconomic indicators influence and forecast unemployment trends in the United States.
 
