@@ -1,125 +1,142 @@
-# Backlog: Economic Disruption and Unemployment Trend Analysis
+# Backlog: Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
 
 This file is the **human-readable mirror** of the GitHub Projects (v2) Iterative Development board for this repository. Every row here is also represented as a GitHub issue, added to the board, tagged with a milestone label, and sized.
 
 ## Conventions
 
-- Each item contains: id, title, hypothesis or user story, **Create / Observe / Analyze** triple, milestone tag, size, and GitHub issue reference.
-- Items are ordered top to bottom by **priority**.
-- Milestone tags: `M1-proposal`, `M2-data-summary`, `M3-poster-draft`, `M4-writeup-draft`, `M5-final`, `infra`, `ethics`.
-- Sizes: S, M, L, XL.
-- Workflow columns on the board: `Backlog` → `Create` → `Observe` → `Analyze` → `Done`.
-- WIP cap: `Create + Observe + Analyze` ≤ `owners + 1`.
-- Definition of Ready and Definition of Done are documented in `CHARTER.md`.
+* Each item contains: id, title, hypothesis or user story, **Create / Observe / Analyze** triple, milestone tag, size, and GitHub issue reference.
+* Items are ordered by priority.
+* Milestone tags: `M1-proposal`, `M2-data-summary`, `M3-poster-draft`, `M4-writeup-draft`, `M5-final`, `infra`, `ethics`.
+* Sizes: S, M, L, XL.
+* Workflow columns: `Backlog` → `Create` → `Observe` → `Analyze` → `Done`.
+* Definition of Ready and Definition of Done are documented in `CHARTER.md`.
 
-## Items
+---
 
-### PBI-001
+## PBI-001
 
-- **Title:** Acquire and validate FRED unemployment datasets
-- **Hypothesis:** FRED unemployment datasets provide reliable and sufficiently complete historical indicators for long-term unemployment trend analysis.
-- **Create:** Build FRED API ingestion scripts and document dataset schemas in `data/README.md`.
-- **Observe:** Validate row counts, missing values, historical date coverage, and schema consistency.
-- **Analyze:** Determine whether FRED datasets satisfy project feasibility requirements for proposal objectives.
-- **Tag:** `M1-proposal`
-- **Size:** M
-- **GitHub issue:** #1
+* **Title:** Acquire and validate approved macroeconomic datasets
+* **Hypothesis:** Publicly available macroeconomic datasets provide sufficient historical coverage and quality to support unemployment forecasting and analysis.
+* **Create:** Acquire UNRATE, CPIAUCSL, FEDFUNDS, GDP, UMCSENT, and USREC datasets.
+* **Observe:** Validate schema consistency, date coverage, missing values, and source reliability.
+* **Analyze:** Determine dataset suitability for the research questions.
+* **Tag:** `M1-proposal`
+* **Size:** M
+* **GitHub issue:** #1
 
-### PBI-002
+---
 
-- **Title:** Acquire and integrate BLS labor market datasets
-- **Hypothesis:** BLS labor market datasets improve industry-level unemployment analysis and complement FRED economic indicators.
-- **Create:** Develop ETL workflows for BLS datasets and normalize schema formats.
-- **Observe:** Verify time-frequency alignment, missingness, and compatibility across datasets.
-- **Analyze:** Evaluate whether BLS integration improves analytical depth and supports the research questions.
-- **Tag:** `M1-proposal`
-- **Size:** M
-- **GitHub issue:** #2
+## PBI-002
 
-### PBI-003
+* **Title:** Build integrated analytical dataset
+* **Hypothesis:** Multiple macroeconomic indicators can be integrated into a unified analytical dataset suitable for forecasting and statistical analysis.
+* **Create:** Standardize and merge approved datasets into a common monthly framework.
+* **Observe:** Validate joins, temporal alignment, duplicates, and data quality.
+* **Analyze:** Evaluate dataset readiness for downstream analysis.
+* **Tag:** `M1-proposal`
+* **Size:** L
+* **GitHub issue:** #2
 
-- **Title:** Finalize project research questions and proposal framing
-- **Hypothesis:** The project research questions can be refined into measurable and testable economic analysis objectives.
-- **Create:** Finalize proposal research questions and update `CHARTER.md` documentation.
-- **Observe:** Validate clarity through peer stakeholder feedback and Studio Brief critiques.
-- **Analyze:** Refine wording, scope, and framing based on stakeholder responses.
-- **Tag:** `M1-proposal`
-- **Size:** S
-- **GitHub issue:** #3
+---
 
-### PBI-004
+## PBI-003
 
-- **Title:** Build unified economic indicators dataset
-- **Hypothesis:** Public economic datasets from multiple APIs can be merged into a clean analytical dataset for downstream analysis.
-- **Create:** Integrate unemployment, GDP, CPI, inflation, and recession indicator datasets into a unified schema.
-- **Observe:** Validate joins, timestamps, feature consistency, and null-value handling.
-- **Analyze:** Identify integration limitations and required preprocessing transformations.
-- **Tag:** `M1-proposal`
-- **Size:** L
-- **GitHub issue:** #4
+* **Title:** Finalize research questions and project scope
+* **Hypothesis:** Clearly defined research questions improve analytical focus and project outcomes.
+* **Create:** Finalize proposal, research questions, and project documentation.
+* **Observe:** Review stakeholder and instructor feedback.
+* **Analyze:** Refine scope and project objectives.
+* **Tag:** `M1-proposal`
+* **Size:** S
+* **GitHub issue:** #3
 
-### PBI-005
+---
 
-- **Title:** Perform exploratory data analysis on unemployment trends
-- **Hypothesis:** Historical unemployment datasets contain measurable patterns associated with recessions, inflation, COVID-19, layoffs, and economic disruptions.
-- **Create:** Generate exploratory visualizations and descriptive statistical summaries.
-- **Observe:** Identify trend changes during major economic disruptions and recession periods.
-- **Analyze:** Determine which variables demonstrate the strongest relationships with unemployment trends.
-- **Tag:** `M1-proposal`
-- **Size:** M
-- **GitHub issue:** #5
+## PBI-004
 
-### PBI-006
+* **Title:** Engineer forecasting and analytical features
+* **Hypothesis:** Engineered features improve the ability to identify relationships and forecast unemployment trends.
+* **Create:** Develop lag variables, momentum metrics, growth indicators, and composite economic measures.
+* **Observe:** Review feature distributions and quality metrics.
+* **Analyze:** Assess feature usefulness and analytical value.
+* **Tag:** `M2-data-summary`
+* **Size:** L
+* **GitHub issue:** #4
 
-- **Title:** Develop baseline unemployment forecasting models
-- **Hypothesis:** Historical economic indicators can support baseline unemployment forecasting performance.
-- **Create:** Train baseline forecasting models using unemployment and economic indicator datasets.
-- **Observe:** Evaluate forecasting accuracy using RMSE and validation metrics.
-- **Analyze:** Compare forecasting outputs against baseline assumptions and historical unemployment behavior.
-- **Tag:** `M2-data-summary`
-- **Size:** L
-- **GitHub issue:** #6
+---
 
-### PBI-007
+## PBI-005
 
-- **Title:** Create interactive unemployment trend dashboards
-- **Hypothesis:** Interactive dashboards improve interpretation and communication of unemployment and economic indicator relationships.
-- **Create:** Build dashboards using Plotly, Tableau, or Power BI.
-- **Observe:** Validate usability, filtering functionality, and visualization clarity.
-- **Analyze:** Determine which visualizations most effectively communicate project findings to stakeholders.
-- **Tag:** `M3-poster-draft`
-- **Size:** M
-- **GitHub issue:** #7
+* **Title:** Perform exploratory data analysis
+* **Hypothesis:** Historical economic indicators contain measurable patterns associated with unemployment behavior.
+* **Create:** Generate summary statistics, trend analyses, and exploratory visualizations.
+* **Observe:** Identify trends, anomalies, and economic cycle patterns.
+* **Analyze:** Determine which indicators demonstrate the strongest historical relationships with unemployment.
+* **Tag:** `M2-data-summary`
+* **Size:** M
+* **GitHub issue:** #5
 
-### PBI-008
+---
 
-- **Title:** Evaluate ethics and bias risks in forecasting outputs
-- **Hypothesis:** Forecasting models may contain fairness, interpretability, and deployment limitations that require documentation and mitigation.
-- **Create:** Document ethics considerations, forecasting assumptions, and project limitations.
-- **Observe:** Review fairness concerns, interpretability limitations, and risks of misleading conclusions.
-- **Analyze:** Recommend safeguards and transparency practices for project reporting.
-- **Tag:** `ethics`
-- **Size:** S
-- **GitHub issue:** #8
+## PBI-006
 
-### PBI-009
+* **Title:** Conduct statistical relationship analysis
+* **Hypothesis:** Certain macroeconomic indicators consistently exhibit stronger relationships with unemployment than others.
+* **Create:** Perform correlation, trend, and lead-lag analyses.
+* **Observe:** Measure relationship strength and direction.
+* **Analyze:** Identify key indicators associated with unemployment movements.
+* **Tag:** `M2-data-summary`
+* **Size:** M
+* **GitHub issue:** #6
 
-- **Title:** Draft final project methodology and analytical write-up
-- **Hypothesis:** A reproducible methodology and clearly documented findings will support credible and interpretable project conclusions.
-- **Create:** Write methodology, findings, visualizations, discussion, and conclusions sections.
-- **Observe:** Validate documentation completeness and reproducibility of analytical workflows.
-- **Analyze:** Revise findings and documentation structure based on peer and instructor feedback.
-- **Tag:** `M4-writeup-draft`
-- **Size:** L
-- **GitHub issue:** #9
+---
 
-### PBI-010
+## PBI-007
 
-- **Title:** Finalize poster and presentation deliverables
-- **Hypothesis:** A polished poster and presentation will effectively communicate project insights, methodology, and technical contributions.
-- **Create:** Design final poster, presentation visuals, and summary findings.
-- **Observe:** Gather stakeholder feedback on readability, clarity, and presentation quality.
-- **Analyze:** Refine final deliverables before final submission and presentation.
-- **Tag:** `M5-final`
-- **Size:** M
-- **GitHub issue:** #10
+* **Title:** Develop unemployment forecasting models
+* **Hypothesis:** Macroeconomic indicators improve forecasting performance relative to historical unemployment trends alone.
+* **Create:** Train Linear Regression, Random Forest, and XGBoost forecasting models.
+* **Observe:** Evaluate model performance using RMSE, MAE, and R².
+* **Analyze:** Compare forecasting performance across prediction horizons.
+* **Tag:** `M3-poster-draft`
+* **Size:** L
+* **GitHub issue:** #7
+
+---
+
+## PBI-008
+
+* **Title:** Create visualizations and stakeholder-facing outputs
+* **Hypothesis:** Visual analytics improve communication of technical findings and economic insights.
+* **Create:** Develop trend charts, correlation heatmaps, feature importance visuals, and forecasting comparisons.
+* **Observe:** Evaluate clarity and stakeholder usefulness.
+* **Analyze:** Refine outputs based on feedback.
+* **Tag:** `M3-poster-draft`
+* **Size:** M
+* **GitHub issue:** #8
+
+---
+
+## PBI-009
+
+* **Title:** Evaluate ethics, risks, and limitations
+* **Hypothesis:** Transparent discussion of limitations improves responsible interpretation of forecasting results.
+* **Create:** Document assumptions, risks, limitations, and ethical considerations.
+* **Observe:** Review potential misuse and interpretation risks.
+* **Analyze:** Develop mitigation and communication strategies.
+* **Tag:** `ethics`
+* **Size:** S
+* **GitHub issue:** #9
+
+---
+
+## PBI-010
+
+* **Title:** Complete final report and presentation deliverables
+* **Hypothesis:** A well-documented and reproducible project improves communication, credibility, and stakeholder value.
+* **Create:** Prepare final write-up, poster, visualizations, and supporting documentation.
+* **Observe:** Collect stakeholder and instructor feedback.
+* **Analyze:** Refine final deliverables before submission.
+* **Tag:** `M5-final`
+* **Size:** L
+* **GitHub issue:** #10
