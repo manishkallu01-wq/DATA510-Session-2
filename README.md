@@ -1,63 +1,166 @@
-## Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
+# 📊 Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
 
-> This project analyzes how major economic disruptions such as recessions, inflation, COVID-19, layoffs, and policy changes impact unemployment trends across industries and regions in the United States using public economic datasets.
-
-## Quick reference
-
-| Field | Value |
-|-------|-------|
-| Owner team | Manish R Kallu |
-| Owner Product Lead | Manish R Kallu |
-| Peer Stakeholder POs | Brandon Smith, Jon Garrow, Jackson Garro |
-| Studio Session | 2 |
-| GitHub repo | https://github.com/manishkallu01-wq/DATA510-Session-2/tree/main
-| GitHub Projects board | https://github.com/users/manishkallu01-wq/projects/1
-| Discord category |https://discord.com/channels/1277725100816203942/1508588739063054376
-| Instructor / Sponsor | Lucas Cordova (`LucasCordova` on GitHub) |
-
-## What this repo contains
-
-| Path | Purpose |
-|------|---------|
-| [`CHARTER.md`](CHARTER.md) | Studio Charter: vision, mission, context, success criteria, working agreements, SLAs, DoR / DoD. Committed at the end of the week 3 Studio Charter session. |
-| [`BACKLOG.md`](BACKLOG.md) | Human-readable mirror of the GitHub Projects board. |
-| [`studio/briefs/`](studio/briefs/) | Weekly Studio Briefs from peer POs (`W<NN>-<peer>.md`). |
-| [`studio/critiques/`](studio/critiques/) | Weekly Studio Critiques from peer POs (`W<NN>-<peer>.md`). |
-| [`src/`](src/) | Working code (scripts, modules). |
-| [`notebooks/`](notebooks/) | Exploratory and reporting notebooks. |
-| [`data/`](data/) | Project data. Raw inputs are `.gitignored` by default; see `data/README.md`. |
-| [`deliverables/`](deliverables/) | Milestone deliverables: proposal, data summary, poster, write-up. |
-
-## How this project runs (DS3 in one paragraph)
-
-This project is run as a **DS3 studio**: the owner team is paired with two or three **peer Stakeholder POs** drawn from adjacent capstone projects. Every week the peer POs file a **Studio Brief** for the next iteration and a **Studio Critique** of the last iteration. The owner team commits an **Iteration Review** here in `README.md` before each class. See the [Studio Session weekly ritual](https://courses.lpcordova.phd/data510/project-framework/weekly-ritual.html) for the cadence and [Studio Charter](https://courses.lpcordova.phd/data510/project-framework/charter-inception.html) for the inception session.
+> 🚀 **Capstone Project | DATA 510 – Data Science Studio (DS3)**
+>
+> An end-to-end Data Engineering, Analytics, Statistical Modeling, and Machine Learning project investigating how macroeconomic indicators influence and forecast unemployment trends in the United States.
 
 ---
 
+## 🎯 Project Overview
+
+This project explores whether publicly available macroeconomic indicators can improve forecasting of future U.S. unemployment across multiple forecasting horizons.
+
+Using nearly **70 years of economic history (1956–2026)** and integrating datasets from the **Bureau of Labor Statistics (BLS)**, **Federal Reserve (FRED)**, **Bureau of Economic Analysis (BEA)**, **University of Michigan**, and **National Bureau of Economic Research (NBER)**, the project develops a reproducible analytical framework for:
+
+* 📈 Labor Market Analysis
+* 🤖 Machine Learning Forecasting
+* 🏗️ Data Engineering Pipelines
+* 📊 Statistical Analysis
+* 📉 Economic Cycle Evaluation
+* 🎨 Data Visualization & Storytelling
+
+The project aligns with all five pillars of the Willamette University M.S. in Data Science program and serves as a comprehensive portfolio demonstration of applied Data Engineering and Analytics skills.
+
+---
+
+## 👤 Project Information
+
+| Item                    | Details                                                              |
+| ----------------------- | -------------------------------------------------------------------- |
+| 👨‍💻 Owner Team        | Manish R Kallu                                                       |
+| 🎯 Product Lead         | Manish R Kallu                                                       |
+| 🤝 Peer Stakeholder POs | Brandon Smith, Jon Garrow, Jackson Garro                             |
+| 🎓 Instructor / Sponsor | Lucas P. Cordova, Ph.D.                                              |
+| 🏫 Studio Session       | 2                                                                    |
+| 📅 Studio Formation     | May 25, 2026                                                         |
+| 📂 Repository           | https://github.com/manishkallu01-wq/DATA510-Session-2/tree/main      |
+| 📋 Project Board        | https://github.com/users/manishkallu01-wq/projects/1                 |
+| 💬 Discord Category     | https://discord.com/channels/1277725100816203942/1508588739063054376 |
+
+---
+
+## 🧠 Research Questions
+
+### Primary Research Question
+
+> To what extent can publicly available macroeconomic indicators improve forecasting of future U.S. unemployment across 3-month, 6-month, and 12-month forecasting horizons?
+
+### Secondary Research Question
+
+> Which macroeconomic indicators demonstrate the strongest and most consistent historical relationships with unemployment across U.S. economic cycles between 1956 and 2025?
+
+---
+
+## 🛠️ Technology Stack
+
+### Data Engineering
+
+* 🐍 Python
+* 🐼 Pandas
+* 🔢 NumPy
+* 📂 Git & GitHub
+
+### Analytics & Machine Learning
+
+* 📊 Scikit-Learn
+* 🌲 Random Forest
+* ⚡ XGBoost
+* 📈 Statistical Analysis
+
+### Visualization
+
+* 📉 Matplotlib
+* 📊 Seaborn
+* 📋 Interactive Dashboards
+
+### Data Sources
+
+* 🏛️ Federal Reserve Economic Data (FRED)
+* 📈 Bureau of Labor Statistics (BLS)
+* 💵 Bureau of Economic Analysis (BEA)
+* 😊 University of Michigan Consumer Sentiment
+* 📉 National Bureau of Economic Research (NBER)
+
+---
+
+## 📦 Repository Structure
+
+| 📁 Path         | Purpose                                            |
+| --------------- | -------------------------------------------------- |
+| `data/`         | Raw, processed, and analytical datasets            |
+| `src/`          | Reusable data engineering and modeling code        |
+| `notebooks/`    | Exploratory analysis and experimentation           |
+| `deliverables/` | Capstone milestone submissions                     |
+| `studio/`       | DS3 briefs, critiques, and collaboration artifacts |
+| `BACKLOG.md`    | Human-readable project backlog                     |
+| `CHARTER.md`    | Studio charter and project governance              |
+
+---
+
+## 📌 Current Status
+
+🟢 Proposal Approved
+🟢 Data Acquisition Completed
+🟢 Data Integration Completed
+🟢 Feature Engineering Completed
+🟢 Analytical Dataset Created (838 observations, 40 variables)
+🟡 Exploratory Data Analysis In Progress
+🟡 Forecast Model Development In Progress
+⚪ Dashboard Development Pending
+⚪ Final Capstone Deliverables Pending
+
+---
+
+## 🏆 Expected Deliverables
+
+* 📊 Integrated Macroeconomic Dataset
+* 📈 Statistical Relationship Analysis
+* 🤖 Unemployment Forecasting Models
+* 📉 Feature Importance Analysis
+* 📋 Interactive Dashboards
+* 🎓 Final Research Report
+* 🎤 Poster Presentation
+* 📚 Reproducible Data Science Workflow
+
+
 # Iteration Reviews
 
-One subsection per class week. The owner team commits the new section **before each class** so peer POs can read it before filing the next Brief and Critique. Use the template at the bottom of this file for any extra weeks you add.
+## Week 4 -- Proposal Milestone (M1)
 
-## Week 4 -- Proposal milestone (M1)
-
-**Iteration ending:** <date>
+**Iteration ending:** June 5, 2026
 **Milestone tag in focus:** `M1-proposal`
 
 **Completed PBIs**
-- ...
+
+* Finalized project scope and research questions.
+* Completed literature review and proposal writing.
+* Collected and integrated six approved macroeconomic datasets.
+* Performed data validation and feature engineering.
+* Submitted M1 proposal and updated project documentation.
 
 **In-flight (carrying across the boundary)**
-- ...
+
+* Exploratory data analysis.
+* Correlation and trend analysis.
+* Preparation for M2 Data Summary.
 
 **Stakeholder response log**
-- Studio Brief from <peer PO 1>: adopted = ..., deferred = ..., declined (with reason) = ...
-- Studio Brief from <peer PO 2>: adopted = ..., deferred = ..., declined (with reason) = ...
+
+* Brandon Smith: adopted feedback on project clarity and stakeholder impact.
+* Jon Garrow: adopted feedback on research question framing and communication.
 
 **Plan for next iteration**
-- Top PBIs (with milestone tags): ...
+
+* Complete exploratory data analysis (`M2-data-summary`).
+* Develop initial visualizations and summary statistics (`M2-data-summary`).
+* Begin relationship and forecasting analysis (`M2-data-summary`).
 
 **Risks and impediments**
-- ...
+
+* Economic data revisions from source organizations.
+* Forecasting accuracy may vary across prediction horizons.
+* Additional feature engineering may be needed during analysis.
+
 
 ## Week 5
 
