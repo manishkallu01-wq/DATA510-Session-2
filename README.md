@@ -10,7 +10,7 @@
 
 This project explores whether publicly available macroeconomic indicators can improve forecasting of future U.S. unemployment across multiple forecasting horizons.
 
-Using nearly **70 years of economic history (1956–2026)** and integrating datasets from the **Bureau of Labor Statistics (BLS)**, **Federal Reserve (FRED)**, **Bureau of Economic Analysis (BEA)**, **University of Michigan**, and **National Bureau of Economic Research (NBER)**, the project develops a reproducible analytical framework for:
+Using nearly **70 years of economic history (1956–2025)** and integrating datasets from the **Bureau of Labor Statistics (BLS)**, **Federal Reserve (FRED)**, **Bureau of Economic Analysis (BEA)**, **University of Michigan**, and **National Bureau of Economic Research (NBER)**, the project develops a reproducible analytical framework for:
 
 * 📈 Labor Market Analysis
 * 🤖 Machine Learning Forecasting
