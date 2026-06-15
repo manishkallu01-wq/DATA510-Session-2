@@ -174,6 +174,6 @@ This project exists to improve understanding of how macroeconomic indicators inf
 
 ### How to Reach Us
 
-* **Discord category:** [`project-general`]<https://discord.com/channels/1277725100816203942/1508588739063054376>, `project-studio`, `project-blockers`
+* **Discord category:** [project-general](https://discord.com/channels/1277725100816203942/1508588739063054376), [project-studio](https://discord.com/channels/1277725100816203942/1508588756880461834), [project-blockers](https://discord.com/channels/1277725100816203942/1508588778426597466)
 * **GitHub repo:** https://github.com/manishkallu01-wq/DATA510-Session-2/tree/main
 * **GitHub Projects board:** https://github.com/users/manishkallu01-wq/projects/1
