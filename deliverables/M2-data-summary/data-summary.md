@@ -61,20 +61,34 @@ To answer these questions, six public economic datasets were collected from FRED
 ## Repository Data Layout
 
 ```text
-data/
-├── raw/
-│   ├── unemployment.csv
-│   ├── inflation.csv
-│   ├── federal_funds.csv
-│   ├── gdp.csv
-│   ├── consumer_sentiment.csv
-│   └── recession.csv
+DATA510-Session-2/
 │
-├── processed/
-│   └── capstone_capstone_plus_final.csv
+├── data/
+│   ├── raw/
+│   │   ├── unemployment.csv
+│   │   ├── inflation.csv
+│   │   ├── federal_funds.csv
+│   │   ├── gdp.csv
+│   │   ├── consumer_sentiment.csv
+│   │   └── recession.csv
+│   │
+│   ├── processed/
+│   │   └── capstone_capstone_plus_final.csv
+│   │
+│   ├── README.md
+│   └── SCHEMA.md
 │
-├── README.md
-└── SCHEMA.md
+├── deliverables/
+│   └── M2-data-summary/
+│       ├── data-summary.md
+│       ├── rebuild.py
+│       └── eng_variables.py
+│
+├── notebooks/
+├── src/
+├── CHARTER.md
+├── BACKLOG.md
+└── README.md
 ```
 
 ## Primary Key
@@ -226,7 +240,7 @@ python deliverables/M2-data-summary/rebuild.py
 ### Validation Script
 
 ```bash
-python src/checks.py
+python deliverables/M2-data-summary/checks.py
 ```
 
 Successful execution confirms:
