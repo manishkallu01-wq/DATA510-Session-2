@@ -114,24 +114,26 @@ The final dataset includes lag variables, momentum indicators, growth rates, pol
 
 # ⚙️ 4. Ingestion Status
 
-Data ingestion and integration have been completed.
+Data ingestion and dataset construction have been completed.
 
 ### Workflow Summary
 
 1. Retrieved six approved economic datasets from FRED.
-2. Standardized all timestamps and variable names.
+2. Standardized timestamps and variable names.
 3. Converted GDP observations into a monthly analytical framework.
-4. Aligned datasets using a common monthly timeline.
-5. Merged all datasets on the Date field.
-6. Generated engineered features including:
+4. Merged all datasets using the `Date` field.
+5. Generated engineered features using `eng_variables.py`.
+6. Constructed forecasting targets and composite indicators.
+7. Rebuilt and validated the final analytical dataset using `rebuild.py`.
+8. Verified dataset quality through automated validation checks.
 
-   * Lag variables
-   * Growth indicators
-   * Momentum indicators
-   * Policy measures
-   * Composite economic indicators
-7. Generated forecasting targets.
-8. Validated the final dataset.
+### Repository Artifacts
+
+| File | Purpose |
+|--------|---------|
+| `deliverables/M2-data-summary/rebuild.py` | Rebuilds the final analytical dataset |
+| `deliverables/M2-data-summary/eng_variables.py` | Creates engineered variables and forecasting targets |
+| `data/processed/capstone_capstone_plus_final.csv` | Final analysis-ready dataset |
 
 ### Pipeline Status
 
@@ -141,17 +143,13 @@ Data ingestion and integration have been completed.
 
 ✅ Feature engineering complete
 
+✅ Dataset rebuild process documented
+
 ✅ Validation complete
 
 ✅ Analysis-ready dataset generated
 
-The ingestion process successfully produced:
-
-```text
-data/processed/capstone_capstone_plus_final.csv
-```
-
-No additional ingestion work is required.
+No additional ingestion work is required. The final dataset contains all variables necessary to answer the approved research questions.
 
 ---
 
@@ -209,17 +207,23 @@ Periods such as the 1980 inflation shock, the 2008 financial crisis, and the COV
 
 # ♻️ 6. Reproducibility
 
-The project repository contains all data processing scripts, validation scripts, and documentation necessary to reproduce the analysis-ready dataset.
+The repository contains scripts required to reconstruct the final analysis-ready dataset.
 
-## Environment
+### Environment
 
-* Python 3.12
-* Pandas
-* NumPy
-* Scikit-Learn
-* Matplotlib
+- Python 3.12
+- Pandas
+- NumPy
+- Scikit-Learn
+- Matplotlib
 
-## Validation Script
+### Rebuild Workflow
+
+```bash
+python deliverables/M2-data-summary/rebuild.py
+```
+
+### Validation Script
 
 ```bash
 python src/checks.py
