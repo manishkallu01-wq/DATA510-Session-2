@@ -222,7 +222,7 @@ The project repository contains all data processing scripts, validation scripts,
 ## Validation Script
 
 ```bash
-python scripts/checks.py
+python src/checks.py
 ```
 
 Successful execution confirms:
