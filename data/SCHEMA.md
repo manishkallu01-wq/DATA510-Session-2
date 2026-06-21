@@ -9,12 +9,19 @@ This file documents the schema for the final analysis-ready dataset used in the 
 ## Dataset Overview
 
 **File name:** `capstone_capstone_plus_final.csv`
+
 **Expected location:** `data/processed/capstone_capstone_plus_final.csv`
+
 **Observation period:** April 1956 – January 2026
+
 **Rows:** 838
+
 **Columns:** 40
+
 **Primary key:** `Date`
+
 **Grain:** One row per month
+
 **Project owner:** Manish R Kallu
 
 ---
