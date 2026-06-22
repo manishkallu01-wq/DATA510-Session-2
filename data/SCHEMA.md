@@ -154,13 +154,8 @@ The only expected missing values are in future target columns near the end of th
 These missing values are expected because future observations are not available beyond the final months of the dataset.
 
 ---
-# Engineered Variable Dictionary
 
-This document describes the engineered variables included in the final analysis-ready dataset:
-
-`data/processed/capstone_capstone_plus_final.csv`
-
-The dataset combines six public macroeconomic indicators and adds derived variables that support forecasting, economic interpretation, visualization, and machine learning.
+## Engineered Variable Dictionary
 
 ## Notation
 
@@ -701,6 +696,7 @@ This variable supports classification-style forecasting. Instead of predicting t
 
 **Modeling Note:**
 This is a target variable and should not be used as a predictor when training models to forecast future labor market shocks.
+
 ---
 
 ## Notes
