@@ -296,7 +296,7 @@ The final analysis-ready dataset contains:
 
 * 838 observations
 * 40 variables
-* 27 engineered features
+* 29 engineered features
 * 3 unemployment forecasting targets
 * 1 labor market shock forecasting target
 
