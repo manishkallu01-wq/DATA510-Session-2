@@ -239,6 +239,11 @@ The repository contains scripts required to reconstruct the final analysis-ready
 ```bash
 python deliverables/M2-data-summary/rebuild.py
 ```
+### Feature Engineered Variables
+
+```bash
+python deliverables/M2-data-summary/eng_variables.py
+```
 
 ### Validation Script
 
