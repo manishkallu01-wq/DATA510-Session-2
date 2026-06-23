@@ -35,7 +35,7 @@ To answer these questions, six public economic datasets were collected from FRED
 | UNRATE   | FRED / Bureau of Labor Statistics  | Public Government Data | 1956–2026  | 838  | Monthly             | `data/raw/unemployment.csv`       |
 | CPIAUCSL | FRED / Bureau of Labor Statistics  | Public Government Data | 1956–2026  | 838  | Monthly             | `data/raw/inflation.csv`          |
 | FEDFUNDS | FRED / Federal Reserve             | Public Government Data | 1956–2026  | 838  | Monthly             | `data/raw/federal_funds.csv`      |
-| GDP      | FRED / Bureau of Economic Analysis | Public Government Data | 1956–2026  | 838  | Quarterly → Monthly | `data/raw/gdp.csv`                |
+| GDP      | FRED / Bureau of Economic Analysis | Public Government Data | 1956–2026  | 280  | Quarterly  | `data/raw/gdp.csv`                |
 | UMCSENT  | University of Michigan / FRED      | Public Research Data   | 1956–2026  | 838  | Monthly             | `data/raw/consumer_sentiment.csv` |
 | USREC    | NBER / FRED                        | Public Economic Data   | 1956–2026  | 838  | Monthly             | `data/raw/recession.csv`          |
 
