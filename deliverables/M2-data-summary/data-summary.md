@@ -51,7 +51,7 @@ To answer these questions, six public economic datasets were collected from FRED
 | Total Records       | 838                                |
 | Total Variables     | 40                                 |
 | Source Variables    | 6                                  |
-| Engineered Features | 27                                 |
+| Engineered Features | 29                                 |
 | Forecast Targets    | 4                                  |
 
 ---
