@@ -4,8 +4,6 @@
 
 **Author:** Manish R Kallu
 
-**Course:** DATA 510 – Capstone Project
-
 **Studio Session:** 2
 
 **Dataset Version:** `capstone_capstone_plus_final.csv`
