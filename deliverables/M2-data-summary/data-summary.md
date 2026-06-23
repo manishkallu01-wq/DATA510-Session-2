@@ -147,6 +147,11 @@ Data ingestion and dataset construction have been completed.
 | `deliverables/M2-data-summary/eng_variables.py` | Creates engineered variables and forecasting targets |
 | `data/processed/capstone_capstone_plus_final.csv` | Final analysis-ready dataset |
 
+### Visual Schema
+
+<img width="802" height="882" alt="image" src="https://github.com/user-attachments/assets/9579d6e8-6e7f-494b-b67e-0c123e3138d6" />
+
+
 ### Pipeline Status
 
 ✅ Data acquisition complete
