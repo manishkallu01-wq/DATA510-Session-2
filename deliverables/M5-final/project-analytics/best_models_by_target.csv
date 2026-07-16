@@ -1,0 +1,7 @@
+Target,FeatureSet,Model,TrainRows,TestRows,MAE,RMSE,R2
+FutureUnemployment_12M,Baseline_UnemploymentOnly,RandomForestRegressor,660,166,1.1127546032726758,1.9149293257163074,-0.12444517801914201
+FutureUnemployment_12M,MacroIndicators,RandomForestRegressor,660,166,2.1521075087200847,2.749721821291264,-1.3185171169849181
+FutureUnemployment_3M,Baseline_UnemploymentOnly,GradientBoostingRegressor,668,167,0.4338914184195986,1.3040712313570435,0.48429649872860503
+FutureUnemployment_3M,MacroIndicators,GradientBoostingRegressor,668,167,0.4176306918817745,1.2676521668743526,0.5126986014249603
+FutureUnemployment_6M,Baseline_UnemploymentOnly,RandomForestRegressor,665,167,0.6100785820799293,1.5450883166145841,0.2760575075127438
+FutureUnemployment_6M,MacroIndicators,RandomForestRegressor,665,167,0.8726178978539759,1.5940809644403149,0.2294191659075352

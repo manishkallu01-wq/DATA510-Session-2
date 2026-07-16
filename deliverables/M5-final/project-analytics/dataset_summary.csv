@@ -1,0 +1,11 @@
+Metric,Value
+Final Dataset File,capstone_capstone_plus_final_date_format.csv
+Rows,838
+Columns,40
+Start Date,1956-04-01
+End Date,2026-01-01
+Duplicate Dates,0
+Numeric Columns,39
+ML Predictor Variables,33
+Baseline Predictor Variables,10
+Forecast Targets Used,"FutureUnemployment_3M, FutureUnemployment_6M, FutureUnemployment_12M"
