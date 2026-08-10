@@ -1,6 +1,6 @@
 # 📊 Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
 
-> **DATA 510 – Data Science Studio (DS3), Session 2**  
+> **DATA 510 – Session 2**  
 > **Willamette University | Summer 2026**  
 > **Author and Product Lead: Manish R. Kallu**
 
