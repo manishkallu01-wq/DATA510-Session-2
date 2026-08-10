@@ -1,46 +1,292 @@
-# Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
+# 📊 Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
 
-**DATA 510 – Data Science Studio (DS3), Session 2**  
-**Willamette University | Summer 2026**  
-**Author:** Manish R. Kallu
+> **DATA 510 – Data Science Studio (DS3), Session 2**  
+> **Willamette University | Summer 2026**  
+> **Author and Product Lead: Manish R. Kallu**
 
-[View the live project portfolio](https://manishkallu01-wq.github.io/) · [Browse project deliverables](deliverables/) · [View the project board](https://github.com/users/manishkallu01-wq/projects/1)
+[🌐 Live Project Portfolio](https://manishkallu01-wq.github.io/) · [📁 Project Deliverables](deliverables/) · [🗂️ Project Board](https://github.com/users/manishkallu01-wq/projects/1)
 
-## Project Overview
+---
 
-This capstone examines whether publicly available macroeconomic indicators improve forecasts of future U.S. unemployment and identifies the indicators with the strongest historical relationships to labor-market conditions.
+## 🌟 Project at a Glance
 
-The final analytical dataset combines nearly 70 years of monthly U.S. economic history, from **April 1956 through December 2025**. It contains **837 observations, 40 columns, and 35 predictors** derived from six public series:
+This capstone investigates whether publicly available macroeconomic indicators can provide meaningful early-warning signals of future deterioration in the U.S. labor market.
 
-- Unemployment rate (BLS/FRED)
-- Consumer Price Index (BLS/FRED)
-- Federal funds rate (Federal Reserve/FRED)
-- Real GDP (BEA/FRED)
-- Consumer sentiment (University of Michigan/FRED)
-- Recession indicator (NBER/FRED)
+The project integrates nearly 70 years of U.S. economic history into a reproducible data science workflow covering data acquisition, validation, temporal alignment, feature engineering, exploratory analysis, machine learning, model evaluation, interpretation, and professional communication.
 
-Quarterly GDP was converted to monthly frequency, the sources were aligned by date, and lagged, momentum, ratio, and composite features were engineered for multi-horizon forecasting.
+| Project element | Final specification |
+| --- | --- |
+| 📅 Study period | April 1956–December 2025 |
+| 🗓️ Time frequency | Monthly |
+| 📊 Final dataset | 837 observations × 40 columns |
+| 🧠 Predictors | 35 |
+| 🏛️ Public series | 6 |
+| 🔭 Forecast horizons | 3, 6, and 12 months |
+| 🤖 Selected models | Ridge Regression and Extra Trees |
+| ✅ Validation design | Chronological train/test split |
+| 📏 Evaluation metrics | MAE, RMSE, and R² |
+| 🎯 Best result | 3-month Ridge Regression, R² = 0.720 |
 
-## Research Questions
+The central finding is that macroeconomic indicators are most useful for **near-term unemployment forecasting**. Predictive performance is strongest at three months and declines as the forecast horizon increases.
 
-1. To what extent can publicly available macroeconomic indicators improve forecasting of future U.S. unemployment across 3-month, 6-month, and 12-month horizons?
-2. Which macroeconomic indicators demonstrate the strongest and most consistent historical relationships with unemployment across U.S. economic cycles between 1956 and 2025?
+---
 
-## Final Results
+## 👥 Project Team and Stakeholders
 
-Models were evaluated with a chronological train/test split using MAE, RMSE, and R².
+| Role | Name | Project involvement |
+| --- | --- | --- |
+| 👨‍💻 Owner, Author, and Product Lead | **Manish R. Kallu** | Designed and executed the end-to-end project, including data engineering, analysis, modeling, interpretation, and final communication |
+| 🎓 Instructor and Project Sponsor | **Lucas P. Cordova, Ph.D.** | Provided course direction, milestone expectations, and academic oversight |
+| 🤝 Peer Stakeholder / Product Owner | **Brandon Smith** | Reviewed project clarity, stakeholder relevance, and communication of practical value |
+| 🤝 Peer Stakeholder / Product Owner | **Jon Garrow** | Reviewed research-question framing and clarity of project communication |
+| 🤝 Peer Stakeholder / Product Owner | **Jackson Garro** | Participated in the peer stakeholder review process and iterative studio feedback |
+
+Peer feedback was used to improve the framing of the research questions, make the stakeholder value more explicit, clarify the distinction between forecasting and causal explanation, and strengthen the presentation of results and limitations.
+
+### Intended Stakeholders
+
+The project is relevant to:
+
+- 🏛️ **Policymakers and public agencies** monitoring signs of labor-market stress
+- 📈 **Economists and researchers** studying lead-lag relationships across economic cycles
+- 🏢 **Businesses and workforce planners** preparing for changes in hiring demand
+- 💼 **Investors and risk teams** evaluating broader economic conditions
+- 👷 **Workforce-development organizations** anticipating changes in unemployment conditions
+- 🎓 **Students and practitioners** seeking a reproducible applied macroeconomic forecasting example
+
+---
+
+## ❓ Research Questions
+
+### Primary Research Question
+
+> To what extent can publicly available macroeconomic indicators improve forecasting of future U.S. unemployment across 3-month, 6-month, and 12-month forecasting horizons?
+
+### Secondary Research Question
+
+> Which macroeconomic indicators demonstrate the strongest and most consistent historical relationships with unemployment across U.S. economic cycles between 1956 and 2025?
+
+These questions intentionally separate two objectives:
+
+1. **Forecasting:** measuring out-of-sample predictive performance at multiple future horizons.
+2. **Historical interpretation:** identifying indicators with strong lead-lag relationships while avoiding unsupported causal claims.
+
+---
+
+## 🗃️ Data Sources
+
+Six public macroeconomic series were integrated into one monthly analytical dataset.
+
+| Series | Measure | Source organization | Project role |
+| --- | --- | --- | --- |
+| **UNRATE** | U.S. unemployment rate | Bureau of Labor Statistics via FRED | Outcome, baseline signal, and labor-market context |
+| **CPIAUCSL** | Consumer Price Index | Bureau of Labor Statistics via FRED | Inflation conditions |
+| **FEDFUNDS** | Effective federal funds rate | Federal Reserve via FRED | Monetary-policy conditions |
+| **GDP** | Real Gross Domestic Product | Bureau of Economic Analysis via FRED | Economic growth |
+| **UMCSENT** | Consumer sentiment | University of Michigan via FRED | Household expectations and confidence |
+| **USREC** | U.S. recession indicator | NBER via FRED | Economic-cycle context |
+
+### Data Scope
+
+- **Final date range:** April 1956–December 2025
+- **Final analytical observations:** 837 monthly rows
+- **Final columns:** 40
+- **Predictors used in the modeling framework:** 35
+- **Geographic scope:** United States
+- **Unit of analysis:** Month
+
+All source organizations retain ownership of their respective data. This repository uses the data for educational and academic analysis.
+
+---
+
+## 🏗️ Data Engineering Pipeline
+
+The project follows a structured, reproducible pipeline:
+
+1. 📥 **Acquire source data**  
+   Download the six approved public macroeconomic series.
+
+2. 🔍 **Validate each source**  
+   Check date types, coverage, duplicates, missing values, invalid values, and frequency.
+
+3. 🗓️ **Standardize temporal frequency**  
+   Convert quarterly GDP observations to monthly frequency so they can be aligned with the other series.
+
+4. 🔗 **Merge on the monthly date key**  
+   Integrate all six sources into a unified time-indexed dataset.
+
+5. 🧹 **Handle valid mid-series gaps**  
+   Apply controlled interpolation only where appropriate; do not backfill observations before a series was first published.
+
+6. 🛠️ **Engineer forecasting features**  
+   Create lagged, momentum, acceleration, ratio, and composite economic indicators.
+
+7. 🎯 **Create future targets**  
+   Generate unemployment outcomes for the 3-, 6-, and 12-month forecast horizons.
+
+8. ⏳ **Split chronologically**  
+   Preserve temporal order so models are evaluated only on future observations not seen during training.
+
+9. 🤖 **Train and compare models**  
+   Evaluate candidate approaches at each forecast horizon.
+
+10. 📊 **Interpret and communicate results**  
+    Compare metrics, analyze historical relationships, document limitations, and present results through the report, poster, repository, and portfolio.
+
+---
+
+## 🧠 Feature Engineering
+
+The engineered features were designed to capture changes in economic direction, policy conditions, stress, and cross-indicator relationships.
+
+### Future Targets
+
+- `FutureUnemployment_3M`
+- `FutureUnemployment_6M`
+- `FutureUnemployment_12M`
+
+### Lagged Signals
+
+- `FederalFundsLag6`
+- `GDPGrowthLag6`
+- `ConsumerSentimentLag6`
+
+### Momentum and Acceleration
+
+- `UnemploymentMomentum`
+- `GDPGrowthMomentum`
+- `InflationAcceleration`
+- `ConsumerConfidenceDeterioration`
+
+### Ratios and Composite Indicators
+
+- `GrowthToInflationRatio`
+- `InflationUnemploymentRatio`
+- `MonetaryTighteningIndex`
+- `EconomicStressIndex`
+- `RecessionRiskFlag`
+- `LaborMarketShock`
+
+These engineered variables help represent economic dynamics that may not be visible from contemporaneous raw values alone. Features containing unemployment-derived information are interpreted carefully because they can strengthen prediction while limiting claims about fully external early-warning power.
+
+---
+
+## 🔬 Modeling and Validation
+
+### Candidate Modeling Strategy
+
+The analysis considered linear and tree-based approaches so that predictive accuracy could be compared with interpretability and robustness across horizons.
+
+The final selected models were:
+
+- 📈 **Ridge Regression** for the 3-month horizon
+- 🌲 **Extra Trees** for the 6-month horizon
+- 🌲 **Extra Trees** for the 12-month horizon
+
+### Why a Chronological Split?
+
+A random split would allow observations from later years to influence training for earlier years, creating unrealistic leakage in a time-series forecasting setting. The project therefore uses a **time-based train/test split**, where earlier observations are used for training and later observations are held out for evaluation.
+
+### Evaluation Metrics
+
+| Metric | Meaning |
+| --- | --- |
+| **MAE** | Average absolute forecast error in unemployment-rate percentage points |
+| **RMSE** | Error measure that gives greater weight to larger misses |
+| **R²** | Proportion of variation explained in the held-out period |
+
+---
+
+## 🏆 Final Forecasting Results
 
 | Forecast horizon | Selected model | MAE | RMSE | R² |
 | --- | --- | ---: | ---: | ---: |
-| 3 months | Ridge Regression | 0.349 | 1.020 | 0.720 |
-| 6 months | Extra Trees | 0.725 | 1.277 | 0.563 |
-| 12 months | Extra Trees | 1.195 | 1.729 | 0.205 |
+| **3 months** | **Ridge Regression** | **0.349** | **1.020** | **0.720** |
+| **6 months** | **Extra Trees** | **0.725** | **1.277** | **0.563** |
+| **12 months** | **Extra Trees** | **1.195** | **1.729** | **0.205** |
 
-The 3-month model produced the strongest forecast performance. Accuracy declined at longer horizons, showing that public macroeconomic indicators are most useful as near-term early-warning signals rather than precise long-range forecasts.
+### Result Interpretation
 
-For the historical relationship analysis, **consumer sentiment was the strongest overall external indicator**, reaching a correlation of **r = −0.496 at the 12-month horizon**. These relationships are regime-dependent associations and should not be interpreted as causal effects.
+- 🥇 **Three months:** strongest and most practically useful forecasting horizon.
+- 📉 **Six months:** moderate predictive value, but larger errors and lower explained variation.
+- 🔭 **Twelve months:** substantially more difficult; performance indicates limited precision for long-range forecasting.
+- ⚠️ **Overall:** forecast uncertainty grows with the horizon, so results should be treated as directional early-warning evidence rather than exact future unemployment estimates.
 
-## Repository Structure
+The 3-month Ridge Regression result—**MAE 0.349 and R² 0.720**—shows that the combined macroeconomic feature set can provide useful near-term information while retaining a relatively interpretable model structure.
+
+---
+
+## 🔎 Historical Indicator Findings
+
+For the secondary research question, consumer sentiment produced the strongest overall historical external relationship with future unemployment.
+
+> **Consumer sentiment reached r = −0.496 at the 12-month horizon.**
+
+The negative relationship is economically intuitive: weaker consumer confidence often accompanies expectations of slower activity and can precede worsening labor-market conditions. However:
+
+- the strength of the relationship varies across economic regimes;
+- correlation does not establish causation;
+- revised historical data do not perfectly reproduce a real-time forecasting environment; and
+- recession periods and structural breaks can change relationships between variables.
+
+The project therefore presents these findings as **historical associations**, not causal estimates.
+
+---
+
+## 💡 Key Conclusions
+
+1. Public macroeconomic data can improve near-term unemployment forecasting.
+2. The 3-month horizon provides the strongest balance of accuracy and practical usefulness.
+3. Forecast quality weakens meaningfully at 6 and 12 months.
+4. Consumer sentiment is the strongest overall historical external indicator in the lead-lag analysis.
+5. Economic relationships are regime-dependent and should not be assumed to remain constant.
+6. Model outputs should complement—not replace—expert economic judgment.
+7. Interpretability, temporal validation, and transparent limitations are essential for responsible use.
+
+---
+
+## ⚠️ Limitations
+
+- **Retrospective recession labels:** NBER recession dates are not available as real-time signals when recessions begin.
+- **Unemployment-derived composite features:** some engineered indicators incorporate unemployment information and must not be described as purely external predictors.
+- **Structural breaks:** COVID-19 and other major disruptions can change relationships learned from historical data.
+- **National aggregation:** U.S.-level values can conceal state, industry, demographic, and regional differences.
+- **Data revisions:** current historical values may differ from the data vintages available at the original forecast date.
+- **Single chronological split:** results depend on one held-out period and may vary under rolling-origin validation.
+- **No formal prediction intervals:** point metrics do not fully express forecast uncertainty.
+- **Association versus causation:** correlations and model importance do not prove causal effects.
+- **Serial dependence:** monthly observations are related over time and are not fully independent.
+- **Limited indicator set:** the analysis uses six approved public series and does not cover every possible labor-market driver.
+
+### Future Work
+
+Future extensions could:
+
+- add state-, industry-, and demographic-level labor-market data;
+- introduce additional leading indicators and real-time data vintages;
+- evaluate rolling and expanding-window validation;
+- construct formal forecast intervals;
+- test dedicated time-series and deep-learning methods;
+- study alternative forecast horizons; and
+- monitor performance across changing economic regimes.
+
+---
+
+## 🛡️ Responsible Use
+
+This project is an educational decision-support demonstration. Its forecasts should not be used alone for employment, investment, public-policy, lending, or other high-stakes decisions.
+
+Responsible use requires:
+
+- reviewing the forecast horizon and error metrics;
+- accounting for uncertainty and structural change;
+- separating predictive associations from causal conclusions;
+- combining outputs with domain expertise and current economic information; and
+- revalidating models before applying them to a new period or decision context.
+
+---
+
+## 📦 Repository Structure
 
 | Path | Purpose |
 | --- | --- |
@@ -48,53 +294,110 @@ For the historical relationship analysis, **consumer sentiment was the strongest
 | [`src/`](src/) | Data preparation, feature engineering, analysis, and modeling code |
 | [`notebooks/`](notebooks/) | Exploratory analysis and model-development notebooks |
 | [`deliverables/`](deliverables/) | Final report, poster, and milestone submissions |
-| [`studio/`](studio/) | Studio briefs, critiques, and collaboration artifacts |
-| [`BACKLOG.md`](BACKLOG.md) | Project backlog |
+| [`studio/`](studio/) | Studio briefs, critiques, and stakeholder-feedback artifacts |
+| [`BACKLOG.md`](BACKLOG.md) | Human-readable project backlog |
 | [`CHARTER.md`](CHARTER.md) | Project charter and governance |
 
-## Reproducing the Analysis
+---
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/manishkallu01-wq/DATA510-Session-2.git
-   cd DATA510-Session-2
-   ```
-2. Use Python 3 and install the analysis packages used by the project:
-   ```bash
-   pip install pandas numpy scikit-learn matplotlib seaborn xgboost
-   ```
-3. Review the source files in [`src/`](src/) and notebooks in [`notebooks/`](notebooks/).
-4. Run the data preparation and feature-engineering workflow before the modeling workflow.
-5. Compare reproduced metrics and visualizations with the final materials in [`deliverables/`](deliverables/).
+## 🔁 Reproducing the Analysis
 
-The workflow uses a time-ordered split to avoid training on future observations. Random seeds are fixed where supported by the selected estimators.
+### 1. Clone the Repository
 
-## Limitations and Responsible Use
+```bash
+git clone https://github.com/manishkallu01-wq/DATA510-Session-2.git
+cd DATA510-Session-2
+```
 
-- NBER recession labels are retrospective and are not real-time signals.
-- Some engineered composite features contain unemployment information and require careful interpretation.
-- Structural breaks, including COVID-19, reduce stability across economic regimes.
-- National aggregates can conceal state, industry, and demographic differences.
-- Revised historical data may differ from the vintages available at an actual forecast date.
-- Results rely on one chronological holdout period and do not include formal prediction intervals.
-- Correlation and feature importance indicate association, not causation.
-- Serial dependence may make conventional independent-observation interpretations inappropriate.
+### 2. Create a Python Environment
 
-The models are educational decision-support tools. They should not be used alone for policy, investment, employment, or other high-stakes decisions.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-## Final Deliverables
+On Windows, activate the environment with:
 
-- Integrated and feature-engineered macroeconomic dataset
-- Lead-lag relationship and economic-cycle analysis
-- 3-, 6-, and 12-month unemployment forecasting models
-- Model evaluation and feature-importance analysis
-- Final research report
-- Final poster presentation
-- Live project portfolio
-- Reproducible code and documentation
+```powershell
+.venv\Scripts\activate
+```
 
-**Project status: Complete and ready for submission.**
+### 3. Install the Core Packages
 
-## Data Attribution
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn xgboost
+```
 
-The project uses publicly available data from the U.S. Bureau of Labor Statistics, Federal Reserve Economic Data, U.S. Bureau of Economic Analysis, University of Michigan Surveys of Consumers, and National Bureau of Economic Research. Source organizations retain ownership of their respective data.
+### 4. Follow the Project Workflow
+
+1. Review the datasets and documentation in [`data/`](data/).
+2. Run the data preparation and feature-engineering code in [`src/`](src/).
+3. Review or run the analytical notebooks in [`notebooks/`](notebooks/).
+4. Preserve chronological ordering during model training and evaluation.
+5. Compare reproduced metrics and figures with the final materials in [`deliverables/`](deliverables/).
+
+Random seeds are fixed where supported by the estimators. The chronological evaluation design must be retained to avoid training on future observations.
+
+---
+
+## 📚 Final Deliverables
+
+The completed project includes:
+
+- ✅ Integrated monthly macroeconomic dataset
+- ✅ Feature-engineered analytical dataset
+- ✅ Data validation and preparation workflow
+- ✅ Exploratory and lead-lag relationship analysis
+- ✅ 3-, 6-, and 12-month unemployment forecasting models
+- ✅ Model comparison using MAE, RMSE, and R²
+- ✅ Feature and indicator interpretation
+- ✅ Limitations, ethics, and responsible-use documentation
+- ✅ Final research report
+- ✅ Final poster presentation
+- ✅ Live project portfolio
+- ✅ Reproducible source code and repository documentation
+
+The report, poster, milestone materials, and supporting artifacts are available in the [`deliverables/`](deliverables/) directory and through the [live portfolio](https://manishkallu01-wq.github.io/).
+
+---
+
+## 🗓️ Milestone Completion Summary
+
+| Milestone | Focus | Final status |
+| --- | --- | --- |
+| **M1 – Proposal** | Scope, motivation, literature, research questions, and plan | ✅ Complete |
+| **M2 – Data Summary** | Source integration, validation, EDA, and dataset documentation | ✅ Complete |
+| **M3 – Poster Draft** | Visual communication of methods and preliminary findings | ✅ Complete |
+| **M4 – Write-up Draft** | Full methods, results, discussion, and limitations | ✅ Complete |
+| **M5 – Final Portfolio** | Final report, poster, repository, and public portfolio | ✅ Complete |
+
+Studio critiques and peer stakeholder reviews were incorporated across milestones. Unfinished weekly templates were intentionally removed from this final README so the repository reflects completed outcomes rather than planning placeholders.
+
+---
+
+## 🧰 Technology Stack
+
+- 🐍 **Programming:** Python
+- 🐼 **Data processing:** Pandas and NumPy
+- 🤖 **Machine learning:** Scikit-learn and XGBoost
+- 📊 **Visualization:** Matplotlib and Seaborn
+- 📂 **Version control:** Git and GitHub
+- 📝 **Communication:** Research report, poster, README, and public portfolio
+
+---
+
+## 📬 Project Links
+
+- 🌐 **Portfolio:** [manishkallu01-wq.github.io](https://manishkallu01-wq.github.io/)
+- 💻 **Repository:** [DATA510-Session-2](https://github.com/manishkallu01-wq/DATA510-Session-2)
+- 📁 **Deliverables:** [Final project artifacts](deliverables/)
+- 🗂️ **Project Board:** [DATA 510 project board](https://github.com/users/manishkallu01-wq/projects/1)
+- 🔗 **LinkedIn:** [Manish Kallu](https://www.linkedin.com/in/manish-kallu-583b61421/)
+
+---
+
+## ✅ Final Project Status
+
+> **Complete, documented, and ready for submission.**
+
+The repository now reflects the final dataset, selected models, verified metrics, historical indicator findings, limitations, stakeholder contributions, reproducibility guidance, and completed deliverables. It contains no “in progress,” “pending,” `<date>`, or ellipsis placeholders from earlier project stages.
