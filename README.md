@@ -1,373 +1,100 @@
-# 📊 Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
+# Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
 
-> 🚀 **DATA 510 – Data Science Studio (DS3)**
->
-> An end-to-end Data Engineering, Analytics, Statistical Modeling, and Machine Learning project investigating how macroeconomic indicators influence and forecast unemployment trends in the United States.
+**DATA 510 – Data Science Studio (DS3), Session 2**  
+**Willamette University | Summer 2026**  
+**Author:** Manish R. Kallu
 
----
+[View the live project portfolio](https://manishkallu01-wq.github.io/) · [Browse project deliverables](deliverables/) · [View the project board](https://github.com/users/manishkallu01-wq/projects/1)
 
-## 🎯 Project Overview
+## Project Overview
 
-This project explores whether publicly available macroeconomic indicators can improve forecasting of future U.S. unemployment across multiple forecasting horizons.
+This capstone examines whether publicly available macroeconomic indicators improve forecasts of future U.S. unemployment and identifies the indicators with the strongest historical relationships to labor-market conditions.
 
-Using nearly **70 years of economic history (1956–2025)** and integrating datasets from the **Bureau of Labor Statistics (BLS)**, **Federal Reserve (FRED)**, **Bureau of Economic Analysis (BEA)**, **University of Michigan**, and **National Bureau of Economic Research (NBER)**, the project develops a reproducible analytical framework for:
+The final analytical dataset combines nearly 70 years of monthly U.S. economic history, from **April 1956 through December 2025**. It contains **837 observations, 40 columns, and 35 predictors** derived from six public series:
 
-* 📈 Labor Market Analysis
-* 🤖 Machine Learning Forecasting
-* 🏗️ Data Engineering Pipelines
-* 📊 Statistical Analysis
-* 📉 Economic Cycle Evaluation
-* 🎨 Data Visualization & Storytelling
+- Unemployment rate (BLS/FRED)
+- Consumer Price Index (BLS/FRED)
+- Federal funds rate (Federal Reserve/FRED)
+- Real GDP (BEA/FRED)
+- Consumer sentiment (University of Michigan/FRED)
+- Recession indicator (NBER/FRED)
 
-The project aligns with all five pillars of the Willamette University M.S. in Data Science program and serves as a comprehensive portfolio demonstration of applied Data Engineering and Analytics skills.
+Quarterly GDP was converted to monthly frequency, the sources were aligned by date, and lagged, momentum, ratio, and composite features were engineered for multi-horizon forecasting.
 
----
+## Research Questions
 
-## 👤 Project Information
+1. To what extent can publicly available macroeconomic indicators improve forecasting of future U.S. unemployment across 3-month, 6-month, and 12-month horizons?
+2. Which macroeconomic indicators demonstrate the strongest and most consistent historical relationships with unemployment across U.S. economic cycles between 1956 and 2025?
 
-| Item                    | Details                                                              |
-| ----------------------- | -------------------------------------------------------------------- |
-| 👨‍💻 Owner Team        | Manish R Kallu                                                       |
-| 🎯 Product Lead         | Manish R Kallu                                                       |
-| 🤝 Peer Stakeholder POs | Brandon Smith, Jon Garrow, Jackson Garro                             |
-| 🎓 Instructor / Sponsor | Lucas P. Cordova, Ph.D.                                              |
-| 🏫 Studio Session       | 2                                                                    |
-| 📅 Studio Formation     | May 25, 2026                                                         |
-| 📂 Repository           | https://github.com/manishkallu01-wq/DATA510-Session-2/tree/main      |
-| 📋 Project Board        | https://github.com/users/manishkallu01-wq/projects/1                 |
-| 💬 Discord Category     | https://discord.com/channels/1277725100816203942/1508588739063054376 |
+## Final Results
 
----
+Models were evaluated with a chronological train/test split using MAE, RMSE, and R².
 
-## 🧠 Research Questions
+| Forecast horizon | Selected model | MAE | RMSE | R² |
+| --- | --- | ---: | ---: | ---: |
+| 3 months | Ridge Regression | 0.349 | 1.020 | 0.720 |
+| 6 months | Extra Trees | 0.725 | 1.277 | 0.563 |
+| 12 months | Extra Trees | 1.195 | 1.729 | 0.205 |
 
-### Primary Research Question
+The 3-month model produced the strongest forecast performance. Accuracy declined at longer horizons, showing that public macroeconomic indicators are most useful as near-term early-warning signals rather than precise long-range forecasts.
 
-> To what extent can publicly available macroeconomic indicators improve forecasting of future U.S. unemployment across 3-month, 6-month, and 12-month forecasting horizons?
+For the historical relationship analysis, **consumer sentiment was the strongest overall external indicator**, reaching a correlation of **r = −0.496 at the 12-month horizon**. These relationships are regime-dependent associations and should not be interpreted as causal effects.
 
-### Secondary Research Question
+## Repository Structure
 
-> Which macroeconomic indicators demonstrate the strongest and most consistent historical relationships with unemployment across U.S. economic cycles between 1956 and 2025?
+| Path | Purpose |
+| --- | --- |
+| [`data/`](data/) | Raw, processed, and final analytical datasets |
+| [`src/`](src/) | Data preparation, feature engineering, analysis, and modeling code |
+| [`notebooks/`](notebooks/) | Exploratory analysis and model-development notebooks |
+| [`deliverables/`](deliverables/) | Final report, poster, and milestone submissions |
+| [`studio/`](studio/) | Studio briefs, critiques, and collaboration artifacts |
+| [`BACKLOG.md`](BACKLOG.md) | Project backlog |
+| [`CHARTER.md`](CHARTER.md) | Project charter and governance |
 
----
+## Reproducing the Analysis
 
-## 🛠️ Technology Stack
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/manishkallu01-wq/DATA510-Session-2.git
+   cd DATA510-Session-2
+   ```
+2. Use Python 3 and install the analysis packages used by the project:
+   ```bash
+   pip install pandas numpy scikit-learn matplotlib seaborn xgboost
+   ```
+3. Review the source files in [`src/`](src/) and notebooks in [`notebooks/`](notebooks/).
+4. Run the data preparation and feature-engineering workflow before the modeling workflow.
+5. Compare reproduced metrics and visualizations with the final materials in [`deliverables/`](deliverables/).
 
-### Data Engineering
+The workflow uses a time-ordered split to avoid training on future observations. Random seeds are fixed where supported by the selected estimators.
 
-* 🐍 Python
-* 🐼 Pandas
-* 🔢 NumPy
-* 📂 Git & GitHub
+## Limitations and Responsible Use
 
-### Analytics & Machine Learning
+- NBER recession labels are retrospective and are not real-time signals.
+- Some engineered composite features contain unemployment information and require careful interpretation.
+- Structural breaks, including COVID-19, reduce stability across economic regimes.
+- National aggregates can conceal state, industry, and demographic differences.
+- Revised historical data may differ from the vintages available at an actual forecast date.
+- Results rely on one chronological holdout period and do not include formal prediction intervals.
+- Correlation and feature importance indicate association, not causation.
+- Serial dependence may make conventional independent-observation interpretations inappropriate.
 
-* 📊 Scikit-Learn
-* 🌲 Random Forest
-* ⚡ XGBoost
-* 📈 Statistical Analysis
+The models are educational decision-support tools. They should not be used alone for policy, investment, employment, or other high-stakes decisions.
 
-### Visualization
+## Final Deliverables
 
-* 📉 Matplotlib
-* 📊 Seaborn
-* 📋 Interactive Dashboards
+- Integrated and feature-engineered macroeconomic dataset
+- Lead-lag relationship and economic-cycle analysis
+- 3-, 6-, and 12-month unemployment forecasting models
+- Model evaluation and feature-importance analysis
+- Final research report
+- Final poster presentation
+- Live project portfolio
+- Reproducible code and documentation
 
-### Data Sources
+**Project status: Complete and ready for submission.**
 
-* 🏛️ Federal Reserve Economic Data (FRED)
-* 📈 Bureau of Labor Statistics (BLS)
-* 💵 Bureau of Economic Analysis (BEA)
-* 😊 University of Michigan Consumer Sentiment
-* 📉 National Bureau of Economic Research (NBER)
+## Data Attribution
 
----
-
-## 📦 Repository Structure
-
-| 📁 Path         | Purpose                                            |
-| --------------- | -------------------------------------------------- |
-| `data/`         | Raw, processed, and analytical datasets            |
-| `src/`          | Reusable data engineering and modeling code        |
-| `notebooks/`    | Exploratory analysis and experimentation           |
-| `deliverables/` | Capstone milestone submissions                     |
-| `studio/`       | DS3 briefs, critiques, and collaboration artifacts |
-| `BACKLOG.md`    | Human-readable project backlog                     |
-| `CHARTER.md`    | Studio charter and project governance              |
-
----
-
-## 📌 Current Status
-
-🟢 Proposal Approved
-🟢 Data Acquisition Completed
-🟢 Data Integration Completed
-🟢 Feature Engineering Completed
-🟢 Analytical Dataset Created (838 observations, 40 variables)
-🟡 Exploratory Data Analysis In Progress
-🟡 Forecast Model Development In Progress
-⚪ Dashboard Development Pending
-⚪ Final Capstone Deliverables Pending
-
----
-
-## 🏆 Expected Deliverables
-
-* 📊 Integrated Macroeconomic Dataset
-* 📈 Statistical Relationship Analysis
-* 🤖 Unemployment Forecasting Models
-* 📉 Feature Importance Analysis
-* 📋 Interactive Dashboards
-* 🎓 Final Research Report
-* 🎤 Poster Presentation
-* 📚 Reproducible Data Science Workflow
-
-
-# Iteration Reviews
-
-## Week 4 -- Proposal Milestone (M1)
-
-**Iteration ending:** June 5, 2026
-**Milestone tag in focus:** `M1-proposal`
-
-**Completed PBIs**
-
-* Finalized project scope and research questions.
-* Completed literature review and proposal writing.
-* Collected and integrated six approved macroeconomic datasets.
-* Performed data validation and feature engineering.
-* Submitted M1 proposal and updated project documentation.
-
-**In-flight (carrying across the boundary)**
-
-* Exploratory data analysis.
-* Correlation and trend analysis.
-* Preparation for M2 Data Summary.
-
-**Stakeholder response log**
-
-* Brandon Smith: adopted feedback on project clarity and stakeholder impact.
-* Jon Garrow: adopted feedback on research question framing and communication.
-
-**Plan for next iteration**
-
-* Complete exploratory data analysis (`M2-data-summary`).
-* Develop initial visualizations and summary statistics (`M2-data-summary`).
-* Begin relationship and forecasting analysis (`M2-data-summary`).
-
-**Risks and impediments**
-
-* Economic data revisions from source organizations.
-* Forecasting accuracy may vary across prediction horizons.
-* Additional feature engineering may be needed during analysis.
-
-
-## Week 5
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M1-proposal` / `M2-data-summary`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-## Week 6
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M2-data-summary`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-## Week 7 -- Data summary milestone (M2)
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M2-data-summary`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-**Retrospective (milestone boundary)**
-- What worked: ...
-- What did not: ...
-- One change for next iteration: ...
-
-## Week 8
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M3-poster-draft`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-## Week 9
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M3-poster-draft`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-## Week 10 -- Poster rough-draft milestone (M3)
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M3-poster-draft`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-**Retrospective (milestone boundary)**
-- What worked: ...
-- What did not: ...
-- One change for next iteration: ...
-
-## Week 11
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M4-writeup-draft`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-## Week 12 -- Write-up rough-draft milestone (M4)
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M4-writeup-draft`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-**Retrospective (milestone boundary)**
-- What worked: ...
-- What did not: ...
-- One change for next iteration: ...
-
-## Week 13
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M5-final`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-## Week 14 -- Final write-up and poster (M5)
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M5-final`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Final retrospective**
-- What worked: ...
-- What did not: ...
-- What we would change if we ran this project again: ...
-
----
-
-## Iteration Review template (copy for any extra week)
-
-```markdown
-## Week <NN>
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** <M1-proposal | M2-data-summary | M3-poster-draft | M4-writeup-draft | M5-final | infra | ethics>
-
-**Completed PBIs**
-- ...
-
-**In-flight (carrying across the boundary)**
-- ...
-
-**Stakeholder response log**
-- Studio Brief from <peer PO>: adopted = ..., deferred = ..., declined (with reason) = ...
-
-**Plan for next iteration**
-- Top PBIs (with milestone tags): ...
-
-**Risks and impediments**
-- ...
-```
+The project uses publicly available data from the U.S. Bureau of Labor Statistics, Federal Reserve Economic Data, U.S. Bureau of Economic Analysis, University of Michigan Surveys of Consumers, and National Bureau of Economic Research. Source organizations retain ownership of their respective data.
