@@ -4,7 +4,7 @@
 > **Willamette University | Summer 2026**  
 > **Author and Product Lead: Manish R. Kallu**
 
-[🌐 Live Project Portfolio](https://manishkallu01-wq.github.io/) · [📁 Project Deliverables](deliverables/) · [🗂️ Project Board](https://github.com/users/manishkallu01-wq/projects/1)
+[🌐 Live Project Portfolio](https://manishkallu01-wq.github.io/capstone.html) · [📁 Project Deliverables](deliverables/) · [🗂️ Project Board](https://github.com/users/manishkallu01-wq/projects/1)
 
 ---
 
