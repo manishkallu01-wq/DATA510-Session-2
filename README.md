@@ -334,7 +334,8 @@ pip install pandas numpy scikit-learn matplotlib seaborn xgboost
 2. Run the data preparation and feature-engineering code in [`src/`](src/).
 3. Review or run the analytical notebooks in [`notebooks/`](notebooks/).
 4. Preserve chronological ordering during model training and evaluation.
-5. Compare reproduced metrics and figures with the final materials in [`deliverables/`](deliverables/).
+5. Use the Python scripts in the [`M5-final/`](deliverables/M5-final/) folder to reproduce the machine-learning modeling and correlation analysis.
+6. Compare reproduced metrics and figures with the final materials in [`deliverables/`](deliverables/).
 
 Random seeds are fixed where supported by the estimators. The chronological evaluation design must be retained to avoid training on future observations.
 
