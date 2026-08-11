@@ -358,7 +358,7 @@ The completed project includes:
 - ✅ Live project portfolio
 - ✅ Reproducible source code and repository documentation
 
-The report, poster, milestone materials, and supporting artifacts are available in the [`deliverables/`](deliverables/) directory and through the [live portfolio](https://manishkallu01-wq.github.io/).
+The report, poster, milestone materials, and supporting artifacts are available in the [`deliverables/`](deliverables/) directory and through the [live portfolio](https://manishkallu01-wq.github.io/capstone.html).
 
 ---
 
