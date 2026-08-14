@@ -1,202 +1,90 @@
-import pandas as pd
+#!/usr/bin/env python3
+"""Engineer the final 40-column workbook from capstone_super_dataset.csv."""
+from __future__ import annotations
+import argparse
 from pathlib import Path
+import numpy as np
+import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
-# =====================================================
-# LOAD DATASET
-# =====================================================
+FINAL = ["Date","UnemploymentRate","ConsumerPriceIndex","FederalFundsRate",
+"GrossDomesticProduct","ConsumerSentiment","RecessionIndicator","InflationRateYoY",
+"GDPGrowthYoY","RealInterestRate","UnemploymentChange1M","UnemploymentChange3M",
+"ConsumerSentimentMomentum3M","UnemploymentLag1","UnemploymentLag3","UnemploymentLag6",
+"UnemploymentLag12","InflationLag3","FederalFundsLag3","GDPGrowthLag3",
+"ConsumerSentimentLag3","InflationLag6","FederalFundsLag6","GDPGrowthLag6",
+"ConsumerSentimentLag6","EconomicStressIndex","LaborMarketShock",
+"InflationAcceleration","GDPGrowthMomentum","UnemploymentMomentum",
+"MonetaryTighteningIndex","PolicyPressureScore","ConsumerConfidenceDeterioration",
+"InflationUnemploymentRatio","GrowthToInflationRatio","RecessionRiskScore",
+"FutureUnemployment_3M","FutureUnemployment_6M","FutureUnemployment_12M",
+"FutureLaborMarketShock_6M"]
 
-DOWNLOADS = Path.home() / "Downloads"
+def arguments():
+    root=Path(__file__).resolve().parents[1]
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--input",type=Path,
+        default=root/"data"/"processed"/"capstone_super_dataset.csv")
+    p.add_argument("--output",type=Path,
+        default=root/"data"/"processed"/"capstone_plus_final.xlsx")
+    return p.parse_args()
 
-INPUT_FILE = DOWNLOADS / "capstone_dataset.csv"
+def engineer(df):
+    needed={"Date","UNRATE","CPIAUCSL","FEDFUNDS","GDP","UMCSENT","USREC"}
+    if missing:=sorted(needed-set(df.columns)):
+        raise ValueError("Missing super-dataset columns: "+", ".join(missing))
+    df=df.copy().rename(columns={"UNRATE":"UnemploymentRate",
+        "CPIAUCSL":"ConsumerPriceIndex","FEDFUNDS":"FederalFundsRate",
+        "GDP":"GrossDomesticProduct","UMCSENT":"ConsumerSentiment",
+        "USREC":"RecessionIndicator"})
+    df["Date"]=pd.to_datetime(df["Date"],errors="coerce")
+    df=df.sort_values("Date").drop_duplicates("Date",keep="last").reset_index(drop=True)
+    df["InflationRateYoY"]=df.ConsumerPriceIndex.pct_change(12,fill_method=None)*100
+    df["GDPGrowthYoY"]=df.GrossDomesticProduct.pct_change(12,fill_method=None)*100
+    df["RealInterestRate"]=df.FederalFundsRate-df.InflationRateYoY
+    df["UnemploymentChange1M"]=df.UnemploymentRate.diff()
+    df["UnemploymentChange3M"]=df.UnemploymentRate.diff(3)
+    df["ConsumerSentimentMomentum3M"]=df.ConsumerSentiment.diff(3)
+    for lag in (1,3,6,12): df[f"UnemploymentLag{lag}"]=df.UnemploymentRate.shift(lag)
+    for lag in (3,6):
+        df[f"InflationLag{lag}"]=df.InflationRateYoY.shift(lag)
+        df[f"FederalFundsLag{lag}"]=df.FederalFundsRate.shift(lag)
+        df[f"GDPGrowthLag{lag}"]=df.GDPGrowthYoY.shift(lag)
+        df[f"ConsumerSentimentLag{lag}"]=df.ConsumerSentiment.shift(lag)
+    cols=["UnemploymentRate","InflationRateYoY","FederalFundsRate"]
+    usable=df[cols].dropna()
+    df["EconomicStressIndex"]=np.nan
+    df.loc[usable.index,"EconomicStressIndex"]=StandardScaler().fit_transform(usable).mean(1)
+    df["LaborMarketShock"]=(df.UnemploymentChange3M>=0.5).astype(int)
+    df["InflationAcceleration"]=df.InflationRateYoY.diff()
+    df["GDPGrowthMomentum"]=df.GDPGrowthYoY-df.GDPGrowthLag3
+    df["UnemploymentMomentum"]=df.UnemploymentChange3M
+    df["MonetaryTighteningIndex"]=df.FederalFundsRate-df.FederalFundsLag6
+    df["PolicyPressureScore"]=df.FederalFundsRate*df.InflationRateYoY
+    df["ConsumerConfidenceDeterioration"]=df.ConsumerSentimentLag6-df.ConsumerSentiment
+    df["InflationUnemploymentRatio"]=df.InflationRateYoY/df.UnemploymentRate.replace(0,np.nan)
+    df["GrowthToInflationRatio"]=df.GDPGrowthYoY/df.InflationRateYoY.replace(0,np.nan)
+    df["RecessionRiskScore"]=(df.EconomicStressIndex.fillna(0)
+        +df.RecessionIndicator.fillna(0)+df.LaborMarketShock)
+    for n in (3,6,12): df[f"FutureUnemployment_{n}M"]=df.UnemploymentRate.shift(-n)
+    df["FutureLaborMarketShock_6M"]=df.LaborMarketShock.shift(-6)
+    df=df[(df.Date>="1956-04-01")&(df.Date<="2025-12-01")].copy()
+    predictors=[c for c in FINAL if c!="Date" and not c.startswith("Future")]
+    df=df.dropna(subset=predictors).reset_index(drop=True)[FINAL]
+    numeric=[c for c in FINAL if c!="Date"]
+    df[numeric]=df[numeric].round(2)
+    return df
 
-OUTPUT_FILE = (
-    DOWNLOADS /
-    "capstone_dataset_feature_engineered.csv"
-)
+def main():
+    args=arguments()
+    if not args.input.is_file():
+        raise FileNotFoundError(f"{args.input} not found; run src/rebuild.py first")
+    df=engineer(pd.read_csv(args.input))
+    args.output.parent.mkdir(parents=True,exist_ok=True)
+    df.to_excel(args.output,index=False,engine="openpyxl")
+    print(f"Saved: {args.output}")
+    print(f"Shape: {df.shape[0]} rows x {df.shape[1]} columns")
+    print(f"Range: {df.Date.min().date()} to {df.Date.max().date()}")
 
-df = pd.read_csv(INPUT_FILE)
-
-df["observation_date"] = pd.to_datetime(
-    df["observation_date"]
-)
-
-df = df.sort_values(
-    "observation_date"
-)
-
-# =====================================================
-# DERIVED ECONOMIC FEATURES
-# =====================================================
-
-# -----------------------------
-# Inflation Rate (YoY)
-# -----------------------------
-
-df["INFLATION_YOY"] = (
-    (
-        df["CPIAUCSL"]
-        - df["CPIAUCSL"].shift(12)
-    )
-    /
-    df["CPIAUCSL"].shift(12)
-) * 100
-
-# -----------------------------
-# GDP Growth (YoY)
-# -----------------------------
-
-df["GDP_GROWTH_YOY"] = (
-    (
-        df["GDP"]
-        - df["GDP"].shift(12)
-    )
-    /
-    df["GDP"].shift(12)
-) * 100
-
-# -----------------------------
-# Unemployment Change
-# -----------------------------
-
-df["UNRATE_CHANGE_1M"] = (
-    df["UNRATE"]
-    .diff(1)
-)
-
-# -----------------------------
-# 3 Month Change
-# -----------------------------
-
-df["UNRATE_CHANGE_3M"] = (
-    df["UNRATE"]
-    .diff(3)
-)
-
-# -----------------------------
-# Consumer Sentiment Momentum
-# -----------------------------
-
-df["UMCSENT_MOMENTUM_3M"] = (
-    df["UMCSENT"]
-    -
-    df["UMCSENT"].shift(3)
-)
-
-# -----------------------------
-# Real Interest Rate
-# -----------------------------
-
-df["REAL_INTEREST_RATE"] = (
-    df["FEDFUNDS"]
-    -
-    df["INFLATION_YOY"]
-)
-
-# =====================================================
-# LAG FEATURES
-# =====================================================
-
-for lag in [1, 3, 6, 12]:
-
-    df[f"UNRATE_LAG_{lag}"] = (
-        df["UNRATE"]
-        .shift(lag)
-    )
-
-for lag in [3, 6]:
-
-    df[f"CPI_LAG_{lag}"] = (
-        df["INFLATION_YOY"]
-        .shift(lag)
-    )
-
-    df[f"FEDFUNDS_LAG_{lag}"] = (
-        df["FEDFUNDS"]
-        .shift(lag)
-    )
-
-    df[f"GDP_LAG_{lag}"] = (
-        df["GDP_GROWTH_YOY"]
-        .shift(lag)
-    )
-
-    df[f"UMCSENT_LAG_{lag}"] = (
-        df["UMCSENT"]
-        .shift(lag)
-    )
-
-# =====================================================
-# ECONOMIC STRESS INDEX
-# =====================================================
-
-stress_features = [
-    "UNRATE",
-    "INFLATION_YOY",
-    "FEDFUNDS"
-]
-
-temp = df[stress_features].copy()
-
-temp = temp.dropna()
-
-scaler = StandardScaler()
-
-scaled = scaler.fit_transform(temp)
-
-df.loc[
-    temp.index,
-    "ECONOMIC_STRESS_INDEX"
-] = scaled.mean(axis=1)
-
-# =====================================================
-# LABOR MARKET SHOCK FLAG
-# =====================================================
-
-df["LABOR_MARKET_SHOCK"] = 0
-
-df.loc[
-    df["UNRATE_CHANGE_3M"] >= 0.5,
-    "LABOR_MARKET_SHOCK"
-] = 1
-
-# =====================================================
-# DROP INITIAL ROWS
-# =====================================================
-
-df = df.dropna().reset_index(drop=True)
-
-# =====================================================
-# SAVE
-# =====================================================
-
-df.to_csv(
-    OUTPUT_FILE,
-    index=False
-)
-
-# =====================================================
-# REPORT
-# =====================================================
-
-print("\nFEATURE ENGINEERING COMPLETE")
-print("=" * 60)
-
-print("\nRows:")
-print(len(df))
-
-print("\nColumns:")
-print(len(df.columns))
-
-print("\nColumn Names:")
-print(df.columns.tolist())
-
-print("\nDate Range:")
-print(
-    df["observation_date"].min(),
-    "to",
-    df["observation_date"].max()
-)
-
-print("\nOutput:")
-print(OUTPUT_FILE)
+if __name__=="__main__":
+    main()
