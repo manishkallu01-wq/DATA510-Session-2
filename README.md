@@ -164,7 +164,7 @@ The engineered features were designed to capture changes in economic direction, 
 - `InflationUnemploymentRatio`
 - `MonetaryTighteningIndex`
 - `EconomicStressIndex`
-- `RecessionRiskFlag`
+- `RecessionRiskScore`
 - `LaborMarketShock`
 
 These engineered variables help represent economic dynamics that may not be visible from contemporaneous raw values alone. Features containing unemployment-derived information are interpreted carefully because they can strengthen prediction while limiting claims about fully external early-warning power.
@@ -294,10 +294,11 @@ Responsible use requires:
 
 | Path | Purpose |
 | --- | --- |
-| [`data/`](data/) | Raw, processed, and final analytical datasets |
-| [`src/`](src/) | Data preparation, feature engineering, analysis, and modeling code |
+| [`data/`](data/) | Read-only raw source files and the submitted processed dataset |
+| [`src/`](src/) | Optional dataset reconstruction, feature-engineering, and validation scripts |
 | [`notebooks/`](notebooks/) | Exploratory analysis and model-development notebooks |
-| [`deliverables/`](deliverables/) | Final report, poster, and milestone submissions |
+| [`deliverables/M5-final/`](deliverables/M5-final/) | Final machine-learning and correlation scripts, results, figures, report, and poster |
+| [`deliverables/`](deliverables/) | All milestone submissions |
 | [`studio/`](studio/) | Studio briefs, critiques, and stakeholder-feedback artifacts |
 | [`BACKLOG.md`](BACKLOG.md) | Human-readable project backlog |
 | [`CHARTER.md`](CHARTER.md) | Project charter and governance |
@@ -336,23 +337,33 @@ pip install pandas numpy scikit-learn xgboost matplotlib seaborn scipy openpyxl 
 
 Dataset construction and statistical analysis are separate stages in this repository.
 
-#### A. Construct and validate the dataset from raw files — optional
+#### A. Reconstruct and validate a local dataset from the raw files — optional
 
 Use this path only when rebuilding the dataset from the six source CSV files in [`data/raw/`](data/raw/):
 
-1. Run [`src/rebuild.py`](src/rebuild.py) to load, align, and merge the raw macroeconomic series.
-2. Run [`src/eng_variables.py`](src/eng_variables.py) to create the engineered variables used in the final dataset.
-3. Run [`src/checks.py`](src/checks.py) to validate the resulting dataset.
+```bash
+python src/rebuild.py
+python src/eng_variables.py
+python src/checks.py
+```
+
+The stages are deliberately separate:
+
+1. [`src/rebuild.py`](src/rebuild.py) reads the six repository CSVs, aligns and merges them, and exports `~/Downloads/super_dataset.csv`.
+2. [`src/eng_variables.py`](src/eng_variables.py) reads that local super dataset, engineers the submitted feature schema, and exports `~/Downloads/capstone_plus_final.xlsx`.
+3. [`src/checks.py`](src/checks.py) reads the local engineered workbook and checks its shape, schema, date sequence, duplicates, infinite values, predictor completeness, and intentional missing future targets.
 
 These scripts are for dataset construction and validation. They are not the machine-learning or correlation-analysis scripts.
 
+The raw repository files are only read. Generated datasets are saved to the user's local `Downloads` folder, not to the repository. The scripts do not commit, push, or otherwise write to GitHub, and no GitHub write access is required. Use `--raw-dir`, `--input`, or `--output` only when a different local path is needed.
+
 #### B. Use the final processed dataset directly
 
-Dataset reconstruction is not required for most users. For modeling, correlation analysis, or review of the submitted work, use [`data/processed/capstone_plus_final.xlsx`](data/processed/capstone_plus_final.xlsx) directly. This is the common analysis-ready input used for both research questions.
+Dataset reconstruction is not required for most users. For modeling, correlation analysis, or review of the submitted work, read or download [`data/processed/capstone_plus_final.xlsx`](data/processed/capstone_plus_final.xlsx) directly. This submitted 837-row × 40-column workbook is the common analysis-ready input used for both research questions.
 
 #### C. Run the final analyses
 
-The Python scripts for the machine-learning workflow and the separate Research Question 2 correlation analysis are available in [`deliverables/M5-final/`](deliverables/M5-final/). These analysis scripts use `capstone_plus_final.xlsx` as their input and are separate from the dataset-construction scripts in `src/`.
+The Python scripts for the machine-learning workflow and the separate Research Question 2 correlation analysis are available in [`deliverables/M5-final/`](deliverables/M5-final/). They read the submitted `capstone_plus_final.xlsx` through its public, read-only GitHub URL and are separate from the optional dataset-construction scripts in `src/`.
 
 Generated model results, correlation tables, and figures are stored alongside the final analysis materials in [`deliverables/M5-final/`](deliverables/M5-final/).
 
@@ -413,4 +424,3 @@ Studio critiques and peer stakeholder reviews were incorporated across milestone
 - 📁 **Deliverables:** [Final project artifacts](deliverables/)
 - 🗂️ **Project Board:** [DATA 510 project board](https://github.com/users/manishkallu01-wq/projects/1)
 - 🔗 **LinkedIn:** [Manish Kallu](https://www.linkedin.com/in/manish-kallu-583b61421/)
-
