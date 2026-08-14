@@ -332,25 +332,29 @@ On Windows, activate the environment with:
 pip install pandas numpy scikit-learn xgboost matplotlib seaborn scipy openpyxl joblib
 ```
 
-### 4. Choose the Appropriate Data Path
+### 4. Choose the Appropriate Workflow
 
-There are two practical ways to use the project data:
+Dataset construction and statistical analysis are separate stages in this repository.
 
-#### Option A — Reconstruct the dataset from the raw CSV files
+#### A. Construct and validate the dataset from raw files — optional
 
-Use the six source files in [`data/raw/`](data/raw/) with the preparation and validation utilities:
+Use this path only when rebuilding the dataset from the six source CSV files in [`data/raw/`](data/raw/):
 
-- [`rebuild.py`](deliverables/M2-data-summary/rebuild.py)
-- [`eng_variables.py`](deliverables/M2-data-summary/eng_variables.py)
-- [`checks.py`](deliverables/M2-data-summary/checks.py)
+1. Run [`src/rebuild.py`](src/rebuild.py) to load, align, and merge the raw macroeconomic series.
+2. Run [`src/eng_variables.py`](src/eng_variables.py) to create the engineered variables used in the final dataset.
+3. Run [`src/checks.py`](src/checks.py) to validate the resulting dataset.
 
-This option is only needed when reviewing or reconstructing the data-preparation stages from the raw FRED CSV files.
+These scripts are for dataset construction and validation. They are not the machine-learning or correlation-analysis scripts.
 
-#### Option B — Use the final processed dataset directly
+#### B. Use the final processed dataset directly
 
-For modeling, correlation analysis, or review of the submitted results, use [`data/processed/capstone_plus_final.xlsx`](data/processed/capstone_plus_final.xlsx). This is the final analysis-ready dataset used as the common input for both research questions.
+Dataset reconstruction is not required for most users. For modeling, correlation analysis, or review of the submitted work, use [`data/processed/capstone_plus_final.xlsx`](data/processed/capstone_plus_final.xlsx) directly. This is the common analysis-ready input used for both research questions.
 
-The figures and generated CSV results from the submitted analyses are available in [`deliverables/M5-final/`](deliverables/M5-final/). Preserve chronological ordering when performing any new model training or evaluation.
+#### C. Run the final analyses
+
+The Python scripts for the machine-learning workflow and the separate Research Question 2 correlation analysis are available in [`deliverables/M5-final/`](deliverables/M5-final/). These analysis scripts use `capstone_plus_final.xlsx` as their input and are separate from the dataset-construction scripts in `src/`.
+
+Generated model results, correlation tables, and figures are stored alongside the final analysis materials in [`deliverables/M5-final/`](deliverables/M5-final/).
 
 Random seeds are fixed where supported by the estimators. The chronological evaluation design must be retained to avoid training on future observations.
 
