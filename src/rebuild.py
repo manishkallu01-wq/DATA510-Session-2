@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build one monthly super dataset from the six raw FRED CSV files."""
+"""Read repository raw CSVs and export a local monthly super dataset."""
 from __future__ import annotations
 import argparse
 from pathlib import Path
@@ -12,7 +12,8 @@ def arguments():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--raw-dir", type=Path, default=root / "data" / "raw")
     p.add_argument("--output", type=Path,
-                   default=root / "data" / "processed" / "capstone_super_dataset.csv")
+                   default=Path.home() / "Downloads" / "super_dataset.csv",
+                   help="Local export path; defaults to Downloads/super_dataset.csv")
     return p.parse_args()
 
 def read_series(raw_dir: Path, name: str) -> pd.DataFrame:

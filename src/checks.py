@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the final analysis-ready workbook."""
+"""Validate a locally generated final analysis-ready workbook."""
 from __future__ import annotations
 import argparse
 from pathlib import Path
@@ -12,10 +12,10 @@ TARGET_MISSING={"FutureUnemployment_3M":3,"FutureUnemployment_6M":6,
     "FutureUnemployment_12M":12,"FutureLaborMarketShock_6M":6}
 
 def arguments():
-    root=Path(__file__).resolve().parents[1]
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--input",type=Path,
-        default=root/"data"/"processed"/"capstone_plus_final.xlsx")
+        default=Path.home()/"Downloads"/"capstone_plus_final.xlsx",
+        help="Local final workbook created by eng_variables.py")
     return p.parse_args()
 
 def validate(path):

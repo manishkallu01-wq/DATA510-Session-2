@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Engineer the final 40-column workbook from capstone_super_dataset.csv."""
+"""Engineer a local final workbook from an exported super_dataset.csv."""
 from __future__ import annotations
 import argparse
 from pathlib import Path
@@ -21,12 +21,13 @@ FINAL = ["Date","UnemploymentRate","ConsumerPriceIndex","FederalFundsRate",
 "FutureLaborMarketShock_6M"]
 
 def arguments():
-    root=Path(__file__).resolve().parents[1]
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--input",type=Path,
-        default=root/"data"/"processed"/"capstone_super_dataset.csv")
+        default=Path.home()/"Downloads"/"super_dataset.csv",
+        help="Local super dataset created by rebuild.py")
     p.add_argument("--output",type=Path,
-        default=root/"data"/"processed"/"capstone_plus_final.xlsx")
+        default=Path.home()/"Downloads"/"capstone_plus_final.xlsx",
+        help="Local final-dataset export path")
     return p.parse_args()
 
 def engineer(df):
