@@ -332,14 +332,25 @@ On Windows, activate the environment with:
 pip install pandas numpy scikit-learn xgboost matplotlib seaborn scipy openpyxl joblib
 ```
 
-### 4. Follow the Project Workflow
+### 4. Choose the Appropriate Data Path
 
-1. Use [`data/processed/capstone_plus_final.xlsx`](data/processed/capstone_plus_final.xlsx) as the common processed input for both research questions.
-2. Run the data preparation and feature-engineering code in [`src/`](src/).
-3. Review or run the analytical notebooks in [`notebooks/`](notebooks/).
-4. Preserve chronological ordering during model training and evaluation.
-5. Use all Python scripts in [`deliverables/M5-final/`](deliverables/M5-final/), including the separate RQ2 correlation-analysis script, to reproduce the modeling and historical-correlation outputs.
-6. Compare reproduced metrics and figures with the final materials in [`deliverables/`](deliverables/).
+There are two practical ways to use the project data:
+
+#### Option A — Reconstruct the dataset from the raw CSV files
+
+Use the six source files in [`data/raw/`](data/raw/) with the preparation and validation utilities:
+
+- [`rebuild.py`](deliverables/M2-data-summary/rebuild.py)
+- [`eng_variables.py`](deliverables/M2-data-summary/eng_variables.py)
+- [`checks.py`](deliverables/M2-data-summary/checks.py)
+
+This option is only needed when reviewing or reconstructing the data-preparation stages from the raw FRED CSV files.
+
+#### Option B — Use the final processed dataset directly
+
+For modeling, correlation analysis, or review of the submitted results, use [`data/processed/capstone_plus_final.xlsx`](data/processed/capstone_plus_final.xlsx). This is the final analysis-ready dataset used as the common input for both research questions.
+
+The figures and generated CSV results from the submitted analyses are available in [`deliverables/M5-final/`](deliverables/M5-final/). Preserve chronological ordering when performing any new model training or evaluation.
 
 Random seeds are fixed where supported by the estimators. The chronological evaluation design must be retained to avoid training on future observations.
 
