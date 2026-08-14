@@ -151,16 +151,6 @@ The 3-month model is the strongest result, the 6-month model retains moderate va
 - **Analyze:** Consolidated the final message: useful 3-month forecasting, moderate 6-month value, limited 12-month reliability, and consumer sentiment as the strongest overall historical external relationship.
 - **Final evidence:** [`deliverables/M5-final/`](deliverables/M5-final/) and the [public portfolio](https://manishkallu01-wq.github.io/capstone.html).
 
----
-
-## 🔎 Final Research Question 2 Finding
-
-Consumer sentiment produced the strongest full-sample external relationship with unemployment at every evaluated horizon, strengthening from Pearson `r = -0.351` in the same month to `r = -0.496` at twelve months. Recession status ranked second.
-
-At a six-month lead, the consumer-sentiment relationship reversed to `+0.67` during 2020-2025. The final report treats this as possible regime instability during a short pandemic-and-recovery period, not as a stable structural reversal.
-
 ## 🏁 Backlog Status
 
 **All ten PBIs are complete and their GitHub issues are closed.** No unfinished work is represented as part of the submitted project.
-
-Potential extensions—such as vintage-aware data, rolling-origin validation, prediction intervals, additional leading indicators, and subnational forecasting—remain future research ideas rather than incomplete requirements.
