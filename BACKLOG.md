@@ -1,142 +1,166 @@
-# Backlog: Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
+# 🗂️ Final Backlog: Forecasting and Explaining U.S. Unemployment
 
-This file is the **human-readable mirror** of the GitHub Projects (v2) Iterative Development board for this repository. Every row here is also represented as a GitHub issue, added to the board, tagged with a milestone label, and sized.
+This file is the final human-readable traceability record for the project's ten GitHub product backlog items. It reflects the submitted project rather than an active planning queue.
 
-## Conventions
+All ten linked GitHub issues are closed. Their original titles are preserved below, while each final disposition records how the work was completed or refined within the approved six-series capstone scope.
 
-* Each item contains: id, title, hypothesis or user story, **Create / Observe / Analyze** triple, milestone tag, size, and GitHub issue reference.
-* Items are ordered by priority.
-* Milestone tags: `M1-proposal`, `M2-data-summary`, `M3-poster-draft`, `M4-writeup-draft`, `M5-final`, `infra`, `ethics`.
-* Sizes: S, M, L, XL.
-* Workflow columns: `Backlog` → `Create` → `Observe` → `Analyze` → `Done`.
-* Definition of Ready and Definition of Done are documented in `CHARTER.md`.
+## 📋 Conventions
+
+- Workflow: `Backlog` → `Create` → `Observe` → `Analyze` → `Done`
+- Final status: ✅ Done
+- Sizes: S, M, L, or XL
+- Milestones: `M1-proposal`, `M2-data-summary`, `M3-poster-draft`, `M4-writeup-draft`, `M5-final`, and `ethics`
+- Definitions of Ready and Done: [`CHARTER.md`](CHARTER.md)
+- GitHub board: [DATA 510 project board](https://github.com/users/manishkallu01-wq/projects/1)
+
+---
+
+## ✅ Completion Summary
+
+| PBI | Original GitHub issue title | Milestone | Size | Status |
+| --- | --- | --- | --- | --- |
+| [001](#pbi-001) | Acquire and validate FRED unemployment datasets | M1 | M | ✅ Done |
+| [002](#pbi-002) | Acquire and integrate BLS labor market datasets | M1 | L | ✅ Done |
+| [003](#pbi-003) | Finalize project research questions and proposal framing | M1 | S | ✅ Done |
+| [004](#pbi-004) | Build unified economic indicators dataset | M2 | L | ✅ Done |
+| [005](#pbi-005) | Perform exploratory data analysis on unemployment trends | M2 | M | ✅ Done |
+| [006](#pbi-006) | Develop baseline unemployment forecasting models | M3 | L | ✅ Done |
+| [007](#pbi-007) | Create interactive unemployment trend dashboards | M3 | M | ✅ Done |
+| [008](#pbi-008) | Evaluate ethics and bias risks in forecasting outputs | Ethics | S | ✅ Done |
+| [009](#pbi-009) | Draft final project methodology and analytical write-up | M4 | L | ✅ Done |
+| [010](#pbi-010) | Finalize poster and presentation deliverables | M5 | L | ✅ Done |
 
 ---
 
 ## PBI-001
 
-* **Title:** Acquire and validate approved macroeconomic datasets
-* **Hypothesis:** Publicly available macroeconomic datasets provide sufficient historical coverage and quality to support unemployment forecasting and analysis.
-* **Create:** Acquire UNRATE, CPIAUCSL, FEDFUNDS, GDP, UMCSENT, and USREC datasets.
-* **Observe:** Validate schema consistency, date coverage, missing values, and source reliability.
-* **Analyze:** Determine dataset suitability for the research questions.
-* **Tag:** `M1-proposal`
-* **Size:** M
-* **GitHub issue:** #1
+**Title:** Acquire and validate FRED unemployment datasets
+**GitHub issue:** [#1](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/1)
+**Tag / size / status:** `M1-proposal` / M / ✅ Done
 
----
+- **Create:** Acquired the approved FRED-hosted source files, beginning with the U.S. unemployment rate.
+- **Observe:** Checked schema, date parsing, coverage, duplicates, missing values, and numeric validity.
+- **Analyze:** Confirmed that the unemployment series provided sufficient monthly history for the approved forecast horizons.
+- **Final evidence:** `UNRATE.csv` and the other approved source files are available in [`data/raw/`](data/raw/).
 
 ## PBI-002
 
-* **Title:** Build integrated analytical dataset
-* **Hypothesis:** Multiple macroeconomic indicators can be integrated into a unified analytical dataset suitable for forecasting and statistical analysis.
-* **Create:** Standardize and merge approved datasets into a common monthly framework.
-* **Observe:** Validate joins, temporal alignment, duplicates, and data quality.
-* **Analyze:** Evaluate dataset readiness for downstream analysis.
-* **Tag:** `M1-proposal`
-* **Size:** L
-* **GitHub issue:** #2
+**Title:** Acquire and integrate BLS labor market datasets
+**GitHub issue:** [#2](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/2)
+**Tag / size / status:** `M1-proposal` / L / ✅ Done
 
----
+- **Create:** Evaluated labor-market and macroeconomic inputs available through BLS, FRED, BEA, the Federal Reserve, the University of Michigan, and NBER.
+- **Observe:** Compared coverage, frequency, relevance, and compatibility with the monthly unemployment outcome.
+- **Analyze:** Refined the initial acquisition concept into the approved six-series scope: `UNRATE`, `CPIAUCSL`, `FEDFUNDS`, `GDP`, `UMCSENT`, and `USREC`.
+- **Final disposition:** No additional BLS labor-market series were added beyond the approved project scope.
 
 ## PBI-003
 
-* **Title:** Finalize research questions and project scope
-* **Hypothesis:** Clearly defined research questions improve analytical focus and project outcomes.
-* **Create:** Finalize proposal, research questions, and project documentation.
-* **Observe:** Review stakeholder and instructor feedback.
-* **Analyze:** Refine scope and project objectives.
-* **Tag:** `M1-proposal`
-* **Size:** S
-* **GitHub issue:** #3
+**Title:** Finalize project research questions and proposal framing
+**GitHub issue:** [#3](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/3)
+**Tag / size / status:** `M1-proposal` / S / ✅ Done
 
----
+- **Create:** Finalized separate forecasting and historical-relationship research questions.
+- **Observe:** Reviewed instructor and peer stakeholder feedback on scope, usefulness, and interpretation.
+- **Analyze:** Clarified that Research Question 1 evaluates out-of-sample forecasts, while Research Question 2 evaluates historical associations rather than causal effects.
+- **Final evidence:** The final framing appears in the [project report](deliverables/M5-final/M5-Final-Report.pdf), [README](README.md), and [portfolio](https://manishkallu01-wq.github.io/capstone.html).
 
 ## PBI-004
 
-* **Title:** Engineer forecasting and analytical features
-* **Hypothesis:** Engineered features improve the ability to identify relationships and forecast unemployment trends.
-* **Create:** Develop lag variables, momentum metrics, growth indicators, and composite economic measures.
-* **Observe:** Review feature distributions and quality metrics.
-* **Analyze:** Assess feature usefulness and analytical value.
-* **Tag:** `M2-data-summary`
-* **Size:** L
-* **GitHub issue:** #4
+**Title:** Build unified economic indicators dataset
+**GitHub issue:** [#4](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/4)
+**Tag / size / status:** `M2-data-summary` / L / ✅ Done
 
----
+- **Create:** Standardized the date key, aligned quarterly GDP to monthly frequency, merged the six approved series, engineered forecasting features, and created future unemployment targets.
+- **Observe:** Checked the date sequence, coverage, duplicates, missing values, infinite values, feature schema, and intentional end-of-series target gaps.
+- **Analyze:** Confirmed a final analysis-ready dataset covering April 1956 through December 2025.
+- **Final evidence:** [`data/processed/capstone_plus_final.xlsx`](data/processed/capstone_plus_final.xlsx) contains 837 monthly observations, 40 columns, and 35 predictors.
+
+The optional scripts in [`src/`](src/) reconstruct the dataset locally. They read repository raw files and export `super_dataset.csv` and `capstone_plus_final.xlsx` to the user's local `Downloads` folder. They do not upload, commit, or push generated datasets to GitHub.
 
 ## PBI-005
 
-* **Title:** Perform exploratory data analysis
-* **Hypothesis:** Historical economic indicators contain measurable patterns associated with unemployment behavior.
-* **Create:** Generate summary statistics, trend analyses, and exploratory visualizations.
-* **Observe:** Identify trends, anomalies, and economic cycle patterns.
-* **Analyze:** Determine which indicators demonstrate the strongest historical relationships with unemployment.
-* **Tag:** `M2-data-summary`
-* **Size:** M
-* **GitHub issue:** #5
+**Title:** Perform exploratory data analysis on unemployment trends
+**GitHub issue:** [#5](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/5)
+**Tag / size / status:** `M2-data-summary` / M / ✅ Done
 
----
+- **Create:** Produced summary statistics, unemployment trends, economic-cycle comparisons, lead-lag profiles, and correlation visualizations.
+- **Observe:** Identified crisis-period errors, regime changes, and differences in indicator direction and strength across horizons.
+- **Analyze:** Established the historical context used to interpret both forecasting performance and Research Question 2.
+- **Final evidence:** Tables and figures are available in [`deliverables/M5-final/analysis-results/`](deliverables/M5-final/analysis-results/) and [`deliverables/M5-final/Plots/`](deliverables/M5-final/Plots/).
 
 ## PBI-006
 
-* **Title:** Conduct statistical relationship analysis
-* **Hypothesis:** Certain macroeconomic indicators consistently exhibit stronger relationships with unemployment than others.
-* **Create:** Perform correlation, trend, and lead-lag analyses.
-* **Observe:** Measure relationship strength and direction.
-* **Analyze:** Identify key indicators associated with unemployment movements.
-* **Tag:** `M2-data-summary`
-* **Size:** M
-* **GitHub issue:** #6
+**Title:** Develop baseline unemployment forecasting models
+**GitHub issue:** [#6](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/6)
+**Tag / size / status:** `M3-poster-draft` / L / ✅ Done
 
----
+- **Create:** Evaluated Linear Regression, Ridge Regression, Random Forest, Extra Trees, Gradient Boosting, and XGBoost at 3-, 6-, and 12-month horizons, alongside persistence and unemployment-only baselines.
+- **Observe:** Compared validation and test MAE, RMSE, and R² under a chronological train/validation/test split with a horizon-specific embargo.
+- **Analyze:** Selected each model using the lowest validation RMSE, with validation MAE as the tiebreaker, before evaluating the untouched test set.
+
+| Horizon | Selected model | Test MAE | Test RMSE | Test R² |
+| --- | --- | ---: | ---: | ---: |
+| 3 months | Ridge Regression | 0.349 | 1.020 | 0.720 |
+| 6 months | Extra Trees | 0.725 | 1.277 | 0.563 |
+| 12 months | Extra Trees | 1.195 | 1.729 | 0.205 |
+
+The 3-month model is the strongest result, the 6-month model retains moderate value, and the 12-month model is suitable only for broad scenario-level interpretation.
 
 ## PBI-007
 
-* **Title:** Develop unemployment forecasting models
-* **Hypothesis:** Macroeconomic indicators improve forecasting performance relative to historical unemployment trends alone.
-* **Create:** Train Linear Regression, Random Forest, and XGBoost forecasting models.
-* **Observe:** Evaluate model performance using RMSE, MAE, and R².
-* **Analyze:** Compare forecasting performance across prediction horizons.
-* **Tag:** `M3-poster-draft`
-* **Size:** L
-* **GitHub issue:** #7
+**Title:** Create interactive unemployment trend dashboards
+**GitHub issue:** [#7](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/7)
+**Tag / size / status:** `M3-poster-draft` / M / ✅ Done
 
----
+- **Create:** Developed stakeholder-facing unemployment, model-comparison, prediction, feature-importance, and correlation visuals.
+- **Observe:** Reviewed legibility, technical accuracy, narrative fit, and stakeholder usefulness.
+- **Analyze:** Prioritized a polished public portfolio, final poster, and reproducible static analytical figures over an unsupported standalone dashboard claim.
+- **Final evidence:** [Public capstone portfolio](https://manishkallu01-wq.github.io/capstone.html), [final poster](deliverables/M5-final/M5%20poster%20Final.pdf), and [final plots](deliverables/M5-final/Plots/).
 
 ## PBI-008
 
-* **Title:** Create visualizations and stakeholder-facing outputs
-* **Hypothesis:** Visual analytics improve communication of technical findings and economic insights.
-* **Create:** Develop trend charts, correlation heatmaps, feature importance visuals, and forecasting comparisons.
-* **Observe:** Evaluate clarity and stakeholder usefulness.
-* **Analyze:** Refine outputs based on feedback.
-* **Tag:** `M3-poster-draft`
-* **Size:** M
-* **GitHub issue:** #8
+**Title:** Evaluate ethics and bias risks in forecasting outputs
+**GitHub issue:** [#8](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/8)
+**Tag / size / status:** `ethics` / S / ✅ Done
 
----
+- **Create:** Documented responsible-use boundaries, forecast uncertainty, retrospective recession labels, unemployment-derived features, revisions, aggregation, structural breaks, and associational interpretation.
+- **Observe:** Assessed how national forecasts or historical relationships could be overstated or misapplied.
+- **Analyze:** Required explicit separation of forecasting from causation and prohibited high-stakes use without current evidence, domain expertise, and revalidation.
+- **Final evidence:** Ethics and limitations are documented in the final report, [README](README.md), [Charter](CHARTER.md), and portfolio.
 
 ## PBI-009
 
-* **Title:** Evaluate ethics, risks, and limitations
-* **Hypothesis:** Transparent discussion of limitations improves responsible interpretation of forecasting results.
-* **Create:** Document assumptions, risks, limitations, and ethical considerations.
-* **Observe:** Review potential misuse and interpretation risks.
-* **Analyze:** Develop mitigation and communication strategies.
-* **Tag:** `ethics`
-* **Size:** S
-* **GitHub issue:** #9
+**Title:** Draft final project methodology and analytical write-up
+**GitHub issue:** [#9](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/9)
+**Tag / size / status:** `M4-writeup-draft` / L / ✅ Done
 
----
+- **Create:** Drafted the problem statement, data pipeline, feature engineering, validation design, modeling, correlation analysis, results, limitations, recommendations, and reproducibility sections.
+- **Observe:** Reconciled narrative claims with generated result tables and stakeholder feedback.
+- **Analyze:** Revised the write-up to retain validation-selected models, report weak 12-month performance transparently, and distinguish historical association from causation.
+- **Final evidence:** [M4 materials](deliverables/M4-writeup-draft/) and the [final M5 report](deliverables/M5-final/M5-Final-Report.pdf).
 
 ## PBI-010
 
-* **Title:** Complete final report and presentation deliverables
-* **Hypothesis:** A well-documented and reproducible project improves communication, credibility, and stakeholder value.
-* **Create:** Prepare final write-up, poster, visualizations, and supporting documentation.
-* **Observe:** Collect stakeholder and instructor feedback.
-* **Analyze:** Refine final deliverables before submission.
-* **Tag:** `M5-final`
-* **Size:** L
-* **GitHub issue:** #10
+**Title:** Finalize poster and presentation deliverables
+**GitHub issue:** [#10](https://github.com/manishkallu01-wq/DATA510-Session-2/issues/10)
+**Tag / size / status:** `M5-final` / L / ✅ Done
+
+- **Create:** Finalized the report, poster, supporting figures, analytical scripts, result files, repository documentation, and public portfolio.
+- **Observe:** Crosschecked artifact names, links, metrics, model-selection wording, RQ2 findings, limitations, and reproducibility instructions.
+- **Analyze:** Consolidated the final message: useful 3-month forecasting, moderate 6-month value, limited 12-month reliability, and consumer sentiment as the strongest overall historical external relationship.
+- **Final evidence:** [`deliverables/M5-final/`](deliverables/M5-final/) and the [public portfolio](https://manishkallu01-wq.github.io/capstone.html).
+
+---
+
+## 🔎 Final Research Question 2 Finding
+
+Consumer sentiment produced the strongest full-sample external relationship with unemployment at every evaluated horizon, strengthening from Pearson `r = -0.351` in the same month to `r = -0.496` at twelve months. Recession status ranked second.
+
+At a six-month lead, the consumer-sentiment relationship reversed to `+0.67` during 2020-2025. The final report treats this as possible regime instability during a short pandemic-and-recovery period, not as a stable structural reversal.
+
+## 🏁 Backlog Status
+
+**All ten PBIs are complete and their GitHub issues are closed.** No unfinished work is represented as part of the submitted project.
+
+Potential extensions—such as vintage-aware data, rolling-origin validation, prediction intervals, additional leading indicators, and subnational forecasting—remain future research ideas rather than incomplete requirements.
