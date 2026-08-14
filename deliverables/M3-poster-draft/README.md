@@ -1,6 +1,6 @@
 # 🎨 M3 - Poster Draft
 
-This folder records the completed M3 poster-draft milestone for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
+M3 produced the first full poster draft for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
 ## 🎯 Milestone Objective
 
@@ -22,8 +22,6 @@ Translate the project problem, data, methods, emerging evidence, and stakeholder
 - Collected feedback on data specificity, historical coverage, validation wording, forecast timing, figure labels, and visual clarity.
 - Recorded revision priorities for the next project iteration.
 
-## 📌 Milestone Status
+## 📌 Status: Complete
 
-**M3 status:** ✅ Complete
-
-The PDF is intentionally preserved as the poster-draft submission. It represents the work available at M3 and is not labeled as a final poster.
+The PDF preserves the poster submitted at M3. It is a draft milestone artifact, not the final poster.

@@ -1,6 +1,6 @@
 # 📝 M1 - Project Proposal
 
-This folder records the completed M1 proposal milestone for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
+M1 established the scope and plan for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
 ## 🎯 Milestone Objective
 
@@ -23,8 +23,6 @@ Define a consequential unemployment-forecasting problem, establish the two resea
 - Documented ethics risks, limitations, milestones, and the Create-Observe-Analyze process.
 - Established the initial project scope, Charter, Backlog, and repository organization.
 
-## 📌 Milestone Status
-
-**M1 status:** ✅ Complete
+## 📌 Status: Complete
 
 The proposal files are preserved as the record of decisions and expectations at the proposal stage. Statements labeled as planned, proposed, or expected describe the M1 plan rather than completed later-stage results.

@@ -8,11 +8,11 @@
 
 ---
 
-## 🌟 Project at a Glance
+## Project Overview
 
-This capstone investigates whether publicly available macroeconomic indicators can provide meaningful early-warning signals of future deterioration in the U.S. labor market.
+This capstone examines how well public macroeconomic indicators forecast U.S. unemployment three, six, and twelve months ahead. It also studies their historical lead-lag relationships with unemployment without treating correlation as causation.
 
-The project integrates nearly 70 years of U.S. economic history into a reproducible data science workflow covering data acquisition, validation, temporal alignment, feature engineering, exploratory analysis, machine learning, model evaluation, interpretation, and professional communication.
+The monthly dataset covers April 1956 through December 2025. The workflow includes source validation, temporal alignment, feature engineering, chronological model evaluation, and a separate correlation analysis.
 
 | Project element | Final specification |
 | --- | --- |
@@ -27,7 +27,7 @@ The project integrates nearly 70 years of U.S. economic history into a reproduci
 | 📏 Evaluation metrics | MAE, RMSE, and R² |
 | 🎯 Best result | 3-month Ridge Regression, R² = 0.720 |
 
-The central finding is that macroeconomic indicators are most useful for **near-term unemployment forecasting**. Predictive performance is strongest at three months and declines as the forecast horizon increases.
+Forecast performance is strongest at three months and declines at longer horizons.
 
 ---
 
@@ -35,7 +35,7 @@ The central finding is that macroeconomic indicators are most useful for **near-
 
 | Role | Name | Project involvement |
 | --- | --- | --- |
-| 👨‍💻 Owner, Author, and Product Lead | **Manish R. Kallu** | Designed and executed the end-to-end project, including data engineering, analysis, modeling, interpretation, and final communication |
+| 👨‍💻 Owner, Author, and Product Lead | **Manish R. Kallu** | Led the data engineering, analysis, modeling, interpretation, and final communication |
 | 🎓 Instructor and Project Sponsor | **Lucas P. Cordova, Ph.D.** | Provided course direction, milestone expectations, and academic oversight |
 | 🤝 Peer Stakeholder / Product Owner | **Brandon Smith** | Reviewed project clarity, stakeholder relevance, and communication of practical value |
 | 🤝 Peer Stakeholder / Product Owner | **Jon Garrow** | Reviewed research-question framing and clarity of project communication |
@@ -66,7 +66,7 @@ The project is relevant to:
 
 > Which macroeconomic indicators show the strongest and most consistent historical relationship with unemployment across economic environments and business cycles?
 
-These questions intentionally separate two objectives:
+The questions address two distinct objectives:
 
 1. **Forecasting:** measuring out-of-sample predictive performance at multiple future horizons.
 2. **Historical interpretation:** identifying indicators with strong lead-lag relationships while avoiding unsupported causal claims.
@@ -175,7 +175,7 @@ These engineered variables help represent economic dynamics that may not be visi
 
 ### Candidate Modeling Strategy
 
-The analysis considered linear and tree-based approaches so that predictive accuracy could be compared with interpretability and robustness across horizons.
+The analysis compared linear and tree-based approaches across the three forecast horizons.
 
 For each horizon, the model with the lowest validation RMSE—using validation MAE as a tiebreaker—was selected, refitted on the full pre-test period, and evaluated once on the untouched test set. The selected model was retained even when another algorithm later achieved a lower test RMSE.
 
@@ -228,7 +228,7 @@ The negative relationship is economically intuitive: weaker consumer confidence 
 
 - the strength of the relationship varies across economic regimes;
 - correlation does not establish causation;
-- revised historical data do not perfectly reproduce a real-time forecasting environment; and
+- revised historical data do not reproduce the information available at each original forecast date; and
 - recession periods and structural breaks can change relationships between variables.
 
 Recession status ranked second. Consumer sentiment was strongly negative at a six-month lead before 2020 but reversed to **+0.67 during 2020–2025**, so the final period is interpreted cautiously as possible regime instability rather than a permanent structural change.
@@ -402,7 +402,7 @@ The [final report](deliverables/M5-final/M5-Final-Report.pdf), [final poster](de
 | **M4 – Write-up Draft** | Full methods, results, discussion, and limitations | ✅ Complete |
 | **M5 – Final Portfolio** | Final report, poster, repository, and public portfolio | ✅ Complete |
 
-Studio critiques and peer stakeholder reviews were incorporated across milestones. Unfinished weekly templates were intentionally removed from this final README so the repository reflects completed outcomes rather than planning placeholders.
+Studio critiques and peer reviews informed the milestone revisions. Reusable templates remain in the studio directory and are clearly identified as templates.
 
 ---
 

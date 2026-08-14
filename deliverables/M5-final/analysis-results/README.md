@@ -1,6 +1,6 @@
 # 📊 Analysis Results
 
-This folder contains CSV artifacts preserved during the project's analytical development.
+These CSV files record outputs from the submitted RQ2 analysis and from earlier development runs. The two groups should not be combined.
 
 ## ⭐ Submitted Result Tables
 
@@ -28,9 +28,9 @@ The lowercase files listed below are retained as earlier development-run exports
 
 These earlier files use a different modeling configuration and may contain different row counts, model sets, splits, or metrics.
 
-## ✅ Authoritative Final Evidence
+## ✅ Final Evidence
 
-Use these sources for the submitted project:
+For the submitted project, refer to:
 
 1. [`../M5-Final-Report.pdf`](../M5-Final-Report.pdf) for final numerical claims, model selection, interpretation, and limitations.
 2. [`../ML Analysis.py`](../ML%20Analysis.py) for the submitted six-model validation/test workflow.

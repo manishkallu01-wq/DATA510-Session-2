@@ -1,10 +1,10 @@
-# 📓 Notebooks Directory
+# 📓 Notebooks
 
-No notebooks are part of the submitted final reproducibility path in this repository. This folder is retained only as a documented location for exploratory work if future analysis is added.
+The final submission does not use notebooks. This directory is available for exploratory work, while the submitted analysis remains in the Python scripts listed below.
 
-## ✅ Authoritative Analysis Locations
+## Where to Find the Project Work
 
-| Task | Authoritative location |
+| Task | Location |
 | --- | --- |
 | Dataset reconstruction and validation | [`../src/`](../src/) |
 | Final machine-learning analysis | [`../deliverables/M5-final/ML Analysis.py`](../deliverables/M5-final/ML%20Analysis.py) |
@@ -12,18 +12,18 @@ No notebooks are part of the submitted final reproducibility path in this reposi
 | Submitted processed dataset | [`../data/processed/capstone_plus_final.xlsx`](../data/processed/capstone_plus_final.xlsx) |
 | Final report, poster, results, and figures | [`../deliverables/M5-final/`](../deliverables/M5-final/) |
 
-Readers do not need a notebook to reproduce or inspect the submitted results.
+You can review or rerun the submitted work without creating a notebook.
 
-## 🧭 Future Notebook Conventions
+## If Notebooks Are Added
 
 If notebooks are added later:
 
-- use one notebook for one clearly stated analytical question;
-- preserve chronological ordering for time-series work;
-- restart and run all cells before sharing;
-- move reusable construction logic into `../src/`;
-- do not duplicate the final ML or correlation scripts;
-- write generated outputs locally unless a maintainer intentionally versions a reviewed artifact; and
-- document any changed data, feature, package, seed, or model configuration as a new analysis version.
+- Keep each notebook focused on one analytical question.
+- Preserve chronological order in time-series analysis.
+- Restart the kernel and run every cell before sharing.
+- Put reusable data-construction logic in [`../src/`](../src/).
+- Refer to the submitted ML and correlation scripts rather than copying them.
+- Save exploratory outputs locally unless a maintainer has reviewed and approved them for the repository.
+- Record changes to data, features, packages, seeds, or model settings as a new analysis version.
 
-Return to the [project README](../README.md) for the supported workflows.
+See the [project README](../README.md) for the complete workflow.

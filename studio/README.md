@@ -1,6 +1,6 @@
 # 🤝 Studio Artifacts
 
-This folder preserves the DATA 510 peer-studio process for the project. It is governance and feedback history, not an analysis or data directory.
+This directory records the peer feedback and working agreements used during the DATA 510 studio process. It does not contain project data or analysis outputs.
 
 ## 📁 Contents
 
@@ -12,7 +12,7 @@ This folder preserves the DATA 510 peer-studio process for the project. It is go
 | [`../CHARTER.md`](../CHARTER.md) | Working agreements, response expectations, scope, and definitions of Ready and Done |
 | [`../BACKLOG.md`](../BACKLOG.md) | Final traceability record for the ten completed PBIs |
 
-The files present in these folders are the preserved studio record. This README does not imply that a separate brief or critique exists for every peer or every week.
+The listed files are the complete studio record preserved in this repository; there is not a separate brief or critique for every peer or week.
 
 ## 🔄 Historical Studio Workflow
 

@@ -1,6 +1,6 @@
 # 📦 Project Deliverables
 
-This directory organizes the graded DATA 510 milestones for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**. Each milestone folder documents only its own stage of the project.
+The deliverables are organized by DATA 510 milestone. Each folder preserves the work submitted at that stage of the project.
 
 ## 🗂️ Milestone Index
 
@@ -12,9 +12,9 @@ This directory organizes the graded DATA 510 milestones for **Forecasting and Ex
 | [`M4-writeup-draft/`](M4-writeup-draft/) | Write-up draft | Draft PDFs, Quarto source, and references | ✅ Complete |
 | [`M5-final/`](M5-final/) | Final submission | Final report, poster, analysis scripts, result tables, and figures | ✅ Complete |
 
-## ⭐ Source of Truth
+## Final Record
 
-The final submitted conclusions, metrics, model-selection wording, RQ2 findings, limitations, and reproducibility statement are in [`M5-final/M5-Final-Report.pdf`](M5-final/M5-Final-Report.pdf).
+Use [`M5-final/M5-Final-Report.pdf`](M5-final/M5-Final-Report.pdf) for the final conclusions, metrics, model-selection rule, RQ2 findings, limitations, and reproducibility statement.
 
 Earlier milestone folders preserve work at that point in the course. Their preliminary wording, filenames, dataset counts, planned methods, or results must not override the final report.
 
@@ -35,4 +35,4 @@ Consumer sentiment was the strongest overall external historical relationship wi
 - Final ML and correlation scripts: [`M5-final/`](M5-final/)
 - Public portfolio: [capstone project page](https://manishkallu01-wq.github.io/capstone.html)
 
-Readers may inspect or download all public artifacts. No GitHub write access is needed.
+All public artifacts can be inspected or downloaded without GitHub write access.

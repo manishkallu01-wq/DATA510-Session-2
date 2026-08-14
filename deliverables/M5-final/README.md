@@ -1,10 +1,10 @@
 # 🏆 M5 - Final Submission
 
-This folder contains the submitted final report, poster, analytical scripts, generated result tables, and figures for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
+M5 brings together the submitted report, poster, analysis scripts, result tables, and figures for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
-## ⭐ Source of Truth
+## Final Report
 
-[`M5-Final-Report.pdf`](M5-Final-Report.pdf) is the authoritative source for the submitted methodology, model-selection rule, numerical results, Research Question 2 findings, limitations, recommendations, and reproducibility statement.
+Use [`M5-Final-Report.pdf`](M5-Final-Report.pdf) for the submitted methodology, model-selection rule, numerical results, Research Question 2 findings, limitations, recommendations, and reproducibility statement.
 
 ## 📁 Primary Artifacts
 
@@ -14,7 +14,7 @@ This folder contains the submitted final report, poster, analytical scripts, gen
 | [`M5 poster Final.pdf`](M5%20poster%20Final.pdf) | Final poster |
 | [`ML Analysis.py`](ML%20Analysis.py) | Six-model forecasting comparison for 3-, 6-, and 12-month targets |
 | [`Correlation analysis.py`](Correlation%20analysis.py) | Separate RQ2 Pearson/Spearman, lead-lag, period-stability, and recession-comparison analysis |
-| [`analysis-results/`](analysis-results/) | Submitted RQ2 tables plus clearly labeled earlier development-run CSV exports |
+| [`analysis-results/`](analysis-results/) | Submitted RQ2 tables and an inventory of earlier development-run CSV exports |
 | [`Plots/`](Plots/) | Final ML and correlation figures |
 
 Both analysis scripts read the submitted [`../../data/processed/capstone_plus_final.xlsx`](../../data/processed/capstone_plus_final.xlsx) through its public, read-only GitHub URL.
@@ -61,4 +61,4 @@ Results can change if the input data, feature definitions, date ranges, seeds, p
 
 Important limitations include retrospective NBER labels, unemployment-derived composite features, structural breaks, national aggregation, revised historical data, a single chronological split, no formal prediction intervals, and serial dependence.
 
-Public readers may inspect and download these artifacts. The scripts do not require GitHub write access.
+All artifacts are available for public inspection and download. Running the scripts does not require GitHub write access.

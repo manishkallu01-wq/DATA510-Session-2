@@ -1,6 +1,6 @@
 # 📄 M4 - Write-up Draft
 
-This folder records the completed M4 analytical write-up milestone for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
+M4 developed the analytical write-up for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
 ## 🎯 Milestone Objective
 
@@ -26,8 +26,6 @@ Develop a coherent draft covering the problem, stakeholders, data engineering, e
 - Revised the Research Question 2 narrative to avoid causal overstatement.
 - Organized conclusions, recommendations, reproducibility notes, and references into a full analytical draft.
 
-## 📌 Milestone Status
-
-**M4 status:** ✅ Complete
+## 📌 Status: Complete
 
 The files in this folder are preserved as M4 draft artifacts. They document the state of the analytical write-up at that milestone and are not labeled as final-submission artifacts.

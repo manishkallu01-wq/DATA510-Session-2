@@ -1,6 +1,6 @@
 # 🗃️ M2 - Data Summary
 
-This folder records the completed M2 data-summary milestone for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
+M2 documented and validated the data used in **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
 ## 🎯 Milestone Objective
 
@@ -26,8 +26,6 @@ Dataset-construction code is maintained in [`../../src/`](../../src/) so the rep
 - Recorded privacy, attribution, revision, retrospective-label, and non-causal interpretation limits.
 - Froze the data scope for the next analytical stage.
 
-## 📌 Milestone Status
-
-**M2 status:** ✅ Complete
+## 📌 Status: Complete
 
 This README describes only the M2 data milestone. Model selection, forecasting results, correlation findings, and final communication artifacts are outside this milestone's scope.

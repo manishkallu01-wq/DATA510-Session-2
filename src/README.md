@@ -1,6 +1,6 @@
 # 🛠️ Dataset Reconstruction Scripts
 
-This folder contains only the optional dataset-construction and validation workflow. It does **not** contain the submitted machine-learning or Research Question 2 correlation-analysis scripts.
+Use these scripts only to reconstruct and validate the dataset. The submitted machine-learning and Research Question 2 analyses are kept separately in `deliverables/M5-final/`.
 
 ## 📁 Scripts
 
@@ -28,15 +28,15 @@ The expected local reconstruction is:
 
 Use `--raw-dir`, `--input`, or `--output` when a different local path is required.
 
-## 🔒 Repository Access Boundary
+## 🔒 Local Outputs and Repository Access
 
-The repository is an input source for this workflow. Generated datasets are written to the audience member's local `Downloads` folder by default, not to `data/processed/` or another repository path.
+The repository supplies the source files and scripts. By default, reconstructed datasets are written to the user's `Downloads` folder, not to `data/processed/` or any other repository path.
 
 These scripts do not invoke Git, create commits, push branches, or upload files. Public users need only read and download repository content; GitHub write access is not required.
 
 ## 🧪 Final Analysis Code
 
-The submitted analyses are intentionally separate:
+The submitted analyses are stored separately:
 
 - [`../deliverables/M5-final/ML Analysis.py`](../deliverables/M5-final/ML%20Analysis.py) performs the six-model forecasting comparison.
 - [`../deliverables/M5-final/Correlation analysis.py`](../deliverables/M5-final/Correlation%20analysis.py) performs the separate RQ2 lead-lag and historical-period correlation analysis.

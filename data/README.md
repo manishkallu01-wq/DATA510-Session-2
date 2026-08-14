@@ -1,6 +1,6 @@
 # 🗃️ Data Directory
 
-This folder contains the six public source series and the submitted analysis-ready workbook for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
+The project data are organized here in two layers: six public source series in `raw/` and the submitted analysis-ready workbook in `processed/`.
 
 ## 📁 Contents
 
@@ -41,15 +41,15 @@ The final report identifies `data/processed/capstone_plus_final.xlsx` as the com
 
 Future-target missing values occur only at the end of the series because those future unemployment observations are not yet available.
 
-## 🔁 Two Supported Uses
+## 🔁 How to Use the Data
 
 ### Use the submitted dataset directly
 
-Most readers should read or download [`processed/capstone_plus_final.xlsx`](processed/capstone_plus_final.xlsx). The final analysis scripts in [`../deliverables/M5-final/`](../deliverables/M5-final/) use this submitted workbook through its public, read-only GitHub URL.
+For analysis, read or download [`processed/capstone_plus_final.xlsx`](processed/capstone_plus_final.xlsx). The final scripts in [`../deliverables/M5-final/`](../deliverables/M5-final/) use this workbook through its public, read-only GitHub URL.
 
 ### Reconstruct a local dataset
 
-The optional scripts in [`../src/`](../src/) read the six files in `raw/`, create a local `super_dataset.csv`, engineer a local `capstone_plus_final.xlsx`, and validate that local workbook.
+To rebuild the dataset, use the scripts in [`../src/`](../src/). They read the six files in `raw/`, create `super_dataset.csv` locally, engineer `capstone_plus_final.xlsx`, and validate the result.
 
 Generated reconstruction files default to the user's local `Downloads` folder. The scripts do not write generated datasets into this repository and do not commit, push, or upload anything to GitHub.
 
