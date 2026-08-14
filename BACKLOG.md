@@ -1,8 +1,6 @@
 # 🗂️ Final Backlog: Forecasting and Explaining U.S. Unemployment
 
-This file is the final human-readable traceability record for the project's ten GitHub product backlog items. It reflects the submitted project rather than an active planning queue.
 
-All ten linked GitHub issues are closed. Their original titles are preserved below, while each final disposition records how the work was completed or refined within the approved six-series capstone scope.
 
 ## 📋 Conventions
 
