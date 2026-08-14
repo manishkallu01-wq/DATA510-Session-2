@@ -23,7 +23,7 @@ The project integrates nearly 70 years of U.S. economic history into a reproduci
 | 🏛️ Public series | 6 |
 | 🔭 Forecast horizons | 3, 6, and 12 months |
 | 🤖 Selected models | Ridge Regression and Extra Trees |
-| ✅ Validation design | Chronological train/test split |
+| ✅ Validation design | Chronological train/validation/test split with horizon embargo |
 | 📏 Evaluation metrics | MAE, RMSE, and R² |
 | 🎯 Best result | 3-month Ridge Regression, R² = 0.720 |
 
@@ -60,11 +60,11 @@ The project is relevant to:
 
 ### Primary Research Question
 
-> To what extent can publicly available macroeconomic indicators improve forecasting of future U.S. unemployment across 3-month, 6-month, and 12-month forecasting horizons?
+> Can future U.S. unemployment be forecast three, six, and twelve months ahead using publicly available macroeconomic indicators?
 
 ### Secondary Research Question
 
-> Which macroeconomic indicators demonstrate the strongest and most consistent historical relationships with unemployment across U.S. economic cycles between 1956 and 2025?
+> Which macroeconomic indicators show the strongest and most consistent historical relationship with unemployment across economic environments and business cycles?
 
 These questions intentionally separate two objectives:
 
@@ -82,7 +82,7 @@ Six public macroeconomic series were integrated into one monthly analytical data
 | **UNRATE** | U.S. unemployment rate | Bureau of Labor Statistics via FRED | Outcome, baseline signal, and labor-market context |
 | **CPIAUCSL** | Consumer Price Index | Bureau of Labor Statistics via FRED | Inflation conditions |
 | **FEDFUNDS** | Effective federal funds rate | Federal Reserve via FRED | Monetary-policy conditions |
-| **GDP** | Real Gross Domestic Product | Bureau of Economic Analysis via FRED | Economic growth |
+| **GDP** | Gross Domestic Product, current dollars | Bureau of Economic Analysis via FRED | Economic growth |
 | **UMCSENT** | Consumer sentiment | University of Michigan via FRED | Household expectations and confidence |
 | **USREC** | U.S. recession indicator | NBER via FRED | Economic-cycle context |
 
@@ -110,7 +110,7 @@ The project follows a structured, reproducible pipeline:
    Check date types, coverage, duplicates, missing values, invalid values, and frequency.
 
 3. 🗓️ **Standardize temporal frequency**  
-   Convert quarterly GDP observations to monthly frequency so they can be aligned with the other series.
+   Carry each quarterly GDP value across the three months of its quarter so it can be aligned with the monthly series.
 
 4. 🔗 **Merge on the monthly date key**  
    Integrate all six sources into a unified time-indexed dataset.
@@ -177,6 +177,8 @@ These engineered variables help represent economic dynamics that may not be visi
 
 The analysis considered linear and tree-based approaches so that predictive accuracy could be compared with interpretability and robustness across horizons.
 
+For each horizon, the model with the lowest validation RMSE—using validation MAE as a tiebreaker—was selected, refitted on the full pre-test period, and evaluated once on the untouched test set. The selected model was retained even when another algorithm later achieved a lower test RMSE.
+
 The final selected models were:
 
 - 📈 **Ridge Regression** for the 3-month horizon
@@ -185,7 +187,7 @@ The final selected models were:
 
 ### Why a Chronological Split?
 
-A random split would allow observations from later years to influence training for earlier years, creating unrealistic leakage in a time-series forecasting setting. The project therefore uses a **time-based train/test split**, where earlier observations are used for training and later observations are held out for evaluation.
+A random split would allow observations from later years to influence training for earlier years, creating unrealistic leakage in a time-series forecasting setting. The project therefore uses a **chronological train/validation/test design**. Validation begins in January 1989, testing begins in January 1999, and an embargo equal to each forecast horizon prevents development labels from extending into the next split.
 
 ### Evaluation Metrics
 
@@ -209,7 +211,7 @@ A random split would allow observations from later years to influence training f
 
 - 🥇 **Three months:** strongest and most practically useful forecasting horizon.
 - 📉 **Six months:** moderate predictive value, but larger errors and lower explained variation.
-- 🔭 **Twelve months:** substantially more difficult; performance indicates limited precision for long-range forecasting.
+- 🔭 **Twelve months:** limited incremental value; only 0.6% better than persistence and 0.9% worse than the unemployment-only baseline, so it should be treated as a broad scenario rather than a reliable one-year prediction.
 - ⚠️ **Overall:** forecast uncertainty grows with the horizon, so results should be treated as directional early-warning evidence rather than exact future unemployment estimates.
 
 The 3-month Ridge Regression result—**MAE 0.349 and R² 0.720**—shows that the combined macroeconomic feature set can provide useful near-term information while retaining a relatively interpretable model structure.
@@ -229,13 +231,15 @@ The negative relationship is economically intuitive: weaker consumer confidence 
 - revised historical data do not perfectly reproduce a real-time forecasting environment; and
 - recession periods and structural breaks can change relationships between variables.
 
+Recession status ranked second. Consumer sentiment was strongly negative at a six-month lead before 2020 but reversed to **+0.67 during 2020–2025**, so the final period is interpreted cautiously as possible regime instability rather than a permanent structural change.
+
 The project therefore presents these findings as **historical associations**, not causal estimates.
 
 ---
 
 ## 💡 Key Conclusions
 
-1. Public macroeconomic data can improve near-term unemployment forecasting.
+1. Public macroeconomic data support useful three-month forecasts and moderately informative six-month forecasts, but not a reliable twelve-month prediction.
 2. The 3-month horizon provides the strongest balance of accuracy and practical usefulness.
 3. Forecast quality weakens meaningfully at 6 and 12 months.
 4. Consumer sentiment is the strongest overall historical external indicator in the lead-lag analysis.
@@ -325,16 +329,16 @@ On Windows, activate the environment with:
 ### 3. Install the Core Packages
 
 ```bash
-pip install pandas numpy scikit-learn matplotlib seaborn xgboost
+pip install pandas numpy scikit-learn xgboost matplotlib seaborn scipy openpyxl joblib
 ```
 
 ### 4. Follow the Project Workflow
 
-1. Review the datasets and documentation in [`data/`](data/).
+1. Use [`data/processed/capstone_plus_final.xlsx`](data/processed/capstone_plus_final.xlsx) as the common processed input for both research questions.
 2. Run the data preparation and feature-engineering code in [`src/`](src/).
 3. Review or run the analytical notebooks in [`notebooks/`](notebooks/).
 4. Preserve chronological ordering during model training and evaluation.
-5. Use the Python scripts in the [`M5-final/`](deliverables/M5-final/) folder to reproduce the machine-learning modeling and correlation analysis.
+5. Use all Python scripts in [`deliverables/M5-final/`](deliverables/M5-final/), including the separate RQ2 correlation-analysis script, to reproduce the modeling and historical-correlation outputs.
 6. Compare reproduced metrics and figures with the final materials in [`deliverables/`](deliverables/).
 
 Random seeds are fixed where supported by the estimators. The chronological evaluation design must be retained to avoid training on future observations.
