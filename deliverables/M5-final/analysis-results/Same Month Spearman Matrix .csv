@@ -1,0 +1,7 @@
+,UnemploymentRate,InflationRateYoY,FederalFundsRate,GDPGrowthYoY,ConsumerSentiment,RecessionIndicator
+UnemploymentRate,1.0,0.040756,-0.012907,-0.11339,-0.373752,0.146895
+InflationRateYoY,0.040756,1.0,0.649946,0.562337,-0.443146,0.223729
+FederalFundsRate,-0.012907,0.649946,1.0,0.558576,-0.029614,0.148598
+GDPGrowthYoY,-0.11339,0.562337,0.558576,1.0,0.065253,-0.212148
+ConsumerSentiment,-0.373752,-0.443146,-0.029614,0.065253,1.0,-0.353833
+RecessionIndicator,0.146895,0.223729,0.148598,-0.212148,-0.353833,1.0

@@ -1,0 +1,6 @@
+Indicator,MeanAbsolutePearsonAcrossLeads,StrongestLeadMonths,StrongestPearsonR,DirectionAtStrongestLead,SignConsistencyAcrossLeads,PearsonR_0M,PearsonPValue_0M,PearsonR_3M,PearsonPValue_3M,PearsonR_6M,PearsonPValue_6M,PearsonR_12M,PearsonPValue_12M
+Consumer sentiment,0.422923,12,-0.496243,Negative,1.0,-0.350749,0.0,-0.398692,0.0,-0.446008,0.0,-0.496243,0.0
+Recession indicator,0.316066,12,0.429116,Positive,1.0,0.158551,4e-06,0.298243,0.0,0.378354,0.0,0.429116,0.0
+Inflation rate (YoY),0.178013,12,0.304375,Positive,1.0,0.076052,0.027795,0.136561,7.6e-05,0.195064,0.0,0.304375,0.0
+GDP growth (YoY),0.173602,3,-0.200524,Negative,1.0,-0.184153,0.0,-0.200524,0.0,-0.186417,0.0,-0.123311,0.000385
+Federal funds rate,0.152093,12,0.286634,Positive,1.0,0.052422,0.129671,0.103677,0.00272,0.165637,2e-06,0.286634,0.0

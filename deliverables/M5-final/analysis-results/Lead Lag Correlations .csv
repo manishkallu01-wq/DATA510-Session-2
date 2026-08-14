@@ -1,0 +1,21 @@
+Indicator,DisplayIndicator,LeadMonths,PearsonR,PearsonPValue,SpearmanRho,SpearmanPValue,Observations,AbsolutePearsonR
+InflationRateYoY,Inflation rate (YoY),0,0.076052,0.027795,0.040756,0.238866,837,0.076052
+InflationRateYoY,Inflation rate (YoY),3,0.136561,7.6e-05,0.08611,0.012858,834,0.136561
+InflationRateYoY,Inflation rate (YoY),6,0.195064,0.0,0.140247,5e-05,831,0.195064
+InflationRateYoY,Inflation rate (YoY),12,0.304375,0.0,0.246815,0.0,825,0.304375
+FederalFundsRate,Federal funds rate,0,0.052422,0.129671,-0.012907,0.709255,837,0.052422
+FederalFundsRate,Federal funds rate,3,0.103677,0.00272,0.028026,0.418916,834,0.103677
+FederalFundsRate,Federal funds rate,6,0.165637,2e-06,0.080403,0.020446,831,0.165637
+FederalFundsRate,Federal funds rate,12,0.286634,0.0,0.202392,0.0,825,0.286634
+GDPGrowthYoY,GDP growth (YoY),0,-0.184153,0.0,-0.11339,0.001016,837,0.184153
+GDPGrowthYoY,GDP growth (YoY),3,-0.200524,0.0,-0.165457,2e-06,834,0.200524
+GDPGrowthYoY,GDP growth (YoY),6,-0.186417,0.0,-0.170576,1e-06,831,0.186417
+GDPGrowthYoY,GDP growth (YoY),12,-0.123311,0.000385,-0.120278,0.000536,825,0.123311
+ConsumerSentiment,Consumer sentiment,0,-0.350749,0.0,-0.373752,0.0,837,0.350749
+ConsumerSentiment,Consumer sentiment,3,-0.398692,0.0,-0.424575,0.0,834,0.398692
+ConsumerSentiment,Consumer sentiment,6,-0.446008,0.0,-0.463992,0.0,831,0.446008
+ConsumerSentiment,Consumer sentiment,12,-0.496243,0.0,-0.487051,0.0,825,0.496243
+RecessionIndicator,Recession indicator,0,0.158551,4e-06,0.146895,2e-05,837,0.158551
+RecessionIndicator,Recession indicator,3,0.298243,0.0,0.280673,0.0,834,0.298243
+RecessionIndicator,Recession indicator,6,0.378354,0.0,0.35994,0.0,831,0.378354
+RecessionIndicator,Recession indicator,12,0.429116,0.0,0.396505,0.0,825,0.429116

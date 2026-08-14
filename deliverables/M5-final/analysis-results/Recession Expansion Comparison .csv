@@ -1,0 +1,9 @@
+Metric,Value
+Mean unemployment during recessions,6.539806
+Mean unemployment during expansions,5.730995
+Difference: recession minus expansion,0.808811
+Point-biserial correlation,0.158551
+Point-biserial p-value,4e-06
+Welch t-test p-value,4.8e-05
+Recession observations,103.0
+Expansion observations,734.0

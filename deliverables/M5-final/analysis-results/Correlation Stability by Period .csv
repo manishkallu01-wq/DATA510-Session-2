@@ -1,0 +1,101 @@
+Period,Indicator,LeadMonths,PearsonR,PValue,Observations
+1956–1979,Inflation rate (YoY),0,0.285301,1e-06,285
+1956–1979,Inflation rate (YoY),3,0.376973,0.0,282
+1956–1979,Inflation rate (YoY),6,0.461226,0.0,279
+1956–1979,Inflation rate (YoY),12,0.589176,0.0,273
+1956–1979,Federal funds rate,0,-0.088149,0.137683,285
+1956–1979,Federal funds rate,3,-0.019654,0.742445,282
+1956–1979,Federal funds rate,6,0.096866,0.106415,279
+1956–1979,Federal funds rate,12,0.315054,0.0,273
+1956–1979,GDP growth (YoY),0,0.03959,0.505615,285
+1956–1979,GDP growth (YoY),3,-0.03035,0.611788,282
+1956–1979,GDP growth (YoY),6,-0.034473,0.566379,279
+1956–1979,GDP growth (YoY),12,0.036804,0.544833,273
+1956–1979,Consumer sentiment,0,-0.388445,0.0,285
+1956–1979,Consumer sentiment,3,-0.50926,0.0,282
+1956–1979,Consumer sentiment,6,-0.598357,0.0,279
+1956–1979,Consumer sentiment,12,-0.664499,0.0,273
+1956–1979,Recession indicator,0,0.076024,0.200668,285
+1956–1979,Recession indicator,3,0.294782,0.0,282
+1956–1979,Recession indicator,6,0.446738,0.0,279
+1956–1979,Recession indicator,12,0.472782,0.0,273
+1980–1999,Inflation rate (YoY),0,0.30803,1e-06,240
+1980–1999,Inflation rate (YoY),3,0.405356,0.0,237
+1980–1999,Inflation rate (YoY),6,0.476643,0.0,234
+1980–1999,Inflation rate (YoY),12,0.617378,0.0,228
+1980–1999,Federal funds rate,0,0.405708,0.0,240
+1980–1999,Federal funds rate,3,0.484801,0.0,237
+1980–1999,Federal funds rate,6,0.556876,0.0,234
+1980–1999,Federal funds rate,12,0.687684,0.0,228
+1980–1999,GDP growth (YoY),0,0.14353,0.026183,240
+1980–1999,GDP growth (YoY),3,0.137625,0.034209,237
+1980–1999,GDP growth (YoY),6,0.164767,0.011595,234
+1980–1999,GDP growth (YoY),12,0.297029,5e-06,228
+1980–1999,Consumer sentiment,0,-0.600012,0.0,240
+1980–1999,Consumer sentiment,3,-0.685364,0.0,237
+1980–1999,Consumer sentiment,6,-0.725254,0.0,234
+1980–1999,Consumer sentiment,12,-0.737348,0.0,228
+1980–1999,Recession indicator,0,0.357097,0.0,240
+1980–1999,Recession indicator,3,0.483358,0.0,237
+1980–1999,Recession indicator,6,0.540365,0.0,234
+1980–1999,Recession indicator,12,0.564708,0.0,228
+2000–2009,Inflation rate (YoY),0,-0.704537,0.0,120
+2000–2009,Inflation rate (YoY),3,-0.702349,0.0,117
+2000–2009,Inflation rate (YoY),6,-0.48006,0.0,114
+2000–2009,Inflation rate (YoY),12,0.140374,0.147331,108
+2000–2009,Federal funds rate,0,-0.804402,0.0,120
+2000–2009,Federal funds rate,3,-0.784135,0.0,117
+2000–2009,Federal funds rate,6,-0.709173,0.0,114
+2000–2009,Federal funds rate,12,-0.377209,5.7e-05,108
+2000–2009,GDP growth (YoY),0,-0.789835,0.0,120
+2000–2009,GDP growth (YoY),3,-0.878182,0.0,117
+2000–2009,GDP growth (YoY),6,-0.885524,0.0,114
+2000–2009,GDP growth (YoY),12,-0.765629,0.0,108
+2000–2009,Consumer sentiment,0,-0.622269,0.0,120
+2000–2009,Consumer sentiment,3,-0.715582,0.0,117
+2000–2009,Consumer sentiment,6,-0.783362,0.0,114
+2000–2009,Consumer sentiment,12,-0.780235,0.0,108
+2000–2009,Recession indicator,0,0.234632,0.009895,120
+2000–2009,Recession indicator,3,0.478812,0.0,117
+2000–2009,Recession indicator,6,0.716475,0.0,114
+2000–2009,Recession indicator,12,0.730827,0.0,108
+2010–2019,Inflation rate (YoY),0,0.201295,0.027481,120
+2010–2019,Inflation rate (YoY),3,0.22286,0.015728,117
+2010–2019,Inflation rate (YoY),6,0.225622,0.015794,114
+2010–2019,Inflation rate (YoY),12,0.235467,0.01416,108
+2010–2019,Federal funds rate,0,-0.711727,0.0,120
+2010–2019,Federal funds rate,3,-0.686469,0.0,117
+2010–2019,Federal funds rate,6,-0.65774,0.0,114
+2010–2019,Federal funds rate,12,-0.612249,0.0,108
+2010–2019,GDP growth (YoY),0,-0.221016,0.015273,120
+2010–2019,GDP growth (YoY),3,-0.194311,0.035792,117
+2010–2019,GDP growth (YoY),6,-0.186442,0.047015,114
+2010–2019,GDP growth (YoY),12,-0.182921,0.05811,108
+2010–2019,Consumer sentiment,0,-0.927531,0.0,120
+2010–2019,Consumer sentiment,3,-0.91373,0.0,117
+2010–2019,Consumer sentiment,6,-0.914433,0.0,114
+2010–2019,Consumer sentiment,12,-0.902576,0.0,108
+2010–2019,Recession indicator,0,,,120
+2010–2019,Recession indicator,3,,,117
+2010–2019,Recession indicator,6,,,114
+2010–2019,Recession indicator,12,,,108
+2020–2025,Inflation rate (YoY),0,-0.520721,3e-06,72
+2020–2025,Inflation rate (YoY),3,-0.51139,7e-06,69
+2020–2025,Inflation rate (YoY),6,-0.63761,0.0,66
+2020–2025,Inflation rate (YoY),12,-0.687262,0.0,60
+2020–2025,Federal funds rate,0,-0.521166,3e-06,72
+2020–2025,Federal funds rate,3,-0.39564,0.000766,69
+2020–2025,Federal funds rate,6,-0.349483,0.004024,66
+2020–2025,Federal funds rate,12,-0.051591,0.695446,60
+2020–2025,GDP growth (YoY),0,-0.617922,0.0,72
+2020–2025,GDP growth (YoY),3,-0.520593,5e-06,69
+2020–2025,GDP growth (YoY),6,-0.645888,0.0,66
+2020–2025,GDP growth (YoY),12,-0.761852,0.0,60
+2020–2025,Consumer sentiment,0,0.292478,0.012663,72
+2020–2025,Consumer sentiment,3,0.683168,0.0,69
+2020–2025,Consumer sentiment,6,0.66616,0.0,66
+2020–2025,Consumer sentiment,12,0.516043,2.4e-05,60
+2020–2025,Recession indicator,0,0.375505,0.001153,72
+2020–2025,Recession indicator,3,0.453707,9e-05,69
+2020–2025,Recession indicator,6,0.38299,0.001504,66
+2020–2025,Recession indicator,12,0.477554,0.000114,60
