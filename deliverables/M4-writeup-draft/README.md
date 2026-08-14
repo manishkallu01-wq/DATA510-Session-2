@@ -4,7 +4,7 @@ M4 developed the analytical write-up for **Forecasting and Explaining U.S. Unemp
 
 ## 🎯 Milestone Objective
 
-Develop a coherent draft covering the problem, stakeholders, data engineering, ethics, methods, evaluation design, results, limitations, conclusions, reproducibility, and references.
+Prepare a full report draft covering the problem, data, methods, results, ethics, limitations, conclusions, reproducibility, and references.
 
 ## 📁 Submitted Artifacts
 
@@ -26,6 +26,6 @@ Develop a coherent draft covering the problem, stakeholders, data engineering, e
 - Revised the Research Question 2 narrative to avoid causal overstatement.
 - Organized conclusions, recommendations, reproducibility notes, and references into a full analytical draft.
 
-## 📌 Status: Complete
+## 📌 Milestone Status
 
-The files in this folder are preserved as M4 draft artifacts. They document the state of the analytical write-up at that milestone and are not labeled as final-submission artifacts.
+✅ M4 completed.

@@ -1,6 +1,6 @@
 # 🏆 M5 - Final Submission
 
-M5 brings together the submitted report, poster, analysis scripts, result tables, and figures for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
+M5 contains the submitted report, poster, analysis scripts, result tables, and figures for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
 ## Final Report
 
@@ -62,3 +62,7 @@ Results can change if the input data, feature definitions, date ranges, seeds, p
 Important limitations include retrospective NBER labels, unemployment-derived composite features, structural breaks, national aggregation, revised historical data, a single chronological split, no formal prediction intervals, and serial dependence.
 
 All artifacts are available for public inspection and download. Running the scripts does not require GitHub write access.
+
+## 📌 Milestone Status
+
+✅ M5 completed.

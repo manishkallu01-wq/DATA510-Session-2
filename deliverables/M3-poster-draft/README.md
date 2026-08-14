@@ -4,7 +4,7 @@ M3 produced the first full poster draft for **Forecasting and Explaining U.S. Un
 
 ## 🎯 Milestone Objective
 
-Translate the project problem, data, methods, emerging evidence, and stakeholder value into a clear large-format draft suitable for structured peer feedback.
+Create a 48 x 36 inch poster draft presenting the problem, data, methods, early results, and practical relevance for peer review.
 
 ## 📁 Submitted Artifact
 
@@ -22,6 +22,6 @@ Translate the project problem, data, methods, emerging evidence, and stakeholder
 - Collected feedback on data specificity, historical coverage, validation wording, forecast timing, figure labels, and visual clarity.
 - Recorded revision priorities for the next project iteration.
 
-## 📌 Status: Complete
+## 📌 Milestone Status
 
-The PDF preserves the poster submitted at M3. It is a draft milestone artifact, not the final poster.
+✅ M3 completed.

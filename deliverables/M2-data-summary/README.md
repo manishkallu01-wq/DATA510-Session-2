@@ -4,7 +4,7 @@ M2 documented and validated the data used in **Forecasting and Explaining U.S. U
 
 ## 🎯 Milestone Objective
 
-Acquire and document the approved source series, establish a monthly data structure, validate data quality, define the engineered schema, and freeze an analysis-ready dataset for subsequent project work.
+Document the six source series, build the monthly dataset, complete the data-quality checks, and define the 40-column analytical schema.
 
 ## 📁 Submitted Artifact
 
@@ -12,7 +12,7 @@ Acquire and document the approved source series, establish a monthly data struct
 | --- | --- |
 | [`data-summary.md`](data-summary.md) | Data inventory, organization, construction workflow, validation results, ethics, access boundaries, limitations, and M2 freeze record |
 
-Dataset-construction code is maintained in [`../../src/`](../../src/) so the repository has one supported reconstruction workflow rather than duplicate milestone copies.
+The dataset-construction scripts are available in [`../../src/`](../../src/).
 
 ## ✅ Work Completed at M2
 
@@ -26,6 +26,6 @@ Dataset-construction code is maintained in [`../../src/`](../../src/) so the rep
 - Recorded privacy, attribution, revision, retrospective-label, and non-causal interpretation limits.
 - Froze the data scope for the next analytical stage.
 
-## 📌 Status: Complete
+## 📌 Milestone Status
 
-This README describes only the M2 data milestone. Model selection, forecasting results, correlation findings, and final communication artifacts are outside this milestone's scope.
+✅ M2 completed.
