@@ -1,33 +1,34 @@
-# Studio artifacts
+# 🤝 Studio Artifacts
 
-This folder holds the two written artifacts that the **triad** (owner team + peer POs) files every week.
+This folder preserves the DATA 510 peer-studio process for the project. It is governance and feedback history, not an analysis or data directory.
 
-## `briefs/`
+## 📁 Contents
 
-One **Studio Brief** per peer PO per week.
+| Path | Purpose |
+| --- | --- |
+| [`briefs/`](briefs/) | Peer stakeholder briefs and the reusable brief template |
+| [`critiques/`](critiques/) | Reusable critique template and any recorded critiques |
+| [`../CHARTER.md`](../CHARTER.md) | Working agreements, response expectations, scope, and definitions of Ready and Done |
+| [`../BACKLOG.md`](../BACKLOG.md) | Final traceability record for the ten completed PBIs |
 
-- **Filed by:** the peer Stakeholder PO
-- **For:** the owner team to consider before planning the next iteration
-- **File name:** `W<NN>-<peer-first-name>.md` (e.g., `W04-bradley.md`)
-- **Due:** see your Charter's *Working agreements (triad)* section
-- **Starting point:** copy [`briefs/_TEMPLATE.md`](briefs/_TEMPLATE.md)
+The files present in these folders are the preserved studio record. This README does not imply that a separate brief or critique exists for every peer or every week.
 
-## `critiques/`
+## 🔄 Historical Studio Workflow
 
-One **Studio Critique** per peer PO per week.
+1. A peer Stakeholder / Product Owner used the appropriate template.
+2. The artifact was saved under `briefs/` or `critiques/`.
+3. A link was shared in the project's studio communication channel.
+4. The owner reviewed the feedback under the Charter's response expectations.
+5. Adopted changes were incorporated into milestone work, repository documentation, or final communication.
 
-- **Filed by:** the peer Stakeholder PO
-- **For:** the owner team, after they post the Iteration Review for the prior iteration
-- **File name:** `W<NN>-<peer-first-name>.md` (e.g., `W04-bradley.md`)
-- **Due:** see your Charter's *Working agreements (triad)* section
-- **Starting point:** copy [`critiques/_TEMPLATE.md`](critiques/_TEMPLATE.md)
+## 👥 Project Roles
 
-## Workflow
+- **Owner, Author, and Product Lead:** Manish R. Kallu
+- **Peer Stakeholder / Product Owners:** Brandon Smith, Jon Garrow, and Jackson Garro
+- **Instructor and Project Sponsor:** Lucas P. Cordova, Ph.D.
 
-1. Peer PO copies the appropriate `_TEMPLATE.md` to a new file under `briefs/` or `critiques/`.
-2. Commits to a branch and opens a pull request, or commits directly to `main` if the team's working agreement allows it.
-3. Drops a link to the file in the project's `#<project>-studio` channel on Discord.
-4. Owner team responds per the SLA defined in [`../CHARTER.md`](../CHARTER.md).
-5. The acknowledgment / response gets logged in the next [`../README.md`](../README.md) Iteration Review under *Stakeholder response log*.
+## ✅ Final Status
 
-See the framework docs for context: [Studio Session weekly ritual](https://courses.lpcordova.phd/data510/project-framework/weekly-ritual.html).
+Stakeholder feedback informed research-question framing, practical relevance, the distinction between forecasting and causal explanation, results communication, and limitations. The final project state is documented in the [root README](../README.md), [Charter](../CHARTER.md), [Backlog](../BACKLOG.md), and [M5 final artifacts](../deliverables/M5-final/).
+
+Repository visitors need only read these records. Public review does not require GitHub write access.

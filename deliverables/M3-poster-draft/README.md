@@ -1,18 +1,26 @@
-# `deliverables/`
+# 🎨 M3 - Poster Draft
 
-Graded milestone deliverables live here. Each one is its own folder so the source files (Quarto, LaTeX, slides, posters, etc.) stay grouped with their rendered output.
+This folder contains the completed rough-poster milestone.
 
-```
-deliverables/
-  M1-proposal/         # Week 4: project proposal
-  M2-data-summary/     # Week 7: data summary
-  M3-poster-draft/     # Week 10: poster rough draft
-  M4-writeup-draft/    # Week 12: write-up rough draft
-  M5-final/            # Week 14: final write-up and poster
-```
+## 📁 Artifact
 
-Conventions:
+| File | Purpose |
+| --- | --- |
+| [`M3-poster-draft-48x36.pdf`](M3-poster-draft-48x36.pdf) | One-page 48 x 36 inch draft poster used for milestone review and feedback |
 
-- Each milestone folder gets its own `README.md` with the rubric link, the submission link, and a short status (draft, peer-reviewed, submitted).
-- The rendered artifact (PDF, poster PDF, slides PDF) is committed alongside the source so peer POs and graders do not have to render.
-- Every PBI that fed this milestone is linked from the milestone's `README.md` so reviewers can trace the work.
+## 🎯 Milestone Purpose
+
+The draft translated the project into a stakeholder-facing visual structure, including the problem, data, methodology, emerging results, and intended practical value. Feedback from this stage informed later visual hierarchy, wording, result emphasis, and limitations.
+
+## ⚠️ Draft Status
+
+This PDF is an archived draft, not the final source of project metrics or conclusions. Preliminary results or wording visible in it may differ from the submitted analysis.
+
+Use these final artifacts instead:
+
+- [Final poster](../M5-final/M5%20poster%20Final.pdf)
+- [Final report](../M5-final/M5-Final-Report.pdf)
+- [Final figures](../M5-final/Plots/)
+- [Public portfolio](https://manishkallu01-wq.github.io/capstone.html)
+
+**Milestone status:** ✅ Complete

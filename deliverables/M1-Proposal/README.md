@@ -1,18 +1,38 @@
-# `deliverables/`
+# 📝 M1 - Project Proposal
 
-Graded milestone deliverables live here. Each one is its own folder so the source files (Quarto, LaTeX, slides, posters, etc.) stay grouped with their rendered output.
+This folder preserves the completed proposal milestone for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
-```
-deliverables/
-  M1-proposal/         # Week 4: project proposal
-  M2-data-summary/     # Week 7: data summary
-  M3-poster-draft/     # Week 10: poster rough draft
-  M4-writeup-draft/    # Week 12: write-up rough draft
-  M5-final/            # Week 14: final write-up and poster
-```
+## 📁 Artifacts
 
-Conventions:
+| File | Purpose |
+| --- | --- |
+| [`Project Proposal.pdf`](Project%20Proposal.pdf) | Rendered 21-page proposal submitted for milestone review |
+| [`Project_Proposal.md`](Project_Proposal.md) | Markdown source for the proposal narrative |
 
-- Each milestone folder gets its own `README.md` with the rubric link, the submission link, and a short status (draft, peer-reviewed, submitted).
-- The rendered artifact (PDF, poster PDF, slides PDF) is committed alongside the source so peer POs and graders do not have to render.
-- Every PBI that fed this milestone is linked from the milestone's `README.md` so reviewers can trace the work.
+## 🎯 Milestone Scope
+
+The proposal established:
+
+- the forecasting and historical-relationship research questions;
+- the initial stakeholder and consequential-problem framing;
+- the six-source macroeconomic data plan;
+- the intended data-engineering, statistical, and machine-learning workflow;
+- initial feature-engineering and evaluation plans;
+- ethics, risk, limitation, and milestone considerations; and
+- the Create-Observe-Analyze development process.
+
+## ✅ Status and Interpretation
+
+**Status:** Complete and archived as the M1 planning record.
+
+This folder documents what was proposed at the beginning of the project. Planned dataset counts, filenames, algorithms, schedules, or expected outcomes in these artifacts may differ from the submitted final implementation.
+
+For final facts, use:
+
+- [M5 final report](../M5-final/M5-Final-Report.pdf)
+- [M5 final artifacts](../M5-final/)
+- [project README](../../README.md)
+- [final Charter](../../CHARTER.md)
+- [final Backlog](../../BACKLOG.md)
+
+The final project uses 837 monthly observations, 40 columns, 35 predictors, and the April 1956-December 2025 study period.

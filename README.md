@@ -296,7 +296,7 @@ Responsible use requires:
 | --- | --- |
 | [`data/`](data/) | Read-only raw source files and the submitted processed dataset |
 | [`src/`](src/) | Optional dataset reconstruction, feature-engineering, and validation scripts |
-| [`notebooks/`](notebooks/) | Exploratory analysis and model-development notebooks |
+| [`notebooks/`](notebooks/) | Notebook guidance; no notebook is required for the submitted final workflow |
 | [`deliverables/M5-final/`](deliverables/M5-final/) | Final machine-learning and correlation scripts, results, figures, report, and poster |
 | [`deliverables/`](deliverables/) | All milestone submissions |
 | [`studio/`](studio/) | Studio briefs, critiques, and stakeholder-feedback artifacts |
@@ -388,7 +388,7 @@ The completed project includes:
 - ✅ Live project portfolio
 - ✅ Reproducible source code and repository documentation
 
-The report, poster, milestone materials, and supporting artifacts are available in the [`deliverables/`](deliverables/) directory and through the [live portfolio](https://manishkallu01-wq.github.io/capstone.html).
+The [final report](deliverables/M5-final/M5-Final-Report.pdf), [final poster](deliverables/M5-final/M5%20poster%20Final.pdf), milestone materials, and supporting artifacts are available in [`deliverables/`](deliverables/) and through the [live portfolio](https://manishkallu01-wq.github.io/capstone.html).
 
 ---
 

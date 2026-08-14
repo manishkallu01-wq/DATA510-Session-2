@@ -1,18 +1,62 @@
-# `deliverables/`
+# 🏆 M5 - Final Submission
 
-Graded milestone deliverables live here. Each one is its own folder so the source files (Quarto, LaTeX, slides, posters, etc.) stay grouped with their rendered output.
+This folder contains the submitted final report, poster, analytical scripts, generated result tables, and figures for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
-```
-deliverables/
-  M1-proposal/         # Week 4: project proposal
-  M2-data-summary/     # Week 7: data summary
-  M3-poster-draft/     # Week 10: poster rough draft
-  M4-writeup-draft/    # Week 12: write-up rough draft
-  M5-final/            # Week 14: final write-up and poster
-```
+## ⭐ Source of Truth
 
-Conventions:
+[`M5-Final-Report.pdf`](M5-Final-Report.pdf) is the authoritative source for the submitted methodology, model-selection rule, numerical results, Research Question 2 findings, limitations, recommendations, and reproducibility statement.
 
-- Each milestone folder gets its own `README.md` with the rubric link, the submission link, and a short status (draft, peer-reviewed, submitted).
-- The rendered artifact (PDF, poster PDF, slides PDF) is committed alongside the source so peer POs and graders do not have to render.
-- Every PBI that fed this milestone is linked from the milestone's `README.md` so reviewers can trace the work.
+## 📁 Primary Artifacts
+
+| Artifact | Purpose |
+| --- | --- |
+| [`M5-Final-Report.pdf`](M5-Final-Report.pdf) | Final 16-page project report |
+| [`M5 poster Final.pdf`](M5%20poster%20Final.pdf) | Final poster |
+| [`ML Analysis.py`](ML%20Analysis.py) | Six-model forecasting comparison for 3-, 6-, and 12-month targets |
+| [`Correlation analysis.py`](Correlation%20analysis.py) | Separate RQ2 Pearson/Spearman, lead-lag, period-stability, and recession-comparison analysis |
+| [`analysis-results/`](analysis-results/) | Generated CSV result tables used to support analysis and reporting |
+| [`Plots/`](Plots/) | Final ML and correlation figures |
+
+Both analysis scripts read the submitted [`../../data/processed/capstone_plus_final.xlsx`](../../data/processed/capstone_plus_final.xlsx) through its public, read-only GitHub URL.
+
+## 📊 Final Dataset
+
+| Attribute | Final value |
+| --- | --- |
+| Study period | April 1956-December 2025 |
+| Rows | 837 |
+| Columns | 40 |
+| Predictors | 35 |
+| Forecast targets | 3, 6, and 12 months |
+
+## 🤖 Validation and Model Selection
+
+The workflow uses a chronological train/validation/test split with a horizon-specific embargo. For each horizon, the model with the lowest validation RMSE was selected; validation MAE served as the tiebreaker. The selected model was then refitted on the full pre-test period and evaluated once on the untouched test set.
+
+A different model's lower test RMSE does not retroactively change the selected model.
+
+## 🥇 Final Forecasting Results
+
+| Horizon | Selected model | Test MAE | Test RMSE | Test R² |
+| --- | --- | ---: | ---: | ---: |
+| 3 months | Ridge Regression | 0.349 | 1.020 | 0.720 |
+| 6 months | Extra Trees | 0.725 | 1.277 | 0.563 |
+| 12 months | Extra Trees | 1.195 | 1.729 | 0.205 |
+
+The three-month model is the strongest operational result. Six-month performance is moderately informative. Twelve-month performance has limited incremental value and is best treated as scenario-level evidence rather than a reliable one-year prediction.
+
+## 🔎 Research Question 2
+
+Consumer sentiment was the strongest full-sample external historical relationship with unemployment at every horizon, strengthening from Pearson `r = -0.351` in the same month to `r = -0.496` at twelve months. Recession status ranked second.
+
+At a six-month lead, the consumer-sentiment relationship reversed to `+0.67` during 2020-2025. Because that period is short and includes the pandemic and recovery, the reversal is interpreted as possible regime instability, not a permanent structural change.
+
+These are historical associations, not causal estimates.
+
+## ⚠️ Reproducibility and Limitations
+
+Results can change if the input data, feature definitions, date ranges, seeds, packages, hyperparameters, or model configurations change. Such changes constitute a new analysis version rather than direct reproduction of the submitted results.
+
+Important limitations include retrospective NBER labels, unemployment-derived composite features, structural breaks, national aggregation, revised historical data, a single chronological split, no formal prediction intervals, and serial dependence.
+
+Public readers may inspect and download these artifacts. The scripts do not require GitHub write access.
