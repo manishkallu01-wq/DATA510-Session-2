@@ -2,324 +2,266 @@
 
 ## Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators
 
-**Author:** Manish R Kallu
+**Author:** Manish R. Kallu
 
 **Studio Session:** 2
 
-**Dataset Version:** `capstone_capstone_plus_final.csv`
+**Milestone status:** ✅ Complete
+
+**Submitted common analysis input:** `data/processed/capstone_plus_final.xlsx`
 
 ---
 
-# 🎯 1. Research Question Reminder
-
-The goal of this project is to understand how major macroeconomic indicators influence unemployment in the United States and whether those indicators can improve unemployment forecasting across multiple forecasting horizons.
+## 🎯 1. Research Questions
 
 ### Primary Research Question
 
-> To what extent can publicly available macroeconomic indicators improve forecasting of future U.S. unemployment across 3-month, 6-month, and 12-month forecasting horizons?
+> Can future U.S. unemployment be forecast three, six, and twelve months ahead using publicly available macroeconomic indicators?
 
 ### Secondary Research Question
 
-> Which macroeconomic indicators have the strongest historical relationship with unemployment across U.S. economic cycles?
+> Which external macroeconomic indicators show the strongest and most consistent historical relationships with unemployment across forecast horizons and historical periods?
 
-To answer these questions, six public economic datasets were collected from FRED, standardized to a common monthly timeline, and integrated into a single analysis-ready dataset. The resulting dataset spans nearly 70 years of U.S. economic history and contains all information required to answer the approved research questions. At this stage, data collection and engineering work are complete, allowing the remainder of the project to focus on analysis, forecasting, visualization, and reporting.
+The two questions serve different purposes. Research Question 1 evaluates out-of-sample prediction. Research Question 2 evaluates historical lead-lag associations. Neither correlation nor model importance establishes causation.
 
----
-
-# 📦 2. Data Inventory
-
-## Source Datasets
-
-| Dataset  | Source                             | License / Terms        | Date Range | Rows | Refresh Policy      | Repository Location               |
-| -------- | ---------------------------------- | ---------------------- | ---------- | ---- | ------------------- | --------------------------------- |
-| UNRATE   | FRED / Bureau of Labor Statistics  | Public Government Data | 1956–2026  | 838  | Monthly             | `data/raw/unemployment.csv`       |
-| CPIAUCSL | FRED / Bureau of Labor Statistics  | Public Government Data | 1956–2026  | 838  | Monthly             | `data/raw/inflation.csv`          |
-| FEDFUNDS | FRED / Federal Reserve             | Public Government Data | 1956–2026  | 838  | Monthly             | `data/raw/federal_funds.csv`      |
-| GDP      | FRED / Bureau of Economic Analysis | Public Government Data | 1956–2026  | 280  | Quarterly  | `data/raw/gdp.csv`                |
-| UMCSENT  | University of Michigan / FRED      | Public Research Data   | 1956–2026  | 838  | Monthly             | `data/raw/consumer_sentiment.csv` |
-| USREC    | NBER / FRED                        | Public Economic Data   | 1956–2026  | 838  | Monthly             | `data/raw/recession.csv`          |
-
-## Final Analysis Dataset
-
-| Metric              | Value                              |
-| ------------------- | ---------------------------------- |
-| File Name           | `capstone_capstone_plus_final.csv` |
-| Repository Location | `data/processed/`                  |
-| Observation Period  | April 1956 – January 2026          |
-| Total Records       | 838                                |
-| Total Variables     | 40                                 |
-| Source Variables    | 6                                  |
-| Engineered Features | 29                                 |
-| Forecast Targets    | 4                                  |
+Six public macroeconomic series were aligned to a monthly timeline and integrated into the common analysis-ready dataset. The final modeling period covers April 1956 through December 2025.
 
 ---
 
-# 🏗️ 3. Schema and Organization
+## 📦 2. Data Inventory
 
-## Repository Data Layout
+### Raw Source Series
+
+| File | Series | Measure | Provider | Native frequency |
+| --- | --- | --- | --- | --- |
+| [`UNRATE.csv`](../../data/raw/UNRATE.csv) | UNRATE | U.S. unemployment rate | Bureau of Labor Statistics via FRED | Monthly |
+| [`CPIAUCSL.csv`](../../data/raw/CPIAUCSL.csv) | CPIAUCSL | Consumer Price Index | Bureau of Labor Statistics via FRED | Monthly |
+| [`FEDFUNDS.csv`](../../data/raw/FEDFUNDS.csv) | FEDFUNDS | Effective federal funds rate | Federal Reserve via FRED | Monthly |
+| [`GDP.csv`](../../data/raw/GDP.csv) | GDP | Gross Domestic Product, current dollars | Bureau of Economic Analysis via FRED | Quarterly |
+| [`UMCSENT.csv`](../../data/raw/UMCSENT.csv) | UMCSENT | Consumer sentiment | University of Michigan via FRED | Monthly |
+| [`USREC.csv`](../../data/raw/USREC.csv) | USREC | U.S. recession indicator | NBER via FRED | Monthly |
+
+The source files contain aggregate public economic observations. They contain no individual records, protected attributes, credentials, or personal identifiers. Source organizations retain ownership, and users remain responsible for applicable provider terms and attribution requirements.
+
+### Final Analysis Dataset
+
+| Attribute | Final specification |
+| --- | --- |
+| File | [`data/processed/capstone_plus_final.xlsx`](../../data/processed/capstone_plus_final.xlsx) |
+| Observation period | April 1956-December 2025 |
+| Grain | One row per month |
+| Rows | 837 |
+| Columns | 40 |
+| Predictors | 35 |
+| Public source series | 6 |
+| Primary forecast horizons | 3, 6, and 12 months |
+| Primary key | `Date` |
+
+The workbook is the common processed input for the final machine-learning and separate Research Question 2 correlation analyses.
+It contains 837 rows, 40 columns, and 35 predictors.
+
+---
+
+## 🏗️ 3. Data Organization and Schema
+
+### Repository Layout
 
 ```text
-DATA510-Session-2/
-│
-├── data/
-│   ├── raw/
-│   │   ├── unemployment.csv
-│   │   ├── inflation.csv
-│   │   ├── federal_funds.csv
-│   │   ├── gdp.csv
-│   │   ├── consumer_sentiment.csv
-│   │   └── recession.csv
-│   │
-│   ├── processed/
-│   │   └── capstone_capstone_plus_final.csv
-│   │
-│   ├── README.md
-│   └── SCHEMA.md
-│
-├── deliverables/
-│   └── M2-data-summary/
-│       ├── data-summary.md
-│       ├── rebuild.py
-│       └── eng_variables.py
-│
-├── notebooks/
-├── src/
-├── CHARTER.md
-├── BACKLOG.md
+data/
+├── raw/
+│   ├── CPIAUCSL.csv
+│   ├── FEDFUNDS.csv
+│   ├── GDP.csv
+│   ├── UMCSENT.csv
+│   ├── UNRATE.csv
+│   └── USREC.csv
+├── processed/
+│   └── capstone_plus_final.xlsx
+├── README.md
+└── SCHEMA.md
+
+src/
+├── rebuild.py
+├── eng_variables.py
+├── checks.py
 └── README.md
+
+deliverables/
+├── M2-data-summary/
+│   ├── data-summary.md
+│   ├── rebuild.py
+│   ├── eng_variables.py
+│   ├── checks.py
+│   └── README.md
+└── M5-final/
+    ├── ML Analysis.py
+    ├── Correlation analysis.py
+    ├── M5-Final-Report.pdf
+    ├── M5 poster Final.pdf
+    ├── analysis-results/
+    └── Plots/
 ```
 
-## Primary Key
+The three scripts stored inside `M2-data-summary/` are preserved historical milestone copies. They are not the supported current reconstruction workflow.
 
-* `Date`
+### Join and Frequency Strategy
 
-## Join Strategy
+1. Parse and standardize the source dates.
+2. Establish a complete monthly date sequence.
+3. Carry quarterly GDP values across the corresponding monthly panel.
+4. Align the other approved series to the monthly date key.
+5. Handle valid mid-series gaps without backfilling observations before a series begins.
+6. Merge the six series using `Date` as the one-row-per-month key.
+7. Engineer lagged, rate-of-change, momentum, ratio, stress, and future-target variables.
+8. Trim to the fully usable April 1956-December 2025 modeling period.
 
-All datasets were standardized to monthly frequency and merged using the `Date` field as the common key.
+### Core Source Columns
 
-## Data Layers
+- `UnemploymentRate`
+- `ConsumerPriceIndex`
+- `FederalFundsRate`
+- `GrossDomesticProduct`
+- `ConsumerSentiment`
+- `RecessionIndicator`
 
-### Raw Layer
+### Predictor Groups
 
-Contains original source datasets downloaded from FRED.
+| Group | Examples | Purpose |
+| --- | --- | --- |
+| Labor persistence | `UnemploymentRate`, `UnemploymentLag1`, `UnemploymentLag3`, `UnemploymentLag6`, `UnemploymentLag12` | Represent persistence and delayed labor-market adjustment |
+| Labor change | `UnemploymentChange1M`, `UnemploymentChange3M`, `UnemploymentMomentum` | Capture emerging improvement or deterioration |
+| Prices and policy | `InflationRateYoY`, inflation lags, federal-funds-rate lags, `RealInterestRate` | Represent inflation pressure and monetary conditions |
+| Output | `GrossDomesticProduct`, `GDPGrowthYoY`, GDP growth lags and momentum | Represent expansion, contraction, and production trends |
+| Expectations | `ConsumerSentiment`, sentiment lags, confidence deterioration | Represent household expectations |
+| Regime and composites | `RecessionIndicator`, `EconomicStressIndex`, `RecessionRiskScore` | Describe historical regimes and combined stress |
 
-### Processed Layer
+### Forecast Targets
 
-Contains the final analysis-ready dataset used for forecasting, visualization, and statistical analysis.
+- `FutureUnemployment_3M`
+- `FutureUnemployment_6M`
+- `FutureUnemployment_12M`
+- `FutureLaborMarketShock_6M`
 
-## Dataset Structure
+The final 3, 6, and 12 values of the corresponding unemployment targets are intentionally missing because future unemployment is not observable beyond the end of the dataset.
 
-### Core Economic Indicators
-
-* UnemploymentRate
-* ConsumerPriceIndex
-* FederalFundsRate
-* GrossDomesticProduct
-* ConsumerSentiment
-* RecessionIndicator
-
-### Engineered Features
-
-The final dataset includes lag variables, momentum indicators, growth rates, policy indicators, economic stress measures, recession risk indicators, and forecasting targets engineered from the original source variables.
-
----
-
-# ⚙️ 4. Ingestion Status
-
-Data ingestion and dataset construction have been completed.
-
-### Workflow Summary
-
-1. Retrieved six approved economic datasets from FRED.
-2. Standardized timestamps and variable names.
-3. Converted GDP observations into a monthly analytical framework.
-4. Merged all datasets using the `Date` field.
-5. Generated engineered features using `eng_variables.py`.
-6. Constructed forecasting targets and composite indicators.
-7. Rebuilt and validated the final analytical dataset using `rebuild.py`.
-8. Verified dataset quality through automated validation checks.
-
-### Repository Artifacts
-
-| File | Purpose |
-|--------|---------|
-| `deliverables/M2-data-summary/rebuild.py` | Rebuilds the final analytical dataset |
-| `deliverables/M2-data-summary/eng_variables.py` | Creates engineered variables and forecasting targets |
-| `data/processed/capstone_capstone_plus_final.csv` | Final analysis-ready dataset |
-
-### Visual Schema
-
-<img width="802" height="882" alt="image" src="https://github.com/user-attachments/assets/9579d6e8-6e7f-494b-b67e-0c123e3138d6" />
-
-
-### Pipeline Status
-
-✅ Data acquisition complete
-
-✅ Data integration complete
-
-✅ Feature engineering complete
-
-✅ Dataset rebuild process documented
-
-✅ Validation complete
-
-✅ Analysis-ready dataset generated
-
-No additional ingestion work is required. The final dataset contains all variables necessary to answer the approved research questions.
+The full column dictionary is documented in [`data/SCHEMA.md`](../../data/SCHEMA.md).
 
 ---
 
-# 🔍 5. Data Quality and Profiling
+## ⚙️ 4. Construction Pipeline
 
-Several validation checks were performed to ensure the final dataset is suitable for analysis and forecasting.
+### Supported Current Sequence
 
-## Dataset Validation Results
+The maintained scripts in [`src/`](../../src/) separate reconstruction, engineering, and validation:
 
-| Validation Check         | Result |
-| ------------------------ | ------ |
-| Total Records            | 838    |
-| Total Variables          | 40     |
-| Duplicate Rows           | 0      |
-| Duplicate Dates          | 0      |
-| Missing Monthly Periods  | 0      |
-| Infinite Values          | 0      |
-| Missing Predictor Values | 0      |
+1. [`src/rebuild.py`](../../src/rebuild.py) reads the six raw CSVs and creates a local monthly `super_dataset.csv`.
+2. [`src/eng_variables.py`](../../src/eng_variables.py) reads that local super dataset and creates a local engineered `capstone_plus_final.xlsx`.
+3. [`src/checks.py`](../../src/checks.py) validates the local engineered final workbook.
 
-## Missing Value Assessment
-
-The only missing values occur in future forecasting targets.
-
-| Variable               | Missing Values |
-| ---------------------- | -------------- |
-| FutureUnemployment_3M  | 3              |
-| FutureUnemployment_6M  | 6              |
-| FutureUnemployment_12M | 12             |
-
-These values are expected because future unemployment observations do not exist beyond the final months of the dataset.
-
-## Data Quality Findings
-
-### Duplicates
-
-* No duplicate rows detected.
-* No duplicate dates detected.
-
-### Missingness
-
-* No missing predictor variables.
-* Missing target values occur only because of forecasting horizon construction.
-
-### Outliers
-
-Periods such as the 1980 inflation shock, the 2008 financial crisis, and the COVID-19 recession contain extreme observations. These observations were intentionally retained because they represent real economic events and are important for forecasting performance evaluation.
-
-### Known Limitations
-
-* GDP is originally published quarterly and was aligned to monthly frequency.
-* Historical economic relationships may change across different economic eras.
-* Observational economic data cannot establish causal relationships.
-
----
-
-# ♻️ 6. Reproducibility
-
-The repository contains scripts required to reconstruct the final analysis-ready dataset.
-
-### Environment
-
-- Python 3.12
-- Pandas
-- NumPy
-- Scikit-Learn
-- Matplotlib
-
-### Rebuild Workflow
+Run from the repository root:
 
 ```bash
-python deliverables/M2-data-summary/rebuild.py
-```
-### Feature Engineered Variables
-
-```bash
-python deliverables/M2-data-summary/eng_variables.py
+python src/rebuild.py
+python src/eng_variables.py
+python src/checks.py
 ```
 
-### Validation Script
+Default local outputs:
 
-```bash
-python deliverables/M2-data-summary/checks.py
-```
+| Stage | Output | Expected result |
+| --- | --- | --- |
+| Reconstruction | `~/Downloads/super_dataset.csv` | 858 rows x 7 columns; July 1954-December 2025 |
+| Feature engineering | `~/Downloads/capstone_plus_final.xlsx` | 837 rows x 40 columns; April 1956-December 2025 |
+| Validation | Console result | Final dataset checks pass |
 
-Successful execution confirms:
+Use `--raw-dir`, `--input`, or `--output` only when a different local path is needed.
 
-* 838 rows
-* 40 columns
-* 0 duplicate rows
-* 0 duplicate dates
-* 0 infinite values
-* 0 missing predictor values
+### Repository Access Boundary
 
-The dataset can be regenerated from documented source files without additional manual intervention.
+The repository provides read-only source context for public users. Generated reconstruction files default to the user's local `Downloads` folder, not to `data/processed/` or another repository path.
+
+The scripts do not invoke Git, create commits, push branches, or upload generated datasets. No GitHub write access is required.
+
+### Direct-Use Path
+
+Dataset reconstruction is optional. Most readers should read or download the submitted [`capstone_plus_final.xlsx`](../../data/processed/capstone_plus_final.xlsx) directly.
+
+The final analysis scripts in [`../M5-final/`](../M5-final/) read that submitted workbook through its public, read-only GitHub URL.
 
 ---
 
-# ⚖️ 7. Ethics and Access Controls
+## 🔍 5. Data Quality Results
 
-## Privacy and Data Handling
+| Validation check | Final result |
+| --- | ---: |
+| Rows | 837 |
+| Columns | 40 |
+| Predictors | 35 |
+| Date range | 1956-04-01 to 2025-12-01 |
+| Duplicate dates | 0 |
+| Missing monthly periods | 0 |
+| Infinite numeric values | 0 |
+| Unexpected missing predictor values | 0 |
+| Missing `FutureUnemployment_3M` values | 3 |
+| Missing `FutureUnemployment_6M` values | 6 |
+| Missing `FutureUnemployment_12M` values | 12 |
 
-✅ No personally identifiable information (PII)
+### Quality Interpretation
 
-✅ No protected health information (PHI)
-
-✅ No individual-level records
-
-✅ No sensitive personal data
-
-## Access Controls
-
-All datasets originate from publicly available economic data sources and do not require authentication, restricted access agreements, or special permissions.
-
-## Responsible Use
-
-Forecasting results will be interpreted as statistical estimates rather than guarantees of future economic outcomes. Findings will be presented as predictive relationships and correlations rather than causal claims. All data sources, transformations, and assumptions are documented to support transparency and reproducibility.
+- Missing unemployment targets occur only at the end of the series because their future observations do not yet exist.
+- Crisis-period extremes were retained because they represent real economic events, not data-entry errors.
+- Quarterly GDP was aligned to the monthly panel before feature engineering.
+- No random imputation was used to invent observations beyond available series coverage.
 
 ---
 
-# ❄️ 8. Freeze Statement
+## ⚠️ 6. Limitations
 
-The project data scope is now frozen.
+- **Historical revisions:** current values may differ from the vintages available at an original forecast date.
+- **Quarterly GDP:** GDP is carried into a monthly representation and is not a native monthly release.
+- **Retrospective recession labels:** NBER dates are historical descriptors and are not available in real time when recessions begin.
+- **Unemployment-derived features:** some composites incorporate unemployment information and are not independent external evidence.
+- **Structural breaks:** events such as COVID-19 can disrupt relationships learned from earlier periods.
+- **National aggregation:** U.S. totals conceal state, industry, demographic, and occupational differences.
+- **Association, not causation:** correlations and feature importance do not establish causal effects.
+- **Serial dependence:** monthly observations are related over time.
 
-All datasets required to answer the approved research questions have been collected, integrated, validated, and documented. No additional data ingestion work is planned for the remainder of the project.
+---
 
-The final analysis-ready dataset contains:
+## ⚖️ 7. Ethics, Access, and Responsible Use
 
-* 838 observations
-* 40 variables
-* 29 engineered features
-* 3 unemployment forecasting targets
-* 1 labor market shock forecasting target
+### Privacy
 
-Future project work will focus on:
+- ✅ Aggregate public economic data only
+- ✅ No personally identifiable information
+- ✅ No protected health information
+- ✅ No individual employment histories
+- ✅ No secrets, credentials, or restricted records
 
-* Exploratory Data Analysis (EDA)
-* Statistical Analysis
-* Forecast Modeling
-* Model Evaluation
-* Dashboard Development
-* Visualization
-* Final Report and Poster Preparation
+### Responsible Use
 
-### Final Dataset Status
+Forecasts are statistical estimates, not guarantees. National results must not be represented as individual predictions or used alone for employment, investment, lending, or public-policy decisions.
 
-✅ Data acquisition complete
+Research Question 2 findings describe historical association. Consumer sentiment was the strongest full-sample external relationship with unemployment, reaching Pearson `r = -0.496` at twelve months, but relationships varied across historical periods.
 
-✅ Data integration complete
+---
 
-✅ Feature engineering complete
+## ❄️ 8. Final Data Freeze Record
 
-✅ Data quality validation complete
+The approved six-series scope is complete and frozen for the submitted analysis.
 
-✅ Dataset frozen for analysis
+| Final item | Status |
+| --- | --- |
+| Raw source inventory | ✅ Complete |
+| Monthly integration | ✅ Complete |
+| Feature engineering | ✅ Complete |
+| Future-target construction | ✅ Complete |
+| Quality validation | ✅ Complete |
+| Common processed workbook | ✅ Complete |
+| Machine-learning analysis | ✅ Complete |
+| RQ2 correlation analysis | ✅ Complete |
+| Final report and poster | ✅ Complete |
 
-**Final Dataset:** `capstone_capstone_plus_final.csv`
+Changes to input data, feature definitions, date ranges, random seeds, package versions, hyperparameters, or model configurations must be documented as a new analysis version rather than a direct reproduction of submitted results.
+
+For the authoritative final methods and conclusions, see the [M5 final report](../M5-final/M5-Final-Report.pdf) and [project README](../../README.md).
