@@ -6,8 +6,9 @@ This folder preserves the DATA 510 peer-studio process for the project. It is go
 
 | Path | Purpose |
 | --- | --- |
-| [`briefs/`](briefs/) | Peer stakeholder briefs and the reusable brief template |
-| [`critiques/`](critiques/) | Reusable critique template and any recorded critiques |
+| [`briefs/W11-jon-garrow.md`](briefs/W11-jon-garrow.md) | Recorded Week 11 peer stakeholder brief and disposition |
+| [`briefs/_TEMPLATE.md`](briefs/_TEMPLATE.md) | Instructions for preparing any future studio brief |
+| [`critiques/_TEMPLATE.md`](critiques/_TEMPLATE.md) | Instructions for preparing a studio critique; no completed critique file is present |
 | [`../CHARTER.md`](../CHARTER.md) | Working agreements, response expectations, scope, and definitions of Ready and Done |
 | [`../BACKLOG.md`](../BACKLOG.md) | Final traceability record for the ten completed PBIs |
 

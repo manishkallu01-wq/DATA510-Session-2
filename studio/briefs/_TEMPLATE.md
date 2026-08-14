@@ -1,30 +1,34 @@
-# Studio Brief -- Week <NN>
+# 📝 Studio Brief Template
 
-**From:** <peer PO first name>
-**To:** <owner team>
-**Filed:** <date and time>
-**For iteration starting:** <date>
-**Milestone tag in focus:** <M1-proposal | M2-data-summary | M3-poster-draft | M4-writeup-draft | M5-final>
+> This is an intentional reusable form, not an incomplete project artifact. Copy it to a week-specific file and replace the instructional sentences with the peer Product Owner's actual brief.
 
-## What I want you to consider for the next iteration
+## Filing Information
 
-1. **<short title of requirement, question, or risk>** -- why it matters: <one sentence>
-2. **<...>** -- why it matters: <...>
-3. **<...>** -- why it matters: <...>
+Record the week number, peer Product Owner, owner, filing date, iteration start date, and milestone tag.
 
-## Why now
+## Requirements, Questions, or Risks
 
-<one or two sentences linking these items to the project's current milestone tag and the prior Iteration Review>
+List each requested consideration with:
 
-## What I am not asking for
+1. a short descriptive title;
+2. why it matters to the current milestone;
+3. the evidence or observation that prompted it; and
+4. the requested priority.
 
-<one sentence so the owner team is not surprised: the things you are intentionally not requesting this week>
+## Why This Feedback Is Timely
 
-## Suggested priority
+Explain how the items relate to the current milestone, the most recent iteration review, or an identified project risk.
 
-<rank the items in order of how important you think they are; this is advisory, the owner team still decides>
+## Explicitly Out of Scope
 
----
+State what the peer Product Owner is not requesting so the owner can interpret the feedback accurately.
 
-> After committing this file, drop the link in `#<project>-studio` on Discord.
-> The owner team's SLA for responding to a Brief is defined in [`../../CHARTER.md`](../../CHARTER.md).
+## Suggested Priority
+
+Rank the requested items. The ranking is advisory; the project owner retains prioritization responsibility.
+
+## Filing Workflow
+
+1. Save the copied brief under `studio/briefs/` with a week-specific descriptive filename.
+2. Share its repository link in the project's studio communication channel.
+3. Follow the response expectations in [`../../CHARTER.md`](../../CHARTER.md).

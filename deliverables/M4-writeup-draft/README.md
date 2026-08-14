@@ -12,7 +12,7 @@ Develop a coherent draft covering the problem, stakeholders, data engineering, e
 | --- | --- |
 | [`M4-rough-draft .pdf`](M4-rough-draft%20.pdf) | Expanded write-up draft incorporating the revised RQ2 analysis |
 | [`writeup.pdf`](writeup.pdf) | Earlier rendered write-up draft |
-| [`writeup.qmd`](writeup.qmd) | Quarto source for the earlier rendered draft |
+| [`writeup.qmd`](writeup.qmd) | Cleaned, placeholder-free Quarto source documenting the M4 analytical draft |
 | [`refs.bib`](refs.bib) | Bibliography used by the Quarto source |
 
 ## ✅ Work Completed at M4

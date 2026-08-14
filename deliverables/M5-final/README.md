@@ -14,10 +14,12 @@ This folder contains the submitted final report, poster, analytical scripts, gen
 | [`M5 poster Final.pdf`](M5%20poster%20Final.pdf) | Final poster |
 | [`ML Analysis.py`](ML%20Analysis.py) | Six-model forecasting comparison for 3-, 6-, and 12-month targets |
 | [`Correlation analysis.py`](Correlation%20analysis.py) | Separate RQ2 Pearson/Spearman, lead-lag, period-stability, and recession-comparison analysis |
-| [`analysis-results/`](analysis-results/) | Generated CSV result tables used to support analysis and reporting |
+| [`analysis-results/`](analysis-results/) | Submitted RQ2 tables plus clearly labeled earlier development-run CSV exports |
 | [`Plots/`](Plots/) | Final ML and correlation figures |
 
 Both analysis scripts read the submitted [`../../data/processed/capstone_plus_final.xlsx`](../../data/processed/capstone_plus_final.xlsx) through its public, read-only GitHub URL.
+
+The [analysis-results inventory](analysis-results/README.md) separates submitted RQ2 tables from older lowercase development exports. Final selected-model metrics must come from the report and submitted six-model script, not from those earlier CSVs.
 
 ## 📊 Final Dataset
 

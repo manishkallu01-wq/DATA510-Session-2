@@ -8,7 +8,7 @@
 
 **Milestone status:** ✅ Complete
 
-**Submitted common analysis input:** `data/processed/capstone_plus_final.xlsx`
+**M2 analysis-ready dataset:** `data/processed/capstone_plus_final.xlsx`
 
 ---
 
@@ -57,7 +57,7 @@ The source files contain aggregate public economic observations. They contain no
 | Primary forecast horizons | 3, 6, and 12 months |
 | Primary key | `Date` |
 
-The workbook is the common processed input for the final machine-learning and separate Research Question 2 correlation analyses.
+The workbook is the validated processed input prepared at M2 for the project's later analytical work.
 It contains 837 rows, 40 columns, and 35 predictors.
 
 ---
@@ -174,7 +174,7 @@ The scripts do not invoke Git, create commits, push branches, or upload generate
 
 ### Analysis-Ready Dataset Path
 
-Dataset reconstruction is optional. Most readers should read or download the submitted [`capstone_plus_final.xlsx`](../../data/processed/capstone_plus_final.xlsx) directly.
+Dataset reconstruction is optional. Readers may use the validated [`capstone_plus_final.xlsx`](../../data/processed/capstone_plus_final.xlsx) directly.
 
 ---
 

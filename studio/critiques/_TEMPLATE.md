@@ -1,43 +1,41 @@
-# Studio Critique -- Week <NN>
+# 🔍 Studio Critique Template
 
-**From:** <peer PO first name>
-**To:** <owner team>
-**Filed:** <date and time>
-**Reviewing iteration ending:** <date>
-**Milestone tag the iteration was aimed at:** <M1-proposal | M2-data-summary | M3-poster-draft | M4-writeup-draft | M5-final>
+> This is an intentional reusable form, not an incomplete project artifact. Copy it to a week-specific file and replace the instructional sentences with the peer Product Owner's actual critique.
 
-## What you delivered
+## Filing Information
 
-<one paragraph summary of what I saw in the Iteration Review in `README.md`, the GitHub Projects board, and any new code, data, or figures in the repo>
+Record the week number, peer Product Owner, owner, filing date, reviewed iteration end date, and milestone tag.
 
-## Against last week's Studio Brief
+## Delivered Work Reviewed
 
-For each item I filed last week, what happened:
+Summarize the iteration evidence reviewed in the repository, project board, code, data, documentation, or figures.
 
-- **Item 1:** <adopted | deferred | declined | partial> -- evidence: <link or short note>
-- **Item 2:** <...>
-- **Item 3:** <...>
+## Response to the Previous Studio Brief
 
-## Against the Charter
+For each previously requested item, record:
 
-- **Vision and Mission:** are you still moving toward them? <yes / no / drifting because ...>
-- **Next milestone (<M1 | M2 | M3 | M4 | M5>):** are you on track for the success criterion in `CHARTER.md`? <yes / no / at risk because ...>
+- disposition: adopted, partially adopted, deferred, or declined;
+- evidence supporting that disposition; and
+- any remaining risk or follow-up.
 
-## Two strengths
+## Alignment With the Charter
 
-- ...
-- ...
+Assess whether the work remains aligned with the project's vision, mission, current milestone completion criterion, responsible-use boundaries, and working agreements.
 
-## Two specific revision suggestions
+## Two Strengths
 
-- ...
-- ...
+Identify two specific strengths supported by evidence.
 
-## Open question for next week
+## Two Revision Suggestions
 
-<one question you want the owner team to think about before next class>
+Provide two concrete, actionable improvements and explain why they matter.
 
----
+## Open Question
 
-> After committing this file, drop the link in `#<project>-studio` on Discord.
-> The owner team's SLA for responding to a Critique is defined in [`../../CHARTER.md`](../../CHARTER.md).
+Record one question for the project owner to consider before the next studio session.
+
+## Filing Workflow
+
+1. Save the copied critique under `studio/critiques/` with a week-specific descriptive filename.
+2. Share its repository link in the project's studio communication channel.
+3. Follow the response expectations in [`../../CHARTER.md`](../../CHARTER.md).

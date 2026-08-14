@@ -1,10 +1,12 @@
 # Data 510: Capstone Project Proposal
 
+> **M1 archival record:** This document preserves the proposal-stage plan. The corrected dataset profile used throughout the repository is 837 monthly observations, 40 columns, and April 1956-December 2025. Items described as planned or expected are M1 intentions, not claims of later completion.
+
 ## Forecasting U.S. Unemployment Using Macroeconomic Indicators: A Data Engineering, Statistical Analysis, and Machine Learning Project
 
-**Institution:** Willamette University, Summer '26  
-**Studio Session:** 2  
-**Studio Formation Date:** May 25, 2026  
+**Institution:** Willamette University, Summer '26
+**Studio Session:** 2
+**Studio Formation Date:** May 25, 2026
 
 ---
 
@@ -70,7 +72,7 @@ The project is expected to produce:
 2.  Statistical evidence describing relationships between economic indicators and unemployment.
 3.  Forecasting models capable of predicting future unemployment conditions.
 4.  Feature importance and lead-lag analyses.
-5.  Interactive dashboards and visualizations.
+5.  Stakeholder-facing portfolio content and visualizations.
 6.  An end-to-end demonstration of Data Engineering, Analytics, Machine Learning, Visualization, Communication, and Research Design skills.
 
 ---
@@ -124,8 +126,8 @@ The six approved datasets were standardized, aligned by time period, validated, 
 
 | Attribute | Value |
 | :--- | :--- |
-| Observation Period | April 1956 - January 2026 |
-| Total Records | 838 |
+| Observation Period | April 1956 - December 2025 |
+| Total Records | 837 |
 | Total Variables | 40 |
 | Source Datasets | 6 |
 | Duplicate Records | 0 |
@@ -142,7 +144,7 @@ A significant contribution of this project is the creation of a research-ready m
 The project enters the implementation phase with a substantial portion of the Data Engineering lifecycle already completed prior to proposal submission, which includes:
 * Six approved datasets
 * A validated analytical dataset
-* 838 integrated observations
+* 837 integrated observations
 * 40 analytical variables
 * More than twenty engineered features
 * Three forecasting targets
@@ -195,7 +197,7 @@ The resulting dataset contains nearly seventy years of integrated macroeconomic 
 | `data/processed/` | Contains cleaned, standardized, integrated, and feature-engineered datasets used for analysis and modeling. |
 | `src/` | Contains reusable Python scripts and data processing logic used for data ingestion, transformation, feature engineering, and analytical workflows. |
 | `notebooks/` | Stores exploratory analysis, statistical analysis, feature engineering, and machine learning notebooks used throughout the project lifecycle. |
-| `deliverables/` | Contains project artifacts including milestone submissions, reports, presentations, visualizations, dashboards, and final capstone deliverables. |
+| `deliverables/` | Contains project artifacts including milestone submissions, reports, presentations, visualizations, and capstone deliverables. |
 
 #### 4.5.2 Data Management Strategy
 Data will be managed using a structured workflow that separates raw, intermediate, and processed data assets. Original source files will be preserved in their raw form, while all transformations and feature engineering activities will be performed on copies maintained within the processed data layer. This approach ensures transparency, reproducibility, and traceability throughout the project lifecycle.
@@ -306,7 +308,7 @@ Each phase contributes directly to answering the research questions and producin
     * Forecasting models
     * Prediction performance metrics
     * Model comparison results
-    * Forecast dashboards
+    * Forecast comparison visuals
 
 #### Research Question 2
 > *Which macroeconomic indicators demonstrate the strongest and most consistent historical relationships with unemployment across U.S. economic cycles between 1956 and 2025?*
@@ -360,10 +362,10 @@ Forecasting performance will be evaluated using established regression metrics:
 Performance will be compared against baseline approaches using historical unemployment trends alone. This evaluation framework directly supports Research Question 1.
 
 ### 5.7 Visualization and Communication
-The final analytical phase focuses on communicating findings through visual storytelling and stakeholder-oriented dashboards. Planned visualizations include:
+The final analytical phase focuses on communicating findings through visual storytelling and stakeholder-oriented portfolio content. Planned visualizations include:
 * **Historical Economic Trends:** Unemployment trends, inflation trends, interest rate trends, GDP growth trends, and consumer sentiment trends.
 * **Relationship Analysis:** Correlation heatmaps, lead-lag visualizations, and economic cycle comparisons.
-* **Forecasting Analysis:** Actual versus predicted unemployment, forecast horizon comparisons, model performance dashboards, and feature importance visualizations.
+* **Forecasting Analysis:** Actual versus predicted unemployment, forecast horizon comparisons, model performance visuals, and feature importance visualizations.
 
 The objective is to communicate technical findings to both technical and non-technical audiences.
 
@@ -383,7 +385,7 @@ The project follows the Data-Driven Scrum (DS3) methodology through continuous C
 | **PBI-4: Exploratory Analysis** | Generate summaries | Observe trends | Identify relationships |
 | **PBI-5: Statistical Analysis** | Produce analytical outputs | Observe indicator behavior | Interpret relationships |
 | **PBI-6: Forecast Modeling** | Train models | Observe accuracy | Evaluate predictive value |
-| **PBI-7: Dashboard Development** | Build visualizations | Observe stakeholder insights | Communicate findings |
+| **PBI-7: Stakeholder Visuals** | Build visualizations | Observe stakeholder insights | Communicate findings |
 | **PBI-8: Final Reporting** | Develop final artifacts | Observe feedback | Refine conclusions |
 
 ---
@@ -399,8 +401,8 @@ A primary objective of this project is to demonstrate integration of all five pi
     * *Description:* Evaluates whether macroeconomic indicators improve unemployment forecasting performance through statistical analysis and predictive modeling.
     * *Deliverables:* Baseline forecasting models, Random Forest models, XGBoost models, forecast evaluation results, and feature importance analysis.
 * **7.3 Visualization and Communication**
-    * *Description:* Translates technical findings into stakeholder-focused visualizations and dashboards.
-    * *Deliverables:* Trend visualizations, economic cycle analyses, forecast dashboards, poster presentation, and final report.
+    * *Description:* Translates technical findings into stakeholder-focused visualizations and portfolio content.
+    * *Deliverables:* Trend visualizations, economic cycle analyses, forecast comparisons, poster presentation, and project report.
 * **7.4 Statistics and Research Design**
     * *Description:* Applies statistical methods to evaluate historical relationships between unemployment and macroeconomic indicators.
     * *Deliverables:* Correlation analysis, lead-lag analysis, trend analysis, economic cycle analysis, and statistical interpretation.
@@ -444,7 +446,7 @@ These risks will be addressed through transparent documentation, model validatio
 | **Week 7** | Dataset summary and analytical review | M2 Data Summary |
 | **Weeks 8-9** | Statistical analysis and forecasting development | Analytical outputs |
 | **Week 10** | Visualization development and model refinement | M3 Poster Draft |
-| **Weeks 11-12** | Dashboard development and communication artifacts | Visual analytics deliverables |
+| **Weeks 11-12** | Stakeholder visualization development and communication artifacts | Visual analytics deliverables |
 | **Week 12** | Report drafting | M4 Rough Draft |
 | **Weeks 13-14** | Final refinement and stakeholder feedback | Final deliverables |
 | **Week 14** | Poster presentation and final submission | M5 Final Submission |
@@ -454,7 +456,7 @@ These risks will be addressed through transparent documentation, model validatio
 ## 10. DS3 Process and Individual Contribution
 
 ### 10.1 Individual Contribution Statement
-This is an individual capstone project. The literature review, research question development, dataset selection, data acquisition, data validation, feature engineering, analytical design, forecasting methodology, dashboard development, and proposal preparation were completed by the project owner. 
+This is an individual capstone project. The literature review, research question development, dataset selection, data acquisition, data validation, feature engineering, analytical design, forecasting methodology, visualization planning, and proposal preparation were completed by the project owner.
 
 Peer Stakeholder Product Owners participate exclusively in the DS3 feedback process and do not contribute to the research, engineering, or analytical components of the project.
 
@@ -465,9 +467,9 @@ Feedback received through Studio briefs from Peer Stakeholder Product Owners, an
 
 ## 11. Conclusion
 
-This project investigates whether publicly available macroeconomic indicators improve understanding and forecasting of future U.S. unemployment conditions. Beginning as a study of historical unemployment trends, the project evolved through literature review, dataset evaluation, and feasibility analysis into a broader investigation of labor market forecasting and economic relationships. 
+This project investigates whether publicly available macroeconomic indicators improve understanding and forecasting of future U.S. unemployment conditions. Beginning as a study of historical unemployment trends, the project evolved through literature review, dataset evaluation, and feasibility analysis into a broader investigation of labor market forecasting and economic relationships.
 
-The resulting analytical framework integrates six approved economic datasets spanning nearly seventy years of United States economic history and combines Data Engineering, Statistics, Machine Learning, Visualization, and Communication into a single reproducible workflow. The project contributes a validated analytical dataset containing 838 observations and 40 variables, engineered economic indicators, forecasting models, statistical insights, and stakeholder-oriented visualizations. By leveraging publicly available economic data and transparent analytical methods, the project seeks to demonstrate how modern data science techniques can be applied to understanding complex economic systems.
+The resulting analytical framework integrates six approved economic datasets spanning nearly seventy years of United States economic history and combines Data Engineering, Statistics, Machine Learning, Visualization, and Communication into a single reproducible workflow. The project contributes a validated analytical dataset containing 837 observations and 40 variables, engineered economic indicators, forecasting models, statistical insights, and stakeholder-oriented visualizations. By leveraging publicly available economic data and transparent analytical methods, the project seeks to demonstrate how modern data science techniques can be applied to understanding complex economic systems.
 
 ---
 

@@ -31,9 +31,10 @@ _freeze/
 _site/
 
 # ---- Data -----------------------------------------------------------------
-# Raw, external, and interim data are not committed. Document them in
-# data/README.md instead and keep small, reproducible processed snapshots
-# under data/processed/ if you really need them in git.
+# Approved public source CSVs in data/raw/ and the submitted workbook in
+# data/processed/ are intentionally versioned for this project. Ignore only
+# additional large or binary data formats unless a maintainer explicitly
+# reviews and versions them.
 *.csv.gz
 *.parquet
 *.feather
