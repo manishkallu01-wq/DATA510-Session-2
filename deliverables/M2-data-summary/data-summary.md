@@ -87,22 +87,12 @@ src/
 └── README.md
 
 deliverables/
-├── M2-data-summary/
-│   ├── data-summary.md
-│   ├── rebuild.py
-│   ├── eng_variables.py
-│   ├── checks.py
-│   └── README.md
-└── M5-final/
-    ├── ML Analysis.py
-    ├── Correlation analysis.py
-    ├── M5-Final-Report.pdf
-    ├── M5 poster Final.pdf
-    ├── analysis-results/
-    └── Plots/
+└── M2-data-summary/
+    ├── data-summary.md
+    └── README.md
 ```
 
-The three scripts stored inside `M2-data-summary/` are preserved historical milestone copies. They are not the supported current reconstruction workflow.
+Dataset-construction code is maintained centrally in `src/`; it is not duplicated inside the milestone folder.
 
 ### Join and Frequency Strategy
 
@@ -182,11 +172,9 @@ The repository provides read-only source context for public users. Generated rec
 
 The scripts do not invoke Git, create commits, push branches, or upload generated datasets. No GitHub write access is required.
 
-### Direct-Use Path
+### Analysis-Ready Dataset Path
 
 Dataset reconstruction is optional. Most readers should read or download the submitted [`capstone_plus_final.xlsx`](../../data/processed/capstone_plus_final.xlsx) directly.
-
-The final analysis scripts in [`../M5-final/`](../M5-final/) read that submitted workbook through its public, read-only GitHub URL.
 
 ---
 
@@ -242,7 +230,7 @@ The final analysis scripts in [`../M5-final/`](../M5-final/) read that submitted
 
 Forecasts are statistical estimates, not guarantees. National results must not be represented as individual predictions or used alone for employment, investment, lending, or public-policy decisions.
 
-Research Question 2 findings describe historical association. Consumer sentiment was the strongest full-sample external relationship with unemployment, reaching Pearson `r = -0.496` at twelve months, but relationships varied across historical periods.
+Research Question 2 is designed to describe historical association rather than causation. Relationship strength and direction must be evaluated across horizons and historical periods during the analytical stage.
 
 ---
 
@@ -258,10 +246,7 @@ The approved six-series scope is complete and frozen for the submitted analysis.
 | Future-target construction | ✅ Complete |
 | Quality validation | ✅ Complete |
 | Common processed workbook | ✅ Complete |
-| Machine-learning analysis | ✅ Complete |
-| RQ2 correlation analysis | ✅ Complete |
-| Final report and poster | ✅ Complete |
 
 Changes to input data, feature definitions, date ranges, random seeds, package versions, hyperparameters, or model configurations must be documented as a new analysis version rather than a direct reproduction of submitted results.
 
-For the authoritative final methods and conclusions, see the [M5 final report](../M5-final/M5-Final-Report.pdf) and [project README](../../README.md).
+The M2 milestone ends with a validated, documented, analysis-ready dataset. Model selection, forecasting results, correlation findings, and final communication artifacts are outside this milestone's scope.

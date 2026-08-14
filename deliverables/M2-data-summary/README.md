@@ -1,45 +1,33 @@
 # 🗃️ M2 - Data Summary
 
-This folder preserves the completed data-summary milestone. It documents the project's intermediate data inventory, integration plan, quality review, and early reconstruction code as they existed at M2.
+This folder records the completed M2 data-summary milestone for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
-## 📁 Artifacts
+## 🎯 Milestone Objective
+
+Acquire and document the approved source series, establish a monthly data structure, validate data quality, define the engineered schema, and freeze an analysis-ready dataset for subsequent project work.
+
+## 📁 Submitted Artifact
 
 | File | Purpose |
 | --- | --- |
-| [`data-summary.md`](data-summary.md) | Milestone data inventory, schema discussion, quality assessment, ethics, and freeze statement |
-| [`rebuild.py`](rebuild.py) | Historical M2 reconstruction script |
-| [`eng_variables.py`](eng_variables.py) | Historical M2 feature-engineering script |
-| [`checks.py`](checks.py) | Historical M2 validation script |
+| [`data-summary.md`](data-summary.md) | Data inventory, organization, construction workflow, validation results, ethics, access boundaries, limitations, and M2 freeze record |
 
-## ⚠️ Historical Snapshot
+Dataset-construction code is maintained in [`../../src/`](../../src/) so the repository has one supported reconstruction workflow rather than duplicate milestone copies.
 
-The scripts and counts in this folder are retained for milestone traceability. They are not the supported final reconstruction workflow and may contain preliminary filenames, paths, row counts, or validation expectations.
+## ✅ Work Completed at M2
 
-Do not use the M2 copies to override later work.
+- Documented the six approved public macroeconomic series.
+- Standardized the monthly `Date` key and described quarterly-to-monthly GDP alignment.
+- Defined the raw and processed data layers.
+- Documented the 40-column schema and 35-predictor modeling framework.
+- Recorded duplicate, missingness, date-sequence, and infinite-value checks.
+- Documented the intentional missing future unemployment targets.
+- Separated local dataset reconstruction from repository storage.
+- Recorded privacy, attribution, revision, retrospective-label, and non-causal interpretation limits.
+- Froze the data scope for the next analytical stage.
 
-## ✅ Final Data Specification
+## 📌 Milestone Status
 
-| Attribute | Final value |
-| --- | --- |
-| Common input | `data/processed/capstone_plus_final.xlsx` |
-| Study period | April 1956-December 2025 |
-| Rows | 837 |
-| Columns | 40 |
-| Predictors | 35 |
-| Duplicate dates | 0 |
-| Infinite values | 0 |
-| Unexpected missing predictors | 0 |
+**M2 status:** ✅ Complete
 
-The only intentional missing unemployment targets are the final 3, 6, and 12 observations for the corresponding forecast horizons.
-
-## 🔁 Supported Current Workflow
-
-Use the maintained scripts in [`../../src/`](../../src/):
-
-1. `src/rebuild.py` reads [`../../data/raw/`](../../data/raw/) and exports a local `super_dataset.csv`.
-2. `src/eng_variables.py` engineers and exports a local `capstone_plus_final.xlsx`.
-3. `src/checks.py` validates that local final workbook.
-
-Generated files default to the user's local `Downloads` folder and are not written or pushed to the repository.
-
-For submitted analyses and final conclusions, use [`../M5-final/`](../M5-final/) and the [root README](../../README.md).
+This README describes only the M2 data milestone. Model selection, forecasting results, correlation findings, and final communication artifacts are outside this milestone's scope.

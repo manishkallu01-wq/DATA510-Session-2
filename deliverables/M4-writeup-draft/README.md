@@ -1,30 +1,33 @@
 # 📄 M4 - Write-up Draft
 
-This folder preserves the completed write-up-draft milestone and its supporting source files.
+This folder records the completed M4 analytical write-up milestone for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
-## 📁 Artifacts
+## 🎯 Milestone Objective
+
+Develop a coherent draft covering the problem, stakeholders, data engineering, ethics, methods, evaluation design, results, limitations, conclusions, reproducibility, and references.
+
+## 📁 Submitted Artifacts
 
 | File | Purpose |
 | --- | --- |
-| [`M4-rough-draft .pdf`](M4-rough-draft%20.pdf) | Expanded 16-page draft incorporating the revised RQ2 analysis |
-| [`writeup.pdf`](writeup.pdf) | Earlier rendered draft |
-| [`writeup.qmd`](writeup.qmd) | Quarto source for the earlier draft |
-| [`refs.bib`](refs.bib) | Bibliography used by the Quarto draft |
+| [`M4-rough-draft .pdf`](M4-rough-draft%20.pdf) | Expanded write-up draft incorporating the revised RQ2 analysis |
+| [`writeup.pdf`](writeup.pdf) | Earlier rendered write-up draft |
+| [`writeup.qmd`](writeup.qmd) | Quarto source for the earlier rendered draft |
+| [`refs.bib`](refs.bib) | Bibliography used by the Quarto source |
 
-## 🎯 Milestone Purpose
+## ✅ Work Completed at M4
 
-M4 developed the full analytical narrative: problem framing, stakeholders, data engineering, ethics, methods, evaluation, results, limitations, conclusions, reproducibility, and references. Revision at this stage strengthened the separation between forecasting and historical correlation.
+- Connected the problem statement to the approved research questions.
+- Documented the six-series data pipeline and engineered predictor groups.
+- Explained the chronological train/validation/test design and forecast horizons.
+- Drafted the forecasting evaluation using MAE, RMSE, and R².
+- Separated the predictive analysis from the historical correlation analysis.
+- Expanded responsible-use guidance and project-specific limitations.
+- Revised the Research Question 2 narrative to avoid causal overstatement.
+- Organized conclusions, recommendations, reproducibility notes, and references into a full analytical draft.
 
-## ⚠️ Draft Status
+## 📌 Milestone Status
 
-These files preserve the drafting process. Placeholders, preliminary values, evolving methods, or wording in them are not authoritative after M5.
+**M4 status:** ✅ Complete
 
-The final source of truth is the [M5 final report](../M5-final/M5-Final-Report.pdf), supported by:
-
-- [final ML script](../M5-final/ML%20Analysis.py)
-- [final RQ2 correlation script](../M5-final/Correlation%20analysis.py)
-- [final analysis results](../M5-final/analysis-results/)
-- [final figures](../M5-final/Plots/)
-- [project README](../../README.md)
-
-**Milestone status:** ✅ Complete
+The files in this folder are preserved as M4 draft artifacts. They document the state of the analytical write-up at that milestone and are not labeled as final-submission artifacts.

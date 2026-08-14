@@ -1,26 +1,29 @@
 # 🎨 M3 - Poster Draft
 
-This folder contains the completed rough-poster milestone.
+This folder records the completed M3 poster-draft milestone for **Forecasting and Explaining U.S. Unemployment Through Macroeconomic Indicators**.
 
-## 📁 Artifact
+## 🎯 Milestone Objective
+
+Translate the project problem, data, methods, emerging evidence, and stakeholder value into a clear large-format draft suitable for structured peer feedback.
+
+## 📁 Submitted Artifact
 
 | File | Purpose |
 | --- | --- |
-| [`M3-poster-draft-48x36.pdf`](M3-poster-draft-48x36.pdf) | One-page 48 x 36 inch draft poster used for milestone review and feedback |
+| [`M3-poster-draft-48x36.pdf`](M3-poster-draft-48x36.pdf) | One-page 48 x 36 inch poster draft submitted for milestone review |
 
-## 🎯 Milestone Purpose
+## ✅ Work Completed at M3
 
-The draft translated the project into a stakeholder-facing visual structure, including the problem, data, methodology, emerging results, and intended practical value. Feedback from this stage informed later visual hierarchy, wording, result emphasis, and limitations.
+- Established the poster's visual hierarchy and reading order.
+- Summarized the unemployment-forecasting problem and stakeholder relevance.
+- Identified the macroeconomic data categories used in the project.
+- Presented the chronological forecasting approach and emerging model evidence.
+- Added figures designed to communicate unemployment behavior and forecast performance.
+- Collected feedback on data specificity, historical coverage, validation wording, forecast timing, figure labels, and visual clarity.
+- Recorded revision priorities for the next project iteration.
 
-## ⚠️ Draft Status
+## 📌 Milestone Status
 
-This PDF is an archived draft, not the final source of project metrics or conclusions. Preliminary results or wording visible in it may differ from the submitted analysis.
+**M3 status:** ✅ Complete
 
-Use these final artifacts instead:
-
-- [Final poster](../M5-final/M5%20poster%20Final.pdf)
-- [Final report](../M5-final/M5-Final-Report.pdf)
-- [Final figures](../M5-final/Plots/)
-- [Public portfolio](https://manishkallu01-wq.github.io/capstone.html)
-
-**Milestone status:** ✅ Complete
+The PDF is intentionally preserved as the poster-draft submission. It represents the work available at M3 and is not labeled as a final poster.
