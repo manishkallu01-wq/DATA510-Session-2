@@ -1,0 +1,13 @@
+Metric,Value
+Rows,837
+Columns,40
+NumericPredictorsUsed,35
+StartDate,1956-04-01
+EndDate,2025-12-01
+ValidationStartDate,1989-01-01
+TestStartDate,1999-01-01
+DuplicateDatesAfterCleaning,0
+InfiniteNumericValuesAfterCleaning,0
+Missing_FutureUnemployment_3M,3
+Missing_FutureUnemployment_6M,6
+Missing_FutureUnemployment_12M,12

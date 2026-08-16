@@ -1,0 +1,10 @@
+Horizon,Approach,MAE,RMSE,R2
+3M,Persistence,0.364,1.0703,0.6916
+3M,Unemployment-Only Linear,0.3822,1.1708,0.6309
+3M,Best Full Model: Ridge Regression,0.3493,1.0204,0.7197
+6M,Persistence,0.602,1.3787,0.4907
+6M,Unemployment-Only Linear,0.5963,1.5532,0.3536
+6M,Best Full Model: Extra Trees,0.7248,1.2772,0.5629
+12M,Persistence,1.0082,1.7391,0.1959
+12M,Unemployment-Only Linear,0.9508,1.7133,0.2196
+12M,Best Full Model: Extra Trees,1.1953,1.7293,0.205
